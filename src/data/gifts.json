@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Jogo de Panelas Tramontina",
+    "price": 450.00,
+    "image": "/placeholder-gift.jpg",
+    "description": "Jogo de panelas antiaderente 5 peças"
+  },
+  {
+    "id": 2,
+    "name": "Liquidificador Philips Walita",
+    "price": 280.00,
+    "image": "/placeholder-gift.jpg",
+    "description": "Liquidificador 1000W com 12 velocidades"
+  },
+  {
+    "id": 3,
+    "name": "Jogo de Toalhas Premium",
+    "price": 180.00,
+    "image": "/placeholder-gift.jpg",
+    "description": "Jogo de toalhas 100% algodão 5 peças"
+  },
+  {
+    "id": 4,
+    "name": "Cafeteira Elétrica Nespresso",
+    "price": 650.00,
+    "image": "/placeholder-gift.jpg",
+    "description": "Cafeteira espresso automática"
+  },
+  {
+    "id": 5,
+    "name": "Jogo de Jantar Porcelana",
+    "price": 380.00,
+    "image": "/placeholder-gift.jpg",
+    "description": "Aparelho de jantar 20 peças"
+  },
+  {
+    "id": 6,
+    "name": "Micro-ondas Electrolux",
+    "price": 520.00,
+    "image": "/placeholder-gift.jpg",
+    "description": "Micro-ondas 30L com grill"
+  },
+  {
+    "id": 7,
+    "name": "Aspirador de Pó Robô",
+    "price": 890.00,
+    "image": "/placeholder-gift.jpg",
+    "description": "Aspirador robô inteligente com WiFi"
+  },
+  {
+    "id": 8,
+    "name": "Jogo de Lençóis King",
+    "price": 220.00,
+    "image": "/placeholder-gift.jpg",
+    "description": "Jogo de lençóis 300 fios 4 peças"
+  },
+  {
+    "id": 9,
+    "name": "Air Fryer Philco",
+    "price": 420.00,
+    "image": "/placeholder-gift.jpg",
+    "description": "Fritadeira elétrica sem óleo 5L"
+  },
+  {
+    "id": 10,
+    "name": "Ferro a Vapor Arno",
+    "price": 160.00,
+    "image": "/placeholder-gift.jpg",
+    "description": "Ferro a vapor ultragliss"
+  },
+  {
+    "id": 11,
+    "name": "Mixer Philips Walita",
+    "price": 190.00,
+    "image": "/placeholder-gift.jpg",
+    "description": "Mixer 700W com 2 velocidades"
+  },
+  {
+    "id": 12,
+    "name": "Edredom King Size",
+    "price": 340.00,
+    "image": "/placeholder-gift.jpg",
+    "description": "Edredom dupla face 300 fios"
+  }
+]

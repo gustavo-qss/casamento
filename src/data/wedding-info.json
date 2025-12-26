@@ -1,0 +1,23 @@
+{
+  "weddingDate": "2026-04-26T16:00:00",
+  "couple": {
+    "bride": "Rawane",
+    "groom": "Gustavo"
+  },
+  "church": {
+    "location": "Igreja Nossa Senhora de Fátima",
+    "time": "16h00",
+    "address": "Rua das Flores, 123 - Centro",
+    "mapsLink": "https://maps.google.com/?q=-23.550520,-46.633308"
+  },
+  "reception": {
+    "location": "Espaço Jardim Encantado",
+    "time": "18h00",
+    "address": "Av. Principal, 456 - Jardim Europa",
+    "mapsLink": "https://maps.google.com/?q=-23.560520,-46.643308"
+  },
+  "pix": {
+    "key": "12401090916",
+    "name": "Rawane e Gustavo"
+  }
+}
