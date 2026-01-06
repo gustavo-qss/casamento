@@ -32,13 +32,7 @@
           }"
           :corners-dot-options="{
             type: 'dot',
-            color: '#bfd5ed',
-          }"
-          image="/favicon.ico"
-          :image-options="{
-            hideBackgroundDots: true,
-            imageSize: 0.4,
-            margin: 5,
+            color: '#b1b9e7',
           }"
         />
       </div>
