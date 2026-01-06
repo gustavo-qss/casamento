@@ -19,10 +19,11 @@
 
 <script setup>
 import FullscreenContainer from '@/components/layout/FullscreenContainer.vue';
+import { getPublicPath } from '@/utils/assets';
 
 const emit = defineEmits(['scrollNext']);
 
-const heroImage = '/homepage.jpeg';
+const heroImage = getPublicPath('homepage.jpeg');
 
 const scrollToNext = () => {
   emit('scrollNext');

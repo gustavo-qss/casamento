@@ -44,11 +44,16 @@ import { ref } from 'vue';
 import ProgressBar from '@/components/ui/ProgressBar.vue';
 import BackButton from '@/components/ui/BackButton.vue';
 import { useStories } from '@/composables/useStories.js';
+import { getPublicPath } from '@/utils/assets';
 import storiesData from '@/data/stories.json';
 
 const emit = defineEmits(['complete', 'back']);
 
-const stories = ref(storiesData);
+// Processar imagens com BASE_URL correto
+const stories = ref(storiesData.map(story => ({
+  ...story,
+  image: getPublicPath(story.image)
+})));
 const STORY_DURATION = 7000; // 7 segundos
 
 const {

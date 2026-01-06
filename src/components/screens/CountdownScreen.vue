@@ -11,7 +11,7 @@
         <div class="countdown-grid">
           <div class="countdown-item">
             <span class="countdown-number">{{ days }}</span>
-            <span class="countdown-label">Dias </span>
+            <span class="countdown-label">Dias</span>
           </div>
           <div class="countdown-item">
             <span class="countdown-number">{{ hours }}</span>
@@ -40,10 +40,11 @@ import FullscreenContainer from '../layout/FullscreenContainer.vue';
 import ScrollArrow from '../ui/ScrollArrow.vue';
 import BackButton from '../ui/BackButton.vue';
 import { useCountdown } from '@/composables/useCountdown';
+import { getPublicPath } from '@/utils/assets';
 import weddingInfo from '@/data/wedding-info.json';
 
 // Imagem de background do countdown
-const countdownImage = '/countdown.jpeg';
+const countdownImage = getPublicPath('countdown.jpeg');
 
 // Usar o countdown com a data do casamento
 const { days, hours, minutes, seconds } = useCountdown(weddingInfo.weddingDate);

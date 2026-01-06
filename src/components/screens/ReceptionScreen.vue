@@ -27,10 +27,11 @@ import FullscreenContainer from '../layout/FullscreenContainer.vue';
 import LocationCard from '../ui/LocationCard.vue';
 import ScrollArrow from '../ui/ScrollArrow.vue';
 import BackButton from '../ui/BackButton.vue';
+import { getPublicPath } from '@/utils/assets';
 import weddingInfo from '@/data/wedding-info.json';
 
 // Imagem da recepção da pasta public
-const receptionImage = '/local-2.jpg';
+const receptionImage = getPublicPath('local-2.jpg');
 
 const emit = defineEmits(['next', 'back']);
 

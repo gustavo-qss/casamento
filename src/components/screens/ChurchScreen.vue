@@ -27,10 +27,11 @@ import FullscreenContainer from '../layout/FullscreenContainer.vue';
 import LocationCard from '../ui/LocationCard.vue';
 import ScrollArrow from '../ui/ScrollArrow.vue';
 import BackButton from '../ui/BackButton.vue';
+import { getPublicPath } from '@/utils/assets';
 import weddingInfo from '@/data/wedding-info.json';
 
 // Imagem da igreja da pasta public
-const churchImage = '/local-1.jpg';
+const churchImage = getPublicPath('local-1.jpg');
 
 const emit = defineEmits(['next', 'back']);
 
