@@ -11,7 +11,7 @@
         <div class="countdown-grid">
           <div class="countdown-item">
             <span class="countdown-number">{{ days }}</span>
-            <span class="countdown-label">Dias</span>
+            <span class="countdown-label">Dias </span>
           </div>
           <div class="countdown-item">
             <span class="countdown-number">{{ hours }}</span>
