@@ -3,84 +3,70 @@
     "id": 1,
     "name": "Jogo de Panelas Tramontina",
     "price": 450.00,
-    "image": "/placeholder-gift.jpg",
+    "image": "https://t62533.vteximg.com.br/arquivos/ids/945641-1000-1000/20298061PDM001G.jpg?v=638627823856770000",
     "description": "Jogo de panelas antiaderente 5 peças"
   },
   {
     "id": 2,
     "name": "Liquidificador Philips Walita",
     "price": 280.00,
-    "image": "/placeholder-gift.jpg",
+    "image": "https://d3alv7ekdacjys.cloudfront.net/Custom/Content/Products/12/12/1212428_liquidificador-mondial-550w-2-2-litros-pratic-turbo-l-98-b-preto_m2_638658978141751385.webp",
     "description": "Liquidificador 1000W com 12 velocidades"
   },
   {
     "id": 3,
     "name": "Jogo de Toalhas Premium",
     "price": 180.00,
-    "image": "/placeholder-gift.jpg",
+    "image": "https://centraltoalhas.cdn.magazord.com.br/img/2022/06/produto/4373/banho-hotel-prata.jpg?ims=800x800",
     "description": "Jogo de toalhas 100% algodão 5 peças"
   },
   {
     "id": 4,
     "name": "Cafeteira Elétrica Nespresso",
     "price": 650.00,
-    "image": "/placeholder-gift.jpg",
+    "image": "https://www.nespresso.com/ecom/medias/sys_master/public/45918999838750/EssenzaMiniVermelhaTQ-Gallery.png?impolicy=medium&imwidth=800&imdensity=1",
     "description": "Cafeteira espresso automática"
   },
   {
     "id": 5,
     "name": "Jogo de Jantar Porcelana",
     "price": 380.00,
-    "image": "/placeholder-gift.jpg",
+    "image": "https://portobrasil.vtexassets.com/arquivos/ids/180505/61091R---APARELHO-DE-JANTAR-42-PECAS-ROMA-BRANCO---02.jpg?v=638942263635530000",
     "description": "Aparelho de jantar 20 peças"
   },
   {
     "id": 6,
     "name": "Micro-ondas Electrolux",
     "price": 520.00,
-    "image": "/placeholder-gift.jpg",
+    "image": "https://dverr7iyvl0k.cloudfront.net/Custom/Content/Products/75/88/7588_110v-forno-microondas-electrolux-meo44-34l-branco_z1_638411860705720573.webp",
     "description": "Micro-ondas 30L com grill"
   },
   {
     "id": 7,
     "name": "Aspirador de Pó Robô",
     "price": 890.00,
-    "image": "/placeholder-gift.jpg",
+    "image": "https://i.zst.com.br/thumbs/12/38/30/1668033974.jpg",
     "description": "Aspirador robô inteligente com WiFi"
   },
   {
     "id": 8,
     "name": "Jogo de Lençóis King",
     "price": 220.00,
-    "image": "/placeholder-gift.jpg",
+    "image": "https://cdn.awsli.com.br/2500x2500/2467/2467495/produto/2077089971b1a137076.jpg",
     "description": "Jogo de lençóis 300 fios 4 peças"
   },
   {
     "id": 9,
     "name": "Air Fryer Philco",
     "price": 420.00,
-    "image": "/placeholder-gift.jpg",
+    "image": "https://ariete.net.br/wp-content/uploads/2025/02/00C462509ARBR_07-2.jpg",
     "description": "Fritadeira elétrica sem óleo 5L"
   },
   {
     "id": 10,
     "name": "Ferro a Vapor Arno",
     "price": 160.00,
-    "image": "/placeholder-gift.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwwDgDRSUVbFhF84muYm3vSs8tsnzTSZqKEw&s",
     "description": "Ferro a vapor ultragliss"
-  },
-  {
-    "id": 11,
-    "name": "Mixer Philips Walita",
-    "price": 190.00,
-    "image": "/placeholder-gift.jpg",
-    "description": "Mixer 700W com 2 velocidades"
-  },
-  {
-    "id": 12,
-    "name": "Edredom King Size",
-    "price": 340.00,
-    "image": "/placeholder-gift.jpg",
-    "description": "Edredom dupla face 300 fios"
   }
 ]
