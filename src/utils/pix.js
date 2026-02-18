@@ -11,9 +11,9 @@ function crc16(payload) {
 
     for (let j = 0; j < 8; j++) {
       if ((crc & 0x8000) !== 0) {
-        crc = (crc << 1) ^ 0x1021;
+        crc = ((crc << 1) ^ 0x1021) & 0xFFFF;
       } else {
-        crc = crc << 1;
+        crc = (crc << 1) & 0xFFFF;
       }
     }
   }
@@ -46,16 +46,21 @@ export function generatePixPayload(pixKey, amount, recipientName = 'Rawane e Gus
   const pixKeyField = buildEMVField('01', pixKey);
   const merchantAccount = buildEMVField('00', 'BR.GOV.BCB.PIX') + pixKeyField;
 
+  // Additional Data Field Template (ID 62) com txid
+  const txid = buildEMVField('05', '***');
+
   // Construir payload
   let payload = '';
-  payload += buildEMVField('00', '01'); // Payload Format Indicator
+  payload += buildEMVField('00', '01');           // Payload Format Indicator
+  payload += buildEMVField('01', '12');           // Point of Initiation Method (12 = dinâmico)
   payload += buildEMVField('26', merchantAccount); // Merchant Account
-  payload += buildEMVField('52', '0000'); // Merchant Category Code
-  payload += buildEMVField('53', '986'); // Transaction Currency (986 = BRL)
-  payload += buildEMVField('54', amountStr); // Transaction Amount
-  payload += buildEMVField('58', 'BR'); // Country Code
-  payload += buildEMVField('59', normalizedName); // Merchant Name
-  payload += buildEMVField('60', normalizedCity); // Merchant City
+  payload += buildEMVField('52', '0000');          // Merchant Category Code
+  payload += buildEMVField('53', '986');           // Transaction Currency (986 = BRL)
+  payload += buildEMVField('54', amountStr);       // Transaction Amount
+  payload += buildEMVField('58', 'BR');            // Country Code
+  payload += buildEMVField('59', normalizedName);  // Merchant Name
+  payload += buildEMVField('60', normalizedCity);  // Merchant City
+  payload += buildEMVField('62', txid);            // Additional Data Field Template
 
   // CRC16
   payload += '6304'; // CRC16 field ID

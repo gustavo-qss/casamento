@@ -19,22 +19,7 @@
       </div>
 
       <div class="qr-code-container">
-        <QRCodeVue3
-          :value="pixCode"
-          :size="250"
-          :dots-options="{
-            type: 'rounded',
-            color: '#5a67d8',
-          }"
-          :corners-square-options="{
-            type: 'extra-rounded',
-            color: '#b1b9e7',
-          }"
-          :corners-dot-options="{
-            type: 'dot',
-            color: '#b1b9e7',
-          }"
-        />
+        <img v-if="qrDataUrl" :src="qrDataUrl" alt="QR Code PIX" width="250" height="250" />
       </div>
 
       <div class="amount-display">
@@ -85,8 +70,8 @@
 </template>
 
 <script setup>
-import { ref, defineProps, defineEmits } from 'vue';
-import QRCodeVue3 from 'qrcode-vue3';
+import { ref, watch, defineProps, defineEmits } from 'vue';
+import QRCode from 'qrcode';
 
 const props = defineProps({
   pixCode: {
@@ -103,6 +88,17 @@ const emit = defineEmits(['close', 'complete']);
 
 const pixInput = ref(null);
 const copied = ref(false);
+const qrDataUrl = ref('');
+
+watch(() => props.pixCode, async (code) => {
+  if (code) {
+    qrDataUrl.value = await QRCode.toDataURL(code, {
+      width: 250,
+      margin: 2,
+      errorCorrectionLevel: 'M',
+    });
+  }
+}, { immediate: true });
 
 const handleClose = () => {
   emit('close');

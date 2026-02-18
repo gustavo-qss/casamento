@@ -43,7 +43,9 @@ import BackButton from '../ui/BackButton.vue';
 import { useCart } from '@/composables/useCart';
 import { generatePixPayload } from '@/utils/pix';
 import giftsData from '@/data/gifts.json';
-import weddingInfo from '@/data/wedding-info.json';
+
+const pixKey = import.meta.env.VITE_PIX_KEY;
+const pixName = import.meta.env.VITE_PIX_NAME;
 
 const emit = defineEmits(['back']);
 
@@ -55,9 +57,9 @@ const { itemCount, total, addItem, removeItem, clearCart, getQuantity } = useCar
 const pixCode = computed(() => {
   if (total.value > 0) {
     return generatePixPayload(
-      weddingInfo.pix.key,
+      pixKey,
       total.value,
-      weddingInfo.pix.name
+      pixName
     );
   }
   return '';
