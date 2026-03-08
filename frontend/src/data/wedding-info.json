@@ -1,19 +1,19 @@
 {
-  "weddingDate": "2026-04-26T16:00:00",
+  "weddingDate": "2026-05-16T16:30:00",
   "couple": {
     "bride": "Rawane",
     "groom": "Gustavo"
   },
   "church": {
     "location": "Igreja Nossa Senhora de Fátima",
-    "time": "16h00",
-    "address": "Rua das Flores, 123 - Centro",
-    "mapsLink": "https://maps.google.com/?q=-23.550520,-46.633308"
+    "time": "16h30",
+    "address": "R. Cmte. Carlos Alberto, 222 Jardim - Caravelle, Londrina - PR.",
+    "mapsLink": "https://www.google.com/maps/place/nossa+senhora+do+silencio+londrina/data=!4m2!3m1!1s0x94eb437197f2386f:0x45e64350fc4d3db4?sa=X&ved=1t:242&ictx=111"
   },
   "reception": {
-    "location": "Espaço Jardim Encantado",
-    "time": "18h00",
-    "address": "Av. Principal, 456 - Jardim Europa",
-    "mapsLink": "https://maps.google.com/?q=-23.560520,-46.643308"
+    "location": "Churrascaria Chimarrão",
+    "time": "19h00",
+    "address": "Av. Tiradentes, 3165 - Cilo 3, Londrina - PR.",
+    "mapsLink": "https://www.google.com/maps/place/Churrascaria+Chimarr%C3%A3o/@-23.297187,-51.2047898,17z/data=!3m1!4b1!4m6!3m5!1s0x94eb5b10c9f8065b:0x1a8eca162d617767!8m2!3d-23.297187!4d-51.2047898!16s%2Fg%2F1tfgqk4r?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D"
   }
 }

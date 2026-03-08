@@ -370,6 +370,14 @@ async function startCheckout(amount, items) {
 - **Sem Vue Router** — navegacao manual via `currentScreen` no App.vue
 - Alias `@` aponta para `src/`
 
+### Responsividade — Regras de Ouro
+
+- **Nunca usar `px` fixo para tamanhos ou espacamentos de layout** — preferir `clamp()`, `vw`, `vh`, `rem` ou variaveis CSS
+- **`clamp(min, ideal, max)`** e o padrao para fontes, larguras e deslocamentos: garante limites seguros em telas pequenas e grandes
+- **`transform: translateY(clamp(...))`** para deslocar visualmente um elemento sem afetar o fluxo dos vizinhos
+- **`margin` e `padding`** com `clamp()` ou variaveis `--spacing-*` — nunca valores absolutos em `px`
+- **Testar sempre nos breakpoints:** 375px (mobile pequeno), 768px (tablet), 1280px (desktop)
+
 ---
 
 ## Referencias

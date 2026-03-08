@@ -21,7 +21,8 @@
   --text-dark: #333333;
 
   /* ===== GRADIENTES ===== */
-  --gradient-main: linear-gradient(135deg, #b1b9e7 0%, #bfd5ed 100%);
+  --gradient-main: linear-gradient(135deg, #3248d8 0%, #657b91 100%);
+  /* --gradient-main: blue; */
   --gradient-soft: linear-gradient(180deg, #faf7f2 0%, #f4d9e6 100%);
   --gradient-overlay: linear-gradient(180deg, rgba(177, 185, 231, 0.7) 0%, rgba(191, 213, 237, 0.7) 100%);
   --gradient-overlay-dark: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);

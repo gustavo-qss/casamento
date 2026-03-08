@@ -98,7 +98,8 @@ const handleBack = () => {
   align-items: center;
   gap: var(--spacing-xs);
   padding: var(--spacing-md);
-  background: linear-gradient(135deg, var(--primary-lavender), var(--primary-blue));
+  /* background: linear-gradient(135deg, var(--primary-lavender), var(--primary-blue)); */
+  background: linear-gradient(135deg, #d6dadf 0%, #3a4dca 150%);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   transition: transform var(--transition-normal);

@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import HeroScreen from '@/components/screens/HeroScreen.vue';
 import StoriesScreen from '@/components/screens/StoriesScreen.vue';
+import EtiquetteScreen from '@/components/screens/EtiquetteScreen.vue';
 import ChurchScreen from '@/components/screens/ChurchScreen.vue';
 import ReceptionScreen from '@/components/screens/ReceptionScreen.vue';
 import CountdownScreen from '@/components/screens/CountdownScreen.vue';
@@ -28,12 +29,12 @@ onMounted(() => {
     window.history.replaceState({}, '', window.location.pathname);
 
     // Navega direto para a tela de presentes ao voltar do MP
-    currentScreen.value = 6;
+    currentScreen.value = 7;
   }
 });
 
 const handleScrollNext = () => {
-  if (currentScreen.value < 6) {
+  if (currentScreen.value < 7) {
     isGoingBack.value = false;
     currentScreen.value++;
   }
@@ -48,7 +49,7 @@ const handleGoBack = () => {
 
 const handleStoriesComplete = () => {
   isGoingBack.value = false;
-  currentScreen.value = 3;
+  currentScreen.value = 3; // EtiquetteScreen
 };
 
 const handleClosePaymentResult = () => {
@@ -61,10 +62,11 @@ const handleClosePaymentResult = () => {
     <Transition :name="isGoingBack ? 'slide-down' : 'slide-up'">
       <HeroScreen v-if="currentScreen === 1" @scroll-next="handleScrollNext" />
       <StoriesScreen v-else-if="currentScreen === 2" @complete="handleStoriesComplete" @back="handleGoBack" />
-      <ChurchScreen v-else-if="currentScreen === 3" @next="handleScrollNext" @back="handleGoBack" />
-      <ReceptionScreen v-else-if="currentScreen === 4" @next="handleScrollNext" @back="handleGoBack" />
-      <CountdownScreen v-else-if="currentScreen === 5" @next="handleScrollNext" @back="handleGoBack" />
-      <GiftsScreen v-else-if="currentScreen === 6" key="gifts" @back="handleGoBack" />
+      <EtiquetteScreen v-else-if="currentScreen === 3" @next="handleScrollNext" @back="handleGoBack" />
+      <ChurchScreen v-else-if="currentScreen === 4" @next="handleScrollNext" @back="handleGoBack" />
+      <ReceptionScreen v-else-if="currentScreen === 5" @next="handleScrollNext" @back="handleGoBack" />
+      <CountdownScreen v-else-if="currentScreen === 6" @next="handleScrollNext" @back="handleGoBack" />
+      <GiftsScreen v-else-if="currentScreen === 7" key="gifts" @back="handleGoBack" />
     </Transition>
 
     <PaymentResultModal

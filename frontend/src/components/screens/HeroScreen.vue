@@ -5,11 +5,8 @@
     overlay-class="overlay-dark"
   >
     <div class="hero-content fade-in">
-      <h1 class="hero-title">
-        Casamento<br />
-        <span class="couple-names script-text">Gustavo e Rawane</span>
-      </h1>
-      <p class="wedding-date">26 de Abril de 2026</p>
+      <img :src="logoImage" alt="Gustavo e Rawane" class="hero-logo" />
+      <p class="wedding-date">16 de Maio de 2026</p>
       <button class="btn btn-primary cta-button hover-lift" @click="scrollToNext">
         Ver Mais
       </button>
@@ -24,6 +21,7 @@ import { getPublicPath } from '@/utils/assets';
 const emit = defineEmits(['scrollNext']);
 
 const heroImage = getPublicPath('homepage.jpeg');
+const logoImage = getPublicPath('logo.png');
 
 const scrollToNext = () => {
   emit('scrollNext');
@@ -38,24 +36,11 @@ const scrollToNext = () => {
   gap: var(--spacing-md);
 }
 
-.hero-title {
-  color: var(--white);
-  font-family: var(--font-display);
-  font-size: var(--text-hero);
-  font-weight: 700;
-  text-align: center;
-  line-height: 1.2;
-  margin: 0;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-.couple-names {
-  display: block;
-  font-size: clamp(3rem, 10vw, 6rem);
-  color: var(--primary-lavender);
-  font-weight: 400;
-  margin-top: var(--spacing-sm);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+.hero-logo {
+  width: clamp(260px, 50vw, 480px);
+  height: auto;
+  transform: translateY(clamp(10px, 3vh, 40px));
+  filter: brightness(0) invert(1) drop-shadow(0 4px 16px rgba(0, 0, 0, 0.4));
 }
 
 .wedding-date {
@@ -79,12 +64,8 @@ const scrollToNext = () => {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: clamp(2rem, 8vw, 3rem);
-  }
-
-  .couple-names {
-    font-size: clamp(2.5rem, 10vw, 4rem);
+  .hero-logo {
+    width: clamp(190px, 65vw, 340px);
   }
 
   .wedding-date {
