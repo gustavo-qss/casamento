@@ -24,46 +24,30 @@
       @checkout="handleCheckout"
     />
 
-    <QRCodeModal
-      v-if="showQRCode"
-      :pix-code="pixCode"
-      :amount="total"
+    <CheckoutModal
+      v-if="showCheckout"
+      :items="items"
+      :total="total"
       @close="handleCloseModal"
-      @complete="handleCompleteCheckout"
     />
   </div>
 </template>
 
 <script setup>
-import { ref, computed, defineEmits } from 'vue';
+import { ref, defineEmits } from 'vue';
 import GiftCard from '../ui/GiftCard.vue';
 import ShoppingCart from '../ui/ShoppingCart.vue';
-import QRCodeModal from '../ui/QRCodeModal.vue';
+import CheckoutModal from '../ui/CheckoutModal.vue';
 import BackButton from '../ui/BackButton.vue';
 import { useCart } from '@/composables/useCart';
-import { generatePixPayload } from '@/utils/pix';
 import giftsData from '@/data/gifts.json';
-
-const pixKey = import.meta.env.VITE_PIX_KEY;
-const pixName = import.meta.env.VITE_PIX_NAME;
 
 const emit = defineEmits(['back']);
 
 const gifts = ref(giftsData);
-const showQRCode = ref(false);
+const showCheckout = ref(false);
 
-const { itemCount, total, addItem, removeItem, clearCart, getQuantity } = useCart();
-
-const pixCode = computed(() => {
-  if (total.value > 0) {
-    return generatePixPayload(
-      pixKey,
-      total.value,
-      pixName
-    );
-  }
-  return '';
-});
+const { items, itemCount, total, addItem, removeItem, getQuantity } = useCart();
 
 const handleAddGift = (gift) => {
   addItem(gift);
@@ -74,18 +58,11 @@ const handleRemoveGift = (giftId) => {
 };
 
 const handleCheckout = () => {
-  showQRCode.value = true;
+  showCheckout.value = true;
 };
 
 const handleCloseModal = () => {
-  showQRCode.value = false;
-};
-
-const handleCompleteCheckout = () => {
-  clearCart();
-  showQRCode.value = false;
-  // Opcional: Mostrar mensagem de agradecimento ou confetti
-  alert('Obrigado pelo presente! ❤️');
+  showCheckout.value = false;
 };
 
 const handleBack = () => {

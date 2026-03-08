@@ -1,14 +1,36 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import HeroScreen from '@/components/screens/HeroScreen.vue';
 import StoriesScreen from '@/components/screens/StoriesScreen.vue';
 import ChurchScreen from '@/components/screens/ChurchScreen.vue';
 import ReceptionScreen from '@/components/screens/ReceptionScreen.vue';
 import CountdownScreen from '@/components/screens/CountdownScreen.vue';
 import GiftsScreen from '@/components/screens/GiftsScreen.vue';
+import PaymentResultModal from '@/components/ui/PaymentResultModal.vue';
+import { useCartStore } from '@/stores/cart';
 
 const currentScreen = ref(1);
 const isGoingBack = ref(false);
+const paymentResult = ref(null); // 'success' | 'failure' | 'pending' | null
+
+onMounted(() => {
+  const params = new URLSearchParams(window.location.search);
+  const payment = params.get('payment');
+
+  if (payment === 'success' || payment === 'failure' || payment === 'pending') {
+    paymentResult.value = payment;
+
+    if (payment === 'success') {
+      useCartStore().clearCart();
+    }
+
+    // Remove os query params da URL sem recarregar a página
+    window.history.replaceState({}, '', window.location.pathname);
+
+    // Navega direto para a tela de presentes ao voltar do MP
+    currentScreen.value = 6;
+  }
+});
 
 const handleScrollNext = () => {
   if (currentScreen.value < 6) {
@@ -25,9 +47,12 @@ const handleGoBack = () => {
 };
 
 const handleStoriesComplete = () => {
-  console.log('Stories completos! Navegando para tela da igreja...');
   isGoingBack.value = false;
   currentScreen.value = 3;
+};
+
+const handleClosePaymentResult = () => {
+  paymentResult.value = null;
 };
 </script>
 
@@ -41,6 +66,12 @@ const handleStoriesComplete = () => {
       <CountdownScreen v-else-if="currentScreen === 5" @next="handleScrollNext" @back="handleGoBack" />
       <GiftsScreen v-else-if="currentScreen === 6" key="gifts" @back="handleGoBack" />
     </Transition>
+
+    <PaymentResultModal
+      v-if="paymentResult"
+      :status="paymentResult"
+      @close="handleClosePaymentResult"
+    />
   </div>
 </template>
 
