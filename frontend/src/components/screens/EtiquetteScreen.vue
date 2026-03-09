@@ -1,27 +1,37 @@
 <template>
   <div class="etiquette-screen">
     <BackButton @click="handleBack" />
-    <div class="screen-bg">
-      <div class="screen-content fade-in">
-        <h2 class="screen-title">
-          Alguns combinados para<br />
-          <span class="script-text title-accent">o nosso grande dia</span>
+
+    <div class="screen-inner">
+      <!-- Cabeçalho -->
+      <header class="etiquette-header fade-in-up">
+        <p class="eyebrow">Para o nosso dia</p>
+        <h2 class="etiquette-title">
+          Alguns<br />
+          <em>Combinados</em>
         </h2>
-        <p class="screen-subtitle">
-          Queremos que esse momento seja especial para todos, então deixamos alguns combinados
-          para que tudo aconteça da melhor forma possível.
+        <p class="etiquette-subtitle">
+          Queremos que esse momento seja especial para todos.
         </p>
-        <div class="rules-grid">
-          <div v-for="rule in rules" :key="rule.id" class="rule-card" :class="{ 'rule-card--full': rule.id === 7 }">
-            <div class="rule-icon" v-html="rule.icon"></div>
-            <div class="rule-text">
-              <h3 class="rule-title">{{ rule.title }}</h3>
-              <p class="rule-desc" v-html="rule.desc"></p>
-            </div>
+      </header>
+
+      <!-- Grid de regras -->
+      <div class="rules-grid">
+        <div
+          v-for="rule in rules"
+          :key="rule.id"
+          class="rule-card"
+          :class="{ 'rule-card--full': rule.id === 7 }"
+        >
+          <div class="rule-icon" v-html="rule.icon"></div>
+          <div class="rule-text">
+            <h3 class="rule-title">{{ rule.title }}</h3>
+            <p class="rule-desc" v-html="rule.desc"></p>
           </div>
         </div>
       </div>
     </div>
+
     <div class="scroll-arrow-wrapper">
       <ScrollArrow @click="scrollToNext" />
     </div>
@@ -88,89 +98,98 @@ const rules = [
   position: relative;
   width: 100%;
   min-height: 100vh;
+  background: var(--pearl);
+  overflow-x: hidden;
 }
 
-.screen-bg {
+.screen-inner {
   min-height: 100vh;
-  background: linear-gradient(160deg, var(--cream) 0%, #dce8f5 50%, var(--primary-blue) 100%);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: var(--spacing-2xl) var(--spacing-md);
-  overflow-y: auto;
+  padding: clamp(80px, 12vh, 120px) var(--spacing-md) clamp(80px, 12vh, 120px);
 }
 
-.screen-content {
-  max-width: 820px;
-  width: 100%;
-  padding: var(--spacing-xl) 0;
-}
-
-.screen-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  color: var(--blue-dark);
+/* ===== CABEÇALHO ===== */
+.etiquette-header {
   text-align: center;
-  line-height: 1.3;
+  margin-bottom: clamp(var(--spacing-xl), 6vh, var(--spacing-2xl));
+  max-width: 600px;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--navy-accent);
+  opacity: 0.6;
   margin: 0 0 var(--spacing-sm) 0;
 }
 
-.title-accent {
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: #3248d8;
+.etiquette-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 400;
+  color: var(--navy-dark);
+  line-height: 1.05;
+  margin: 0 0 var(--spacing-md) 0;
+  letter-spacing: -0.5px;
 }
 
-.screen-subtitle {
+.etiquette-title em {
+  font-style: italic;
+  color: var(--navy-accent);
+}
+
+.etiquette-subtitle {
   font-family: var(--font-body);
   font-size: clamp(0.85rem, 2vw, 1rem);
-  color: var(--text-dark);
-  text-align: center;
+  color: var(--text-muted);
   line-height: 1.7;
-  margin: 0 0 var(--spacing-xl) 0;
-  opacity: 0.75;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
 }
 
+/* ===== GRID DE REGRAS ===== */
 .rules-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-md);
+  gap: 1px;
+  width: 100%;
+  max-width: 860px;
+  background: rgba(13, 31, 60, 0.08);
+  border: 1px solid rgba(13, 31, 60, 0.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
 }
 
 .rule-card {
   display: flex;
   align-items: flex-start;
-  gap: var(--spacing-sm);
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(8px);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-md);
-  border: 1px solid rgba(140, 169, 196, 0.35);
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  gap: var(--spacing-md);
+  background: var(--white);
+  padding: var(--spacing-lg);
+  transition: background var(--transition-normal);
+}
+
+.rule-card:hover {
+  background: var(--pale-blue);
 }
 
 .rule-card--full {
   grid-column: 1 / -1;
 }
 
-.rule-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-}
-
 .rule-icon {
   flex-shrink: 0;
-  width: 2.4rem;
-  height: 2.4rem;
-  color: #3248d8;
-  background: linear-gradient(135deg, rgba(50, 72, 216, 0.1), rgba(140, 169, 196, 0.2));
-  border-radius: var(--radius-sm);
+  width: 2.2rem;
+  height: 2.2rem;
+  color: var(--navy-accent);
+  opacity: 0.8;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.45rem;
+  margin-top: 2px;
 }
 
 .rule-icon :deep(svg) {
@@ -184,29 +203,43 @@ const rules = [
 
 .rule-title {
   font-family: var(--font-body);
-  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
   font-weight: 600;
-  color: var(--blue-dark);
+  color: var(--navy-dark);
   margin: 0 0 var(--spacing-xs) 0;
+  letter-spacing: 0.3px;
 }
 
 .rule-desc {
   font-family: var(--font-body);
-  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
-  color: var(--text-dark);
-  line-height: 1.6;
+  font-size: clamp(0.75rem, 1.5vw, 0.82rem);
+  color: var(--text-muted);
+  line-height: 1.65;
   margin: 0;
-  opacity: 0.8;
+}
+
+.rule-desc :deep(strong) {
+  color: var(--navy-dark);
+  font-weight: 600;
+}
+
+/* ===== SCROLL ARROW (navy sobre fundo claro) ===== */
+.scroll-arrow-wrapper :deep(.scroll-arrow) {
+  color: var(--navy-dark) !important;
+}
+
+.scroll-arrow-wrapper :deep(.scroll-arrow:hover) {
+  color: var(--navy-accent) !important;
 }
 
 .scroll-arrow-wrapper {
   position: fixed;
-  bottom: clamp(20px, 4vh, 50px);
+  bottom: clamp(20px, 4vh, 48px);
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
-  z-index: 1000;
+  z-index: 30;
   pointer-events: none;
 }
 
@@ -220,25 +253,25 @@ const rules = [
   transform: scale(1.2);
 }
 
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
-  .screen-bg {
-    padding: var(--spacing-xl) var(--spacing-sm);
-    padding-bottom: calc(var(--spacing-2xl) + 60px);
-  }
-
   .rules-grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
+    gap: 1px;
   }
 
   .rule-card {
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+
+  .screen-inner {
+    padding-bottom: clamp(80px, 14vh, 120px);
   }
 }
 
 @media (max-width: 480px) {
-  .screen-content {
-    padding: var(--spacing-lg) 0;
+  .etiquette-title {
+    font-size: clamp(2rem, 10vw, 3rem);
   }
 }
 </style>

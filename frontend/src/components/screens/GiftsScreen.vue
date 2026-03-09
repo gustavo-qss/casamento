@@ -1,20 +1,28 @@
 <template>
   <div class="gifts-screen">
     <BackButton @click="handleBack" />
-    <div class="gifts-header">
-      <h2 class="gifts-title">Lista de Presentes</h2>
-      <p class="gifts-subtitle">Escolha um presente para nos dar de casamento</p>
-    </div>
 
-    <div class="gifts-grid">
-      <GiftCard
-        v-for="gift in gifts"
-        :key="gift.id"
-        :gift="gift"
-        :quantity="getQuantity(gift.id)"
-        @add="handleAddGift"
-        @remove="handleRemoveGift"
-      />
+    <!-- Header navy -->
+    <header class="gifts-header">
+      <div class="gifts-header-inner fade-in-up">
+        <p class="gifts-eyebrow">Para nos presentear</p>
+        <h2 class="gifts-title">Lista de<br /><em>Presentes</em></h2>
+        <p class="gifts-subtitle">Escolha com carinho o que nos levar para casa</p>
+      </div>
+    </header>
+
+    <!-- Grid de presentes -->
+    <div class="gifts-body">
+      <div class="gifts-grid">
+        <GiftCard
+          v-for="gift in gifts"
+          :key="gift.id"
+          :gift="gift"
+          :quantity="getQuantity(gift.id)"
+          @add="handleAddGift"
+          @remove="handleRemoveGift"
+        />
+      </div>
     </div>
 
     <ShoppingCart
@@ -34,7 +42,7 @@
 </template>
 
 <script setup>
-import { ref, defineEmits } from 'vue';
+import { ref } from 'vue';
 import GiftCard from '../ui/GiftCard.vue';
 import ShoppingCart from '../ui/ShoppingCart.vue';
 import CheckoutModal from '../ui/CheckoutModal.vue';
@@ -49,25 +57,11 @@ const showCheckout = ref(false);
 
 const { items, itemCount, total, addItem, removeItem, getQuantity } = useCart();
 
-const handleAddGift = (gift) => {
-  addItem(gift);
-};
-
-const handleRemoveGift = (giftId) => {
-  removeItem(giftId);
-};
-
-const handleCheckout = () => {
-  showCheckout.value = true;
-};
-
-const handleCloseModal = () => {
-  showCheckout.value = false;
-};
-
-const handleBack = () => {
-  emit('back');
-};
+const handleAddGift = (gift) => addItem(gift);
+const handleRemoveGift = (giftId) => removeItem(giftId);
+const handleCheckout = () => { showCheckout.value = true; };
+const handleCloseModal = () => { showCheckout.value = false; };
+const handleBack = () => emit('back');
 </script>
 
 <style scoped>
@@ -75,72 +69,90 @@ const handleBack = () => {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(180deg, var(--cream) 0%, var(--gray-light) 100%);
-  padding: var(--spacing-xl) var(--spacing-md);
-  padding-bottom: 120px; /* Espaço para o carrinho flutuante */
+  background: var(--pearl);
 }
 
+/* ===== HEADER NAVY ===== */
 .gifts-header {
+  background: var(--navy-dark);
+  padding: clamp(80px, 14vh, 140px) var(--spacing-md) clamp(50px, 8vh, 90px);
   text-align: center;
-  margin-bottom: var(--spacing-xl);
-  animation: fadeIn 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Detalhe: linha de luz no topo do header */
+.gifts-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ice-blue), transparent);
+  opacity: 0.5;
+}
+
+.gifts-header-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.gifts-eyebrow {
+  font-family: var(--font-body);
+  font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--ice-blue);
+  opacity: 0.65;
+  margin: 0 0 var(--spacing-sm) 0;
 }
 
 .gifts-title {
   font-family: var(--font-display);
-  font-size: var(--text-title);
-  color: var(--lavender-dark);
-  margin: 0 0 var(--spacing-sm) 0;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.05;
+  margin: 0 0 var(--spacing-md) 0;
+  letter-spacing: -0.3px;
+}
+
+.gifts-title em {
+  font-style: italic;
+  color: var(--ice-blue);
 }
 
 .gifts-subtitle {
   font-family: var(--font-body);
-  font-size: var(--text-body);
-  color: var(--blue-dark);
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  color: rgba(255, 255, 255, 0.45);
   margin: 0;
+  line-height: 1.6;
 }
 
+/* ===== BODY ===== */
+.gifts-body {
+  padding: var(--spacing-2xl) var(--spacing-md);
+  padding-bottom: 140px;
+  background: var(--pearl);
+}
+
+/* ===== GRID ===== */
 .gifts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: var(--spacing-lg);
   max-width: 1200px;
   margin: 0 auto;
-  animation: fadeIn 1s ease-out 0.2s backwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
 /* Tablet: 2 colunas */
 @media (max-width: 992px) and (min-width: 577px) {
   .gifts-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile: 1 coluna */
-@media (max-width: 576px) {
-  .gifts-screen {
-    padding: var(--spacing-lg) var(--spacing-sm);
-    padding-bottom: 100px;
-  }
-
-  .gifts-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-  }
-
-  .gifts-header {
-    margin-bottom: var(--spacing-lg);
   }
 }
 
@@ -154,6 +166,19 @@ const handleBack = () => {
 @media (min-width: 993px) and (max-width: 1199px) {
   .gifts-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile: 1 coluna */
+@media (max-width: 576px) {
+  .gifts-body {
+    padding: var(--spacing-xl) var(--spacing-sm);
+    padding-bottom: 120px;
+  }
+
+  .gifts-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
 }
 </style>

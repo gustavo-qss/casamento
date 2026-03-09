@@ -19,13 +19,16 @@
       />
     </div>
 
-    <!-- Story Content -->
-    <div
-      class="story-background"
-      :style="{ backgroundImage: `url(${currentStory.image})` }"
-    >
-      <div class="overlay overlay-dark"></div>
-    </div>
+    <!-- Story Content — com crossfade entre slides -->
+    <Transition name="story-fade">
+      <div
+        :key="currentStoryIndex"
+        class="story-background"
+        :style="{ backgroundImage: `url(${currentStory.image})` }"
+      >
+        <div class="overlay overlay-dark"></div>
+      </div>
+    </Transition>
 
     <div class="story-content">
       <p class="story-text fade-in">{{ currentStory.text }}</p>
@@ -107,6 +110,19 @@ const handleBack = () => {
 </script>
 
 <style scoped>
+/* ===== STORY FADE TRANSITION ===== */
+.story-fade-enter-active,
+.story-fade-leave-active {
+  transition: opacity 0.45s ease;
+  position: absolute;
+  inset: 0;
+}
+
+.story-fade-enter-from,
+.story-fade-leave-to {
+  opacity: 0;
+}
+
 .stories-screen {
   position: relative;
   width: 100%;
@@ -125,7 +141,7 @@ const handleBack = () => {
 /* Desktop: Container estilo Instagram (celular centralizado) */
 @media (min-width: 769px) {
   .stories-screen {
-    background-color: #1a1a1a;
+    background: radial-gradient(ellipse at center, #1e1e2e 0%, #0a0a12 100%);
   }
 
   .stories-screen::before {
@@ -137,9 +153,12 @@ const handleBack = () => {
     width: 420px;
     height: 90vh;
     max-height: 800px;
-    background-color: #000;
-    border-radius: 24px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    background-color: var(--navy-deep);
+    border-radius: 28px;
+    border: 1px solid rgba(197, 223, 245, 0.12);
+    box-shadow:
+      0 12px 48px rgba(0, 0, 0, 0.7),
+      0 0 0 1px rgba(197, 223, 245, 0.05) inset;
     z-index: 0;
   }
 
@@ -230,18 +249,22 @@ const handleBack = () => {
 
 .story-text {
   color: var(--white);
-  font-family: var(--font-body);
-  font-size: var(--text-subtitle);
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.5vw, 1.4rem);
+  font-style: italic;
   font-weight: 400;
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.65;
   max-width: 800px;
   margin: 0;
-  padding: var(--spacing-lg);
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  border-radius: var(--radius-md);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  padding: var(--spacing-md) 0 0;
+  background: none;
+  backdrop-filter: none;
+  border-radius: 0;
+  border-top: 1px solid rgba(197, 223, 245, 0.4);
+  text-shadow:
+    0 2px 20px rgba(0, 0, 0, 0.9),
+    0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 /* Tap Areas para navegação */

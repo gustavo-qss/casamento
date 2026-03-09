@@ -1,7 +1,7 @@
 <template>
   <div class="gift-card">
     <div class="gift-image-wrapper">
-      <img :src="gift.image" :alt="gift.name" class="gift-image" />
+      <img :src="gift.image" :alt="gift.name" class="gift-image" loading="lazy" />
     </div>
     <div class="gift-content">
       <h3 class="gift-name">{{ gift.name }}</h3>
@@ -13,54 +13,34 @@
           @click="handleRemove"
           class="btn-quantity btn-remove"
           aria-label="Remover"
-        >
-          -
-        </button>
+        >−</button>
 
         <span v-if="quantity > 0" class="quantity-display">{{ quantity }}</span>
 
         <button
           @click="handleAdd"
           class="btn-quantity btn-add"
+          :class="{ 'btn-add--has-qty': quantity > 0 }"
           :aria-label="quantity > 0 ? 'Adicionar mais' : 'Adicionar ao carrinho'"
-        >
-          +
-        </button>
+        >+</button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue';
-
 const props = defineProps({
-  gift: {
-    type: Object,
-    required: true,
-  },
-  quantity: {
-    type: Number,
-    default: 0,
-  },
+  gift: { type: Object, required: true },
+  quantity: { type: Number, default: 0 },
 });
 
 const emit = defineEmits(['add', 'remove']);
 
-const handleAdd = () => {
-  emit('add', props.gift);
-};
+const handleAdd = () => emit('add', props.gift);
+const handleRemove = () => emit('remove', props.gift.id);
 
-const handleRemove = () => {
-  emit('remove', props.gift.id);
-};
-
-const formatCurrency = (value) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-  }).format(value);
-};
+const formatCurrency = (value) =>
+  new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
 </script>
 
 <style scoped>
@@ -68,36 +48,39 @@ const formatCurrency = (value) => {
   background: var(--white);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
+  border: 1px solid rgba(13, 31, 60, 0.06);
 }
 
 .gift-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 12px 36px rgba(13, 31, 60, 0.14);
 }
 
+/* ===== IMAGEM ===== */
 .gift-image-wrapper {
   width: 100%;
   height: 200px;
   overflow: hidden;
-  background: var(--gray-light);
+  background: var(--pale-blue);
 }
 
 .gift-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-normal);
+  transition: transform 0.4s ease;
 }
 
 .gift-card:hover .gift-image {
   transform: scale(1.05);
 }
 
+/* ===== CONTEÚDO ===== */
 .gift-content {
   padding: var(--spacing-md);
   display: flex;
@@ -108,21 +91,23 @@ const formatCurrency = (value) => {
 
 .gift-name {
   font-family: var(--font-body);
-  font-size: var(--text-body);
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--navy-dark);
   margin: 0;
   line-height: 1.4;
 }
 
 .gift-price {
   font-family: var(--font-display);
-  font-size: var(--text-subtitle);
-  font-weight: 700;
-  color: var(--gold);
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  font-weight: 400;
+  color: var(--navy-accent);
   margin: 0;
+  letter-spacing: -0.2px;
 }
 
+/* ===== AÇÕES ===== */
 .gift-actions {
   display: flex;
   align-items: center;
@@ -132,36 +117,45 @@ const formatCurrency = (value) => {
 }
 
 .btn-quantity {
-  width: 40px;
-  height: 40px;
-  border: none;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 400;
   cursor: pointer;
-  transition: all var(--transition-normal);
+  transition: all 0.25s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  line-height: 1;
 }
 
 .btn-add {
-  background: linear-gradient(135deg, var(--primary-lavender), var(--primary-blue));
+  background: var(--navy-dark);
+  color: var(--white);
+  border: none;
 }
 
 .btn-add:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(177, 185, 231, 0.5);
+  background: var(--navy-light);
+  transform: scale(1.08);
+  box-shadow: 0 4px 14px rgba(13, 31, 60, 0.3);
+}
+
+.btn-add--has-qty {
+  background: var(--navy-mid);
 }
 
 .btn-remove {
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  background: transparent;
+  border: 1.5px solid rgba(220, 53, 69, 0.4);
+  color: #dc3545;
 }
 
 .btn-remove:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.5);
+  background: rgba(220, 53, 69, 0.08);
+  border-color: #dc3545;
+  transform: scale(1.08);
 }
 
 .btn-quantity:active {
@@ -171,15 +165,15 @@ const formatCurrency = (value) => {
 .quantity-display {
   font-family: var(--font-display);
   font-size: var(--text-subtitle);
-  font-weight: 700;
-  color: var(--lavender-dark);
-  min-width: 30px;
+  font-weight: 400;
+  color: var(--navy-dark);
+  min-width: 28px;
   text-align: center;
 }
 
 @media (max-width: 768px) {
   .gift-image-wrapper {
-    height: 180px;
+    height: 175px;
   }
 
   .gift-content {
@@ -187,9 +181,9 @@ const formatCurrency = (value) => {
   }
 
   .btn-quantity {
-    width: 36px;
-    height: 36px;
-    font-size: 1.25rem;
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
   }
 }
 </style>

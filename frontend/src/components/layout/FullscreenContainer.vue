@@ -3,7 +3,7 @@
     <div
       v-if="backgroundImage"
       class="background-image"
-      :class="{ bouncing: enableBouncing }"
+      :class="{ bouncing: enableBouncing, 'with-blur': enableBlur }"
       :style="{ backgroundImage: `url(${backgroundImage})` }"
     ></div>
     <div v-if="showOverlay" class="overlay" :class="overlayClass"></div>
@@ -28,6 +28,10 @@ defineProps({
     default: 'overlay-dark',
   },
   enableBouncing: {
+    type: Boolean,
+    default: false,
+  },
+  enableBlur: {
     type: Boolean,
     default: false,
   },
@@ -58,6 +62,10 @@ defineProps({
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transform: scale(1.02);
+}
+
+.background-image.with-blur {
   filter: blur(3px);
   transform: scale(1.05);
 }

@@ -112,13 +112,13 @@ defineProps({
 }
 
 .card-icon {
-  color: var(--primary-lavender);
+  color: var(--navy-accent);
   margin-bottom: var(--spacing-sm);
 }
 
 .card-title {
   font-size: var(--text-small);
-  color: var(--lavender-dark);
+  color: var(--navy-accent);
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
@@ -127,21 +127,21 @@ defineProps({
 
 .location-name {
   font-size: var(--text-title);
-  color: var(--text-dark);
+  color: var(--navy-dark);
   margin: var(--spacing-xs) 0;
   font-family: var(--font-display);
 }
 
 .location-time {
   font-size: var(--text-subtitle);
-  color: var(--gold);
+  color: var(--navy-accent);
   font-weight: 600;
   margin: 0;
 }
 
 .location-address {
   font-size: var(--text-body);
-  color: var(--blue-dark);
+  color: var(--text-muted);
   margin: var(--spacing-xs) 0 var(--spacing-md);
   text-align: center;
 }

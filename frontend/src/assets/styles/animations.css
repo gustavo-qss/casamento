@@ -218,6 +218,47 @@
   animation: shine 2s infinite;
 }
 
+/* ===== KEN BURNS (Hero Backgrounds) ===== */
+@keyframes kenBurns {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1.09);
+  }
+}
+
+/* ===== FADE IN UP (Entrada de conteúdo) ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+/* ===== GOLD SHIMMER (Ornamentos decorativos) ===== */
+@keyframes goldShimmer {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.gold-shimmer {
+  animation: goldShimmer 3s ease-in-out infinite;
+}
+
 /* ===== TRANSITIONS CLASSES ===== */
 .transition-fast {
   transition: all var(--transition-fast);
