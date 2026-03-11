@@ -208,4 +208,61 @@ const { church } = weddingInfo;
 .maps-btn svg {
   flex-shrink: 0;
 }
+
+/* ============================================
+   DESKTOP — layout 2 colunas (≥ 768px)
+   foto esquerda | painel de conteúdo direita
+   ============================================ */
+@media (min-width: 768px) {
+  .ceremony {
+    display: grid;
+    grid-template-columns: 58% 42%;
+    min-height: unset;
+    height: clamp(580px, 86vh, 920px);
+    align-items: stretch;
+  }
+
+  /* Foto passa de absolute para um grid-item normal */
+  .ceremony-bg {
+    position: relative; /* anula o absolute */
+    overflow: hidden;
+  }
+
+  .ceremony-photo {
+    object-position: center;
+  }
+
+  /* Overlay só no lado direito da foto — faz a transição para o painel */
+  .ceremony-overlay {
+    background: linear-gradient(
+      to right,
+      transparent 55%,
+      rgba(6, 14, 28, 0.55) 100%
+    );
+  }
+
+  /* Painel de conteúdo com fundo próprio */
+  .ceremony-content {
+    background: rgba(6, 14, 28, 0.97);
+    justify-content: center;
+    padding: 3.5rem 4rem;
+    gap: 1.4rem;
+    width: auto;
+    border-left: 1px solid rgba(197, 223, 245, 0.08);
+  }
+
+  .ceremony-title {
+    font-size: clamp(2.6rem, 3.5vw, 3.6rem);
+  }
+
+  .ceremony-venue {
+    font-size: clamp(1.4rem, 2vw, 1.9rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .ceremony-content {
+    padding: 4rem 5rem;
+  }
+}
 </style>

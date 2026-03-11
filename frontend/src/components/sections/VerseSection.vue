@@ -76,6 +76,24 @@ useScrollReveal(section);
   gap: var(--spacing-sm);
 }
 
+@media (min-width: 768px) {
+  .verse-section {
+    padding: clamp(5rem, 12vw, 9rem) var(--spacing-md);
+  }
+
+  .verse-inner {
+    max-width: 700px;
+  }
+
+  .verse-text {
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+  }
+
+  .wedding-announcement {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+  }
+}
+
 /* Ornamento: sem absolute — fica no fluxo do flex */
 .ornament-wrap {
   width: clamp(200px, 55vw, 280px);

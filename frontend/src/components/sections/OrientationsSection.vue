@@ -159,4 +159,23 @@ const orientations = [
   font-weight: 300;
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  .orient-inner {
+    max-width: 900px;
+  }
+
+  /* 2 colunas nos cards */
+  .orient-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+@media (min-width: 1200px) {
+  .orient-inner {
+    max-width: 1060px;
+  }
+}
 </style>

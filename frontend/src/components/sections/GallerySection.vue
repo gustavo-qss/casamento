@@ -134,7 +134,7 @@ const toggle = (i) => { flipped.value[i] = !flipped.value[i]; };
   opacity: 0.5;
 }
 
-/* Stack */
+/* Stack — mobile: coluna */
 .gallery-stack {
   display: flex;
   flex-direction: column;
@@ -149,6 +149,36 @@ const toggle = (i) => { flipped.value[i] = !flipped.value[i]; };
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+/* ============================================
+   DESKTOP — 3 colunas lado a lado (≥ 768px)
+   ============================================ */
+@media (min-width: 768px) {
+  .gallery {
+    padding: clamp(4rem, 8vw, 7rem) clamp(2.5rem, 5vw, 6rem);
+  }
+
+  .gallery-stack {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1180px;
+    gap: 2.5rem;
+  }
+
+  .polaroid-wrapper {
+    flex: 1;
+    max-width: 340px;
+  }
+
+  .flip-scene {
+    width: 100%;
+  }
+
+  /* Deslocamento vertical — efeito "espalhado na mesa" */
+  .polaroid-wrapper:nth-child(2) { margin-top: 3rem; }
+  .polaroid-wrapper:nth-child(3) { margin-top: 1.2rem; }
 }
 
 /* ===== FLIP SCENE ===== */

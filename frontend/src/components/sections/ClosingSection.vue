@@ -137,4 +137,19 @@ const logoImg    = getPublicPath('logo.png');
   color: rgba(255, 255, 255, 0.4);
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  .closing {
+    min-height: clamp(640px, 90vh, 960px);
+  }
+
+  .closing-text {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    max-width: 520px;
+  }
+
+  .closing-logo {
+    width: clamp(200px, 22vw, 320px);
+  }
+}
 </style>

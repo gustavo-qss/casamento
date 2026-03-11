@@ -127,4 +127,23 @@ useScrollReveal(section);
   flex-shrink: 0;
   stroke: var(--lavender-dark);
 }
+
+@media (min-width: 768px) {
+  .dresscode-inner {
+    max-width: 640px;
+  }
+
+  .dresscode-title {
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  }
+
+  .dresscode-text {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+  }
+
+  .icon-suit,
+  .icon-dress {
+    width: clamp(56px, 6vw, 72px);
+  }
+}
 </style>

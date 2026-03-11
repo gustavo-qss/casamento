@@ -97,4 +97,18 @@ useScrollReveal(section);
   margin: 0;
   line-height: 1.2;
 }
+
+@media (min-width: 768px) {
+  .message-inner {
+    max-width: 680px;
+  }
+
+  .message-quote {
+    font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  }
+
+  .message-signature {
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+  }
+}
 </style>

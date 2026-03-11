@@ -61,6 +61,29 @@ const items = [
   margin: 0 auto;
 }
 
+@media (min-width: 768px) {
+  .program {
+    padding: clamp(4rem, 10vw, 7rem) clamp(2rem, 6vw, 5rem);
+  }
+
+  .program-inner {
+    max-width: 700px;
+  }
+
+  .program-title {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+  }
+
+  .timeline-item {
+    grid-template-columns: 90px 32px 1fr;
+    min-height: 80px;
+  }
+
+  .timeline-label {
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  }
+}
+
 .program-header {
   text-align: center;
   margin-bottom: clamp(2.5rem, 7vw, 4rem);

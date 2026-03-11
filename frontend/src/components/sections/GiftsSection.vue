@@ -150,4 +150,22 @@ const emit = defineEmits(['open-gifts']);
 .gifts-btn svg {
   flex-shrink: 0;
 }
+
+@media (min-width: 768px) {
+  .gifts-inner {
+    max-width: 640px;
+  }
+
+  .gifts-title {
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  }
+
+  .gifts-main {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+  }
+
+  .gifts-sub {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  }
+}
 </style>

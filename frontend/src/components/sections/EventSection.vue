@@ -211,4 +211,62 @@ const { reception } = weddingInfo;
 .maps-btn svg {
   flex-shrink: 0;
 }
+
+/* ============================================
+   DESKTOP — layout 2 colunas (≥ 768px)
+   painel de conteúdo esquerda | foto direita
+   ============================================ */
+@media (min-width: 768px) {
+  .event {
+    display: grid;
+    grid-template-columns: 42% 58%;
+    min-height: unset;
+    height: clamp(580px, 86vh, 920px);
+    align-items: stretch;
+  }
+
+  /* Conteúdo vem primeiro no DOM, logo vai para coluna 1 */
+  .event-bg {
+    position: relative;
+    order: 2; /* foto fica à direita */
+    overflow: hidden;
+  }
+
+  .event-photo {
+    object-position: center;
+  }
+
+  /* Overlay faz a transição foto → painel (da direita para esquerda) */
+  .event-overlay {
+    background: linear-gradient(
+      to left,
+      transparent 55%,
+      rgba(6, 14, 28, 0.55) 100%
+    );
+  }
+
+  .event-content {
+    order: 1; /* painel à esquerda */
+    background: rgba(6, 14, 28, 0.97);
+    justify-content: center;
+    padding: 3.5rem 4rem;
+    gap: 1.4rem;
+    width: auto;
+    border-right: 1px solid rgba(197, 223, 245, 0.08);
+  }
+
+  .event-title {
+    font-size: clamp(2.6rem, 3.5vw, 3.6rem);
+  }
+
+  .event-venue {
+    font-size: clamp(1.4rem, 2vw, 1.9rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .event-content {
+    padding: 4rem 5rem;
+  }
+}
 </style>

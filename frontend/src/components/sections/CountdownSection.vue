@@ -178,4 +178,52 @@ const pad = (n) => String(n).padStart(2, '0');
   margin: 0;
   line-height: 1.3;
 }
+
+/* ============================================
+   DESKTOP (≥ 768px)
+   ============================================ */
+@media (min-width: 768px) {
+  .countdown {
+    min-height: clamp(460px, 55vh, 620px);
+  }
+
+  /* Imagem menos escura e com melhor enquadramento */
+  .countdown-photo {
+    filter: brightness(0.45) saturate(0.6);
+    object-position: center 30%;
+  }
+
+  /* Números maiores e melhor espaçamento */
+  .count-number {
+    font-size: clamp(4rem, 6vw, 7rem);
+  }
+
+  .count-unit {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+  }
+
+  .count-sep {
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .countdown-grid {
+    gap: clamp(1.2rem, 3vw, 3rem);
+  }
+
+  .countdown-content {
+    padding: 4rem 2rem;
+    gap: 2rem;
+  }
+
+  .countdown-label {
+    font-size: 0.82rem;
+    letter-spacing: 0.3em;
+  }
+
+  .countdown-sub {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+  }
+}
 </style>
