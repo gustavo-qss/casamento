@@ -30,18 +30,22 @@
       <button class="btn-mp" @click="handlePay" :disabled="isLoading">
         <span v-if="isLoading" class="loading-text">
           <span class="spinner"></span>
-          Redirecionando...
+          Aguarde, conectando...
         </span>
         <span v-else class="pay-text">
           Pagar com Mercado Pago
         </span>
       </button>
+
+      <p v-if="slowWarning" class="slow-warning">
+        Isso pode levar até 30 segundos na primeira vez — nosso servidor está acordando. Por favor, aguarde.
+      </p>
     </div>
   </div>
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue';
+import { ref, defineProps, defineEmits } from 'vue';
 import { usePayment } from '@/composables/usePayment';
 import { useCart } from '@/composables/useCart';
 
@@ -60,14 +64,20 @@ const emit = defineEmits(['close']);
 
 const { startCheckout, isLoading, error } = usePayment();
 const { clearCart } = useCart();
+const slowWarning = ref(false);
+let slowTimer = null;
 
 const handleClose = () => {
   if (!isLoading.value) emit('close');
 };
 
 const handlePay = async () => {
+  slowWarning.value = false;
+  slowTimer = setTimeout(() => { slowWarning.value = true; }, 6000);
   clearCart();
   await startCheckout(props.items);
+  clearTimeout(slowTimer);
+  slowWarning.value = false;
 };
 
 const formatCurrency = (value) =>
@@ -277,6 +287,20 @@ const formatCurrency = (value) =>
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+.slow-warning {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--blue-dark);
+  text-align: center;
+  margin: var(--spacing-sm) 0 0;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(191, 213, 237, 0.18);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(140, 169, 196, 0.3);
+  line-height: 1.55;
+  animation: fadeIn 0.4s ease-out;
 }
 
 @media (max-width: 480px) {
