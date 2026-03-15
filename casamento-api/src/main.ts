@@ -11,10 +11,21 @@ async function bootstrap() {
     process.env.FRONTEND_URL ?? 'http://localhost:5173',
   ).origin;
 
-  app.enableCors({
-    origin: frontendOrigin,
-  });
+  const allowed = [
+    process.env.FRONTEND_URL,
+    /\.netlify\.app$/,        // qualquer preview do Netlify
+  ].filter(Boolean);
 
+  app.enableCors({
+    origin: (origin, callback) => {
+      if (!origin || allowed.some(o => typeof o === 'string' ? o === origin : o.test(origin))) {
+        callback(null, true);
+      } else {
+        callback(new Error(`CORS bloqueado: ${origin}`));
+      }
+    },
+    credentials: true,
+  });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
   app.setGlobalPrefix('api');
 
