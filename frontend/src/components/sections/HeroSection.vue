@@ -33,7 +33,7 @@ onMounted(() => {
         <span class="divider-ornament">✦</span>
         <span class="divider-line"></span>
       </div>
-      <p class="hero-enter date-text">06 &bull; Dezembro &bull; 2026</p>
+      <p class="hero-enter date-text">16 &bull; Maio &bull; 2026</p>
     </div>
 
     <button class="scroll-hint" @click="scrollDown" aria-label="Rolar para baixo">

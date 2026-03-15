@@ -7,7 +7,7 @@ import weddingInfo from '@/data/wedding-info.json';
 const section = ref(null);
 useScrollReveal(section);
 
-const bgImg = getPublicPath('local-2.jpg');
+const bgImg = getPublicPath('local-2-new.png');
 const { reception } = weddingInfo;
 </script>
 

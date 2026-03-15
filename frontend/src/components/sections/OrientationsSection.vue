@@ -7,24 +7,39 @@ useScrollReveal(section);
 
 const orientations = [
   {
-    icon: `<path d="M12 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM6 8a6 6 0 1 1 12 0M2 20h20M12 14v6M8 17l4-3 4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
-    title: 'Silenciar celulares',
-    text: 'Pedimos gentilmente que durante a cerimônia os celulares permaneçam no modo silencioso.',
-  },
-  {
-    icon: `<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="12" cy="13" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
-    title: 'Evitar fotos durante a cerimônia',
-    text: 'Nosso fotógrafo estará registrando os momentos. Pedimos que evitem levantar celulares.',
+    icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="23" y1="11" x2="17" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+    title: 'Não convide outras pessoas',
+    text: 'O convite foi preparado com muito carinho para cada convidado. Pedimos que não leve acompanhantes que não estejam no convite.',
   },
   {
     icon: `<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/><polyline points="12 6 12 12 16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>`,
-    title: 'Chegar com antecedência',
-    text: 'Recomendamos chegar alguns minutos antes do início da cerimônia.',
+    title: 'Seja pontual',
+    text: 'A cerimônia começará no horário marcado. Chegue com antecedência para não perder nenhum momento especial.',
   },
   {
     icon: `<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
-    title: 'Código de vestimenta',
-    text: 'Traje formal. Evitar roupas brancas.',
+    title: 'Participe da cerimônia',
+    text: 'A cerimônia é o coração do nosso casamento. Sua presença e atenção tornam esse momento ainda mais significativo para nós.',
+  },
+  {
+    icon: `<path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+    title: 'Atenção ao traje',
+    text: 'Traje formal. Pedimos gentilmente que não venha de branco e evite azul marinho.',
+  },
+  {
+    icon: `<rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="12" y1="18" x2="12.01" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+    title: 'Celular no silencioso',
+    text: 'Durante a cerimônia, deixe seu celular no modo silencioso para não interromper o momento.',
+  },
+  {
+    icon: `<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="12" cy="13" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>`,
+    title: 'Ajude nossos fotógrafos',
+    text: 'Teremos profissionais registrando tudo com muito carinho. Pedimos que evitem ficar à frente deles.',
+  },
+  {
+    icon: `<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+    title: 'Antes de ir embora…',
+    text: 'Passe para nos dar um abraço e tirar uma foto com a gente. Vai ser uma lembrança muito especial!',
   },
 ];
 </script>
@@ -46,7 +61,7 @@ const orientations = [
           v-for="(item, i) in orientations"
           :key="i"
           class="orient-card reveal"
-          :class="`reveal-delay-${i + 1}`"
+          :class="[`reveal-delay-${(i % 6) + 1}`, { 'orient-card--full': i === orientations.length - 1 && orientations.length % 2 !== 0 }]"
         >
           <div class="card-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" v-html="item.icon"></svg>
@@ -170,6 +185,10 @@ const orientations = [
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-md);
+  }
+
+  .orient-card--full {
+    grid-column: 1 / -1;
   }
 }
 

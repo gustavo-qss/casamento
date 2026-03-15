@@ -31,8 +31,8 @@ const emit = defineEmits(['open-gifts']);
       </div>
 
       <p class="gifts-sub reveal reveal-delay-4">
-        Mas, se desejar nos presentear, teremos uma opção de contribuição
-        disponível no dia do evento.
+        Se desejar nos presentear, você pode escolher um item diretamente
+        pela nossa lista de presentes abaixo.
       </p>
 
       <button class="gifts-btn reveal reveal-delay-5" @click="emit('open-gifts')">

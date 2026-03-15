@@ -7,7 +7,9 @@ import weddingInfo from '@/data/wedding-info.json';
 const section = ref(null);
 useScrollReveal(section);
 
-const bgImg = getPublicPath('countdown.jpeg');
+const bgImg2  = getPublicPath('countdown.jpeg');
+const bgImg = getPublicPath('countdown2.jpeg');
+const bgImg3 = getPublicPath('countdown3.jpeg');
 const TARGET = new Date(weddingInfo.weddingDate);
 
 const days    = ref(0);
@@ -41,8 +43,27 @@ const pad = (n) => String(n).padStart(2, '0');
 
 <template>
   <section class="countdown" id="countdown" ref="section">
-    <div class="countdown-bg">
+    <!-- Mobile: single image -->
+    <div class="countdown-bg countdown-bg--mobile">
       <img :src="bgImg" alt="" class="countdown-photo" />
+      <div class="countdown-overlay"></div>
+    </div>
+
+    <!-- Desktop: triptych -->
+    <div class="countdown-triptych">
+      <div class="triptych-panel">
+        <img :src="bgImg" alt="" class="countdown-photo" />
+        <div class="triptych-overlay"></div>
+      </div>
+      <div class="triptych-panel">
+        <img :src="bgImg2" alt="" class="countdown-photo" />
+        <div class="triptych-overlay"></div>
+      </div>
+      <div class="triptych-panel">
+        <img :src="bgImg3" alt="" class="countdown-photo" />
+        <div class="triptych-overlay"></div>
+      </div>
+      <!-- unified dark overlay on top of all panels -->
       <div class="countdown-overlay"></div>
     </div>
 
@@ -79,36 +100,47 @@ const pad = (n) => String(n).padStart(2, '0');
 <style scoped>
 .countdown {
   position: relative;
-  min-height: 440px;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-.countdown-bg {
-  position: absolute;
-  inset: 0;
-}
-
+/* ---- shared photo style ---- */
 .countdown-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.35) saturate(0.5);
+  filter: brightness(0.38) saturate(0.5);
+  display: block;
 }
 
+/* ---- mobile: single bg ---- */
+.countdown-bg--mobile {
+  position: absolute;
+  inset: 0;
+}
+
+/* ---- desktop triptych: hidden on mobile ---- */
+.countdown-triptych {
+  display: none;
+}
+
+/* ---- shared overlay ---- */
 .countdown-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(6, 14, 28, 0.72) 0%,
-    rgba(13, 31, 60, 0.88) 100%
+    rgba(6, 14, 28, 0.62) 0%,
+    rgba(13, 31, 60, 0.82) 100%
   );
+  pointer-events: none;
 }
 
+/* ---- content ---- */
 .countdown-content {
   position: relative;
   z-index: 2;
@@ -144,7 +176,7 @@ const pad = (n) => String(n).padStart(2, '0');
 
 .count-number {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 10vw, 5rem);
+  font-size: clamp(3.2rem, 14vw, 5rem);
   font-weight: 400;
   color: var(--white);
   line-height: 1;
@@ -164,7 +196,7 @@ const pad = (n) => String(n).padStart(2, '0');
 
 .count-sep {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 6vw, 3.2rem);
+  font-size: clamp(2rem, 8vw, 3.2rem);
   color: rgba(197, 223, 245, 0.35);
   line-height: 1;
   margin-bottom: 1.2rem;
@@ -173,27 +205,75 @@ const pad = (n) => String(n).padStart(2, '0');
 
 .countdown-sub {
   font-family: var(--font-script);
-  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  font-size: clamp(1.7rem, 6vw, 2rem);
   color: rgba(197, 223, 245, 0.65);
   margin: 0;
   line-height: 1.3;
 }
 
 /* ============================================
-   DESKTOP (≥ 768px)
+   DESKTOP (≥ 768px) — triptych layout
    ============================================ */
 @media (min-width: 768px) {
   .countdown {
-    min-height: clamp(460px, 55vh, 620px);
+    min-height: clamp(700px, 85vh, 960px);
   }
 
-  /* Imagem menos escura e com melhor enquadramento */
-  .countdown-photo {
-    filter: brightness(0.45) saturate(0.6);
+  /* hide mobile single bg */
+  .countdown-bg--mobile {
+    display: none;
+  }
+
+  /* show triptych */
+  .countdown-triptych {
+    display: flex;
+    position: absolute;
+    inset: 0;
+  }
+
+  .triptych-panel {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* thin gap between panels */
+  .triptych-panel + .triptych-panel {
+    border-left: 2px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* per-panel subtle dark overlay (panels stay slightly individual) */
+  .triptych-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 14, 28, 0.18);
+    pointer-events: none;
+  }
+
+  /* unified overlay sits above all panels */
+  .countdown-triptych > .countdown-overlay {
+    z-index: 1;
+    background: linear-gradient(
+      160deg,
+      rgba(6, 14, 28, 0.55) 0%,
+      rgba(13, 31, 60, 0.78) 100%
+    );
+  }
+
+  /* tweak photo position per panel */
+  .triptych-panel:nth-child(1) .countdown-photo {
+    object-position: center 40%;
+    filter: brightness(0.42) saturate(0.5);
+  }
+  .triptych-panel:nth-child(2) .countdown-photo {
+    object-position: center 25%;
+    filter: brightness(0.42) saturate(0.5);
+  }
+  .triptych-panel:nth-child(3) .countdown-photo {
     object-position: center 30%;
+    filter: brightness(0.42) saturate(0.5);
   }
 
-  /* Números maiores e melhor espaçamento */
   .count-number {
     font-size: clamp(4rem, 6vw, 7rem);
   }
