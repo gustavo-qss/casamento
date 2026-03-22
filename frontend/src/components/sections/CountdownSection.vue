@@ -45,7 +45,7 @@ const pad = (n) => String(n).padStart(2, '0');
   <section class="countdown" id="countdown" ref="section">
     <!-- Mobile: single image -->
     <div class="countdown-bg countdown-bg--mobile">
-      <img :src="bgImg" alt="" class="countdown-photo" />
+      <img :src="bgImg2" alt="" class="countdown-photo" />
       <div class="countdown-overlay"></div>
     </div>
 
