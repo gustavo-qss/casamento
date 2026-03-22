@@ -1,7 +1,7 @@
 # CLAUDE.md — Site de Casamento Rawane & Gustavo
 
 Referência completa do projeto para uso em todas as sessões.
-
+stuff
 ## Contexto do Projeto
 
 Site de casamento fullscreen em Vue 3. Os convidados navegam por 6 telas e podem presentear o casal via lista de presentes com pagamento integrado ao Mercado Pago.
