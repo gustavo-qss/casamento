@@ -7,7 +7,7 @@ stuff
 Site de casamento fullscreen em Vue. Os convidados navegam por 6 telas e podem presentear o casal via lista de presentes com pagamento integrado ao Mercado Pago.
 
 - **Casal:** Rawane & Gustavo
-- **Data do casamento:** 26 de abril de 2026 (`2026-04-26T16:00:00`)
+- **Data do casamento:** 26 de abril de 2026 (`2026-04-26T16:00:00`).
 - **Repositorio frontend:** `C:\Users\lurik\Desktop\site-casamento\frontend`
 - **Repositorio backend (a criar):** `casamento-api/` (NestJS, fora desta pasta)
 - **Deploy frontend:** GitHub Pages (branch `main`)
