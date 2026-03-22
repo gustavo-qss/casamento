@@ -14,6 +14,12 @@ const photos = [
     story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
   },
   {
+    src: getPublicPath('transplante.jpeg'),
+    caption: 'Para sempre',
+    rotation: '-1deg',
+    story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  },
+  {
     src: getPublicPath('storie2.jpeg'),
     caption: 'Momentos juntos',
     rotation: '1.5deg',
@@ -24,7 +30,7 @@ const photos = [
     caption: 'Para sempre',
     rotation: '-1deg',
     story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
+  }
 ];
 
 const flipped = ref([false, false, false]);
