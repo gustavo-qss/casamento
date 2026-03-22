@@ -59,7 +59,7 @@ const formatCurrency = (value) => {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(135deg, var(--primary-lavender), var(--primary-blue));
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
   padding: var(--spacing-md);
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
   z-index: 1000;
@@ -132,7 +132,7 @@ const formatCurrency = (value) => {
 
 .btn-checkout {
   background: var(--white);
-  color: var(--lavender-dark);
+  color: var(--navy-dark);
   border: none;
   padding: var(--spacing-sm) var(--spacing-lg);
   border-radius: var(--radius-full);

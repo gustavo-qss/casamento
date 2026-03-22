@@ -26,7 +26,7 @@
     </div>
 
     <ShoppingCart
-      v-if="itemCount > 0"
+      v-if="itemCount > 0 && !showCheckout"
       :item-count="itemCount"
       :total="total"
       @checkout="handleCheckout"

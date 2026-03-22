@@ -28,14 +28,14 @@ useScrollReveal(section);
       <p class="verse-quote reveal reveal-fade">&ldquo;</p>
 
       <blockquote class="verse-text reveal reveal-delay-1">
-        Assim, eles já não são dois,<br>mas sim uma só carne.
+        Assim, eles já não são dois,<br>mas sim uma só carne. <br> Portanto, o que Deus uniu, ninguém o separe
       </blockquote>
 
       <p class="verse-ref reveal reveal-delay-2">Mateus 19:6</p>
 
       <div class="initials-row reveal reveal-delay-3">
         <span class="initials-line"></span>
-        <span class="initials">R &nbsp;|&nbsp; G</span>
+        <span class="initials">G &nbsp;|&nbsp; R</span>
         <span class="initials-line"></span>
       </div>
 
