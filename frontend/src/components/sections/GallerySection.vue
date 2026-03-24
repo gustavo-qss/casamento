@@ -1,40 +1,49 @@
 <script setup>
-import { ref } from 'vue';
-import { useScrollReveal } from '@/composables/useScrollReveal';
-import { getPublicPath } from '@/utils/assets';
+import { ref } from "vue";
+import { useScrollReveal } from "@/composables/useScrollReveal";
+import { getPublicPath } from "@/utils/assets";
 
 const section = ref(null);
 useScrollReveal(section);
 
 const photos = [
   {
-    src: getPublicPath('storie1.jpeg'),
-    caption: 'Nosso começo',
-    rotation: '-2.2deg',
-    story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+    src: getPublicPath("storie1.jpeg"),
+    caption: "Nosso começo",
+    rotation: "-2.2deg",
+    story:
+      "Foi em uma partida de truco com amigos em comum que tudo começou, horas trocadas nos intervalos do colégio e alguns finais de semana que foram transformando aquela amizade em amor. Vieram desafios, mas nunca desistimos um do outro.",
   },
   {
-    src: getPublicPath('transplante.jpeg'),
-    caption: 'Para sempre',
-    rotation: '-1deg',
-    story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    src: getPublicPath("transplante.jpeg"),
+    caption: "De corpo e alma",
+    rotation: "-1deg",
+    story:
+      "Com o tempo, a Rawane perdeu a função dos rins e precisou de um transplante. O Gustavo foi o único compatível, e doou um rim grande, gordo e muito saudável pra ela. Desde então a vida dos dois voltou ao normal, e finalmente puderam selar essa união como sempre sonharam.",
   },
   {
-    src: getPublicPath('storie2.jpeg'),
-    caption: 'Momentos juntos',
-    rotation: '1.5deg',
-    story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    src: getPublicPath("stories3.jpeg"),
+    caption: "Momentos juntos",
+    rotation: "1.5deg",
+    story:
+      "Com a vida de volta aos trilhos, a Rawane encerrando a faculdade de veterinária e o Gustavo o mestrado, chegou a hora de unir não só o corpo, dividindo o rim, mas a alma perante a Deus. É com enorme alegria que te convidamos a fazer parte dessa história.",
   },
   {
-    src: getPublicPath('stories3.jpeg'),
-    caption: 'Para sempre',
-    rotation: '-1deg',
-    story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  }
+    src: getPublicPath("storie2.jpeg"),
+    caption: "Te esperamos lá",
+    rotation: "-1deg",
+    story:
+      "Estamos ansiosos para te ver no nosso casamento. Esperamos que a próxima foto seja com você — e que você esteja ao nosso lado nesse dia tão especial.",
+  },
 ];
 
-const flipped = ref([false, false, false]);
-const toggle = (i) => { flipped.value[i] = !flipped.value[i]; };
+const flipped = ref([false, false, false, false]);
+const hasFlippedFirst = ref(false);
+
+const toggle = (i) => {
+  flipped.value = flipped.value.map((v, idx) => (idx === i ? !v : v));
+  if (i === 0) hasFlippedFirst.value = true;
+};
 </script>
 
 <template>
@@ -65,13 +74,39 @@ const toggle = (i) => { flipped.value[i] = !flipped.value[i]; };
           @keyup.enter="toggle(i)"
         >
           <div class="flip-card">
-
             <!-- Frente: foto -->
             <div class="flip-face flip-front">
               <div class="polaroid-pin"></div>
               <span class="flip-hint">toque para ver nossa história ✦</span>
               <div class="polaroid-photo">
-                <img :src="photo.src" :alt="photo.caption" loading="lazy" />
+                <img
+                  :src="photo.src"
+                  :alt="photo.caption"
+                  loading="lazy"
+                  draggable="false"
+                />
+              </div>
+              <!-- Cursor de clique — só na primeira foto, some após o primeiro flip -->
+              <div
+                v-if="!hasFlippedFirst"
+                class="cursor-hint"
+                aria-hidden="true"
+              >
+                <div class="cursor-ripple"></div>
+                <svg
+                  class="cursor-svg"
+                  viewBox="0 0 13 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.5 1.5 L1.5 13 L4.5 10.5 L6.5 15.5 L9 14.5 L7 9.5 L10.5 9.5 Z"
+                    fill="white"
+                    stroke="#222"
+                    stroke-width="1"
+                    stroke-linejoin="round"
+                  />
+                </svg>
               </div>
               <p class="polaroid-caption">{{ photo.caption }}</p>
             </div>
@@ -86,7 +121,6 @@ const toggle = (i) => { flipped.value[i] = !flipped.value[i]; };
               </div>
               <span class="flip-hint">toque para voltar ✦</span>
             </div>
-
           </div>
         </div>
       </div>
@@ -183,8 +217,12 @@ const toggle = (i) => { flipped.value[i] = !flipped.value[i]; };
   }
 
   /* Deslocamento vertical — efeito "espalhado na mesa" */
-  .polaroid-wrapper:nth-child(2) { margin-top: 3rem; }
-  .polaroid-wrapper:nth-child(3) { margin-top: 1.2rem; }
+  .polaroid-wrapper:nth-child(2) {
+    margin-top: 3rem;
+  }
+  .polaroid-wrapper:nth-child(3) {
+    margin-top: 1.2rem;
+  }
 }
 
 /* ===== FLIP SCENE ===== */
@@ -196,6 +234,9 @@ const toggle = (i) => { flipped.value[i] = !flipped.value[i]; };
   cursor: pointer;
   transform: rotate(var(--rot));
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .flip-scene:hover:not(.is-flipped) {
@@ -221,9 +262,9 @@ const toggle = (i) => { flipped.value[i] = !flipped.value[i]; };
   background: #ffffff;
   border-radius: 2px;
   box-shadow:
-    0 2px 8px  rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.08),
     0 8px 32px rgba(0, 0, 0, 0.13),
-    0 1px 2px  rgba(0, 0, 0, 0.05);
+    0 1px 2px rgba(0, 0, 0, 0.05);
   padding: 14px 14px 52px;
   position: relative;
   overflow: hidden;
@@ -244,7 +285,11 @@ const toggle = (i) => { flipped.value[i] = !flipped.value[i]; };
   padding: 24px 20px 52px;
   /* Textura sutil de papel */
   background:
-    radial-gradient(ellipse at 80% 20%, rgba(177, 185, 231, 0.08) 0%, transparent 55%),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(177, 185, 231, 0.08) 0%,
+      transparent 55%
+    ),
     #ffffff;
 }
 
@@ -357,5 +402,72 @@ const toggle = (i) => { flipped.value[i] = !flipped.value[i]; };
   opacity: 0.45;
 }
 
+/* ===== CURSOR HINT ===== */
+.cursor-hint {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  z-index: 3;
+}
 
+.cursor-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 26px;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
+  animation: cursorPress 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  z-index: 2;
+}
+
+.cursor-ripple {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  animation: cursorRipple 2.6s ease-out infinite;
+}
+
+@keyframes cursorPress {
+  0%,
+  30% {
+    transform: scale(1) translate(0, 0);
+  }
+  48% {
+    transform: scale(0.8) translate(1px, 2px);
+  }
+  62% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+@keyframes cursorRipple {
+  0%,
+  35% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  42% {
+    transform: scale(0.4);
+    opacity: 0.7;
+  }
+  80% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
 </style>

@@ -4,7 +4,7 @@
 
 Site de casamento responsivo em Vue 3 com 6 telas em fullscreen, transições suaves e sistema de lista de presentes com pagamento via PIX.
 
-**Data do Casamento:** 26/04/2026
+**Data do Casamento:** 16/05/2026
 **Cores Principais:** #b1b9e7 (lavanda claro) e #bfd5ed (azul claro)
 **Foco:** Mobile-first, mas totalmente responsivo para desktop
 
@@ -20,33 +20,38 @@ Site de casamento responsivo em Vue 3 com 6 telas em fullscreen, transições su
 --primary-blue: #bfd5ed;
 
 /* Complementares para casamento */
---soft-pink: #f4d9e6;        /* Rosa suave para destaques românticos */
---cream: #faf7f2;            /* Creme para fundos claros */
---gold: #d4af37;             /* Dourado para detalhes elegantes */
---sage: #b7c9b3;             /* Verde sálvia suave */
---lavender-dark: #9098c7;    /* Lavanda escuro para contraste */
---blue-dark: #8ca9c4;        /* Azul escuro para textos */
---white: #ffffff;            /* Branco puro */
---gray-light: #f5f5f5;       /* Cinza claro para backgrounds */
+--soft-pink: #f4d9e6; /* Rosa suave para destaques românticos */
+--cream: #faf7f2; /* Creme para fundos claros */
+--gold: #d4af37; /* Dourado para detalhes elegantes */
+--sage: #b7c9b3; /* Verde sálvia suave */
+--lavender-dark: #9098c7; /* Lavanda escuro para contraste */
+--blue-dark: #8ca9c4; /* Azul escuro para textos */
+--white: #ffffff; /* Branco puro */
+--gray-light: #f5f5f5; /* Cinza claro para backgrounds */
 
 /* Gradientes */
 --gradient-main: linear-gradient(135deg, #b1b9e7 0%, #bfd5ed 100%);
 --gradient-soft: linear-gradient(180deg, #faf7f2 0%, #f4d9e6 100%);
---gradient-overlay: linear-gradient(180deg, rgba(177, 185, 231, 0.7) 0%, rgba(191, 213, 237, 0.7) 100%);
+--gradient-overlay: linear-gradient(
+  180deg,
+  rgba(177, 185, 231, 0.7) 0%,
+  rgba(191, 213, 237, 0.7) 100%
+);
 ```
 
 ### Tipografia
 
 **Fontes Recomendadas (Google Fonts):**
+
 - **Títulos/Nomes:** "Playfair Display" (serif elegante)
 - **Corpo/Texto:** "Montserrat" (sans-serif moderna e limpa)
 - **Detalhes:** "Great Vibes" (script para toques românticos)
 
 ```css
 /* Hierarquia de texto */
---font-display: 'Playfair Display', serif;
---font-body: 'Montserrat', sans-serif;
---font-script: 'Great Vibes', cursive;
+--font-display: "Playfair Display", serif;
+--font-body: "Montserrat", sans-serif;
+--font-script: "Great Vibes", cursive;
 
 /* Tamanhos */
 --text-hero: clamp(2.5rem, 8vw, 5rem);
@@ -125,13 +130,13 @@ src/
   "dependencies": {
     "vue": "^3.5.25",
     "pinia": "^3.0.4",
-    "qrcode.vue3": "^1.6.8",          // QR Code para PIX
-    "dayjs": "^1.11.13"                // Manipulação de datas para countdown
+    "qrcode.vue3": "^1.6.8", // QR Code para PIX
+    "dayjs": "^1.11.13" // Manipulação de datas para countdown
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.2",
     "vite": "^7.2.4",
-    "sass": "^1.80.0"                  // Preprocessador CSS
+    "sass": "^1.80.0" // Preprocessador CSS
   }
 }
 ```
@@ -145,20 +150,25 @@ src/
 ### Tela 1: Hero (Landing)
 
 **Elementos:**
+
 - Imagem de fundo do casal com blur e overlay gradiente
 - Animação de bouncing suave (keyframes)
 - Texto centralizado com hierarquia clara
 - Botão "Ver Mais" com hover effect
 
 **Estrutura:**
+
 ```vue
 <template>
   <div class="hero-screen">
-    <div class="background-image bouncing" :style="{ backgroundImage: `url(${casalImage})` }"></div>
+    <div
+      class="background-image bouncing"
+      :style="{ backgroundImage: `url(${casalImage})` }"
+    ></div>
     <div class="overlay"></div>
     <div class="content">
-      <h1 class="title">Casamento<br>Rawane & Gustavo</h1>
-      <p class="date">26 de Abril de 2026</p>
+      <h1 class="title">Casamento<br />Rawane & Gustavo</h1>
+      <p class="date">26 de maio de 2026</p>
       <button class="cta-button" @click="scrollToNext">Ver Mais</button>
     </div>
     <ScrollArrow @click="scrollToNext" />
@@ -167,10 +177,16 @@ src/
 ```
 
 **Animação Bouncing:**
+
 ```css
 @keyframes bouncing {
-  0%, 100% { transform: translateY(0) scale(1.05); }
-  50% { transform: translateY(-10px) scale(1.08); }
+  0%,
+  100% {
+    transform: translateY(0) scale(1.05);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.08);
+  }
 }
 
 .bouncing {
@@ -179,6 +195,7 @@ src/
 ```
 
 **Responsividade:**
+
 - Mobile: Título em 2 linhas, imagem com background-position ajustado
 - Desktop: Título em 1 linha, imagem centralizada
 
@@ -187,6 +204,7 @@ src/
 ### Tela 2: Stories
 
 **Elementos:**
+
 - Container fullscreen com imagem de fundo (cada story)
 - Barras de progresso no topo (1 por story)
 - Texto sobreposto centralizado ou no terço inferior
@@ -195,13 +213,28 @@ src/
 - Skip ao soltar
 
 **Estrutura:**
+
 ```vue
 <template>
-  <div class="stories-screen" @touchstart="pauseStory" @touchend="nextStory" @mousedown="pauseStory" @mouseup="nextStory">
+  <div
+    class="stories-screen"
+    @touchstart="pauseStory"
+    @touchend="nextStory"
+    @mousedown="pauseStory"
+    @mouseup="nextStory"
+  >
     <div class="progress-bars">
-      <ProgressBar v-for="(story, index) in stories" :key="index" :active="index === currentStory" :progress="getProgress(index)" />
+      <ProgressBar
+        v-for="(story, index) in stories"
+        :key="index"
+        :active="index === currentStory"
+        :progress="getProgress(index)"
+      />
     </div>
-    <div class="story-content" :style="{ backgroundImage: `url(${currentStoryData.image})` }">
+    <div
+      class="story-content"
+      :style="{ backgroundImage: `url(${currentStoryData.image})` }"
+    >
       <div class="overlay"></div>
       <div class="text-content">
         <p class="story-text">{{ currentStoryData.text }}</p>
@@ -212,6 +245,7 @@ src/
 ```
 
 **Lógica (Composable):**
+
 ```javascript
 // composables/useStories.js
 export function useStories(storiesData, duration = 7000) {
@@ -237,7 +271,7 @@ export function useStories(storiesData, duration = 7000) {
       progress.value = 0;
     } else {
       // Ir para próxima tela
-      emit('complete');
+      emit("complete");
     }
   };
 
@@ -246,6 +280,7 @@ export function useStories(storiesData, duration = 7000) {
 ```
 
 **Arquivo de Dados:**
+
 ```json
 // data/stories.json
 [
@@ -263,6 +298,7 @@ export function useStories(storiesData, duration = 7000) {
 ```
 
 **Responsividade:**
+
 - Mobile: Texto menor, padding ajustado
 - Desktop: Texto maior, limitado a 60% da largura
 
@@ -271,6 +307,7 @@ export function useStories(storiesData, duration = 7000) {
 ### Tela 3: Igreja
 
 **Elementos:**
+
 - Imagem de fundo da igreja
 - Card semi-transparente com informações
 - Ícone de localização
@@ -278,16 +315,25 @@ export function useStories(storiesData, duration = 7000) {
 - ScrollArrow para próxima tela
 
 **Estrutura:**
+
 ```vue
 <template>
   <FullscreenContainer :background-image="churchImage">
-    <LocationCard icon="church" title="Cerimônia" :location="churchData.location" :time="churchData.time" :address="churchData.address" :maps-link="churchData.mapsLink" />
+    <LocationCard
+      icon="church"
+      title="Cerimônia"
+      :location="churchData.location"
+      :time="churchData.time"
+      :address="churchData.address"
+      :maps-link="churchData.mapsLink"
+    />
     <ScrollArrow @click="scrollToNext" />
   </FullscreenContainer>
 </template>
 ```
 
 **Dados:**
+
 ```json
 // data/wedding-info.json
 {
@@ -311,10 +357,12 @@ export function useStories(storiesData, duration = 7000) {
 ### Tela 4: Recepção
 
 **Elementos:**
+
 - Idêntico à Tela 3, mas com dados da recepção
 - Imagem de fundo do restaurante/espaço de festa
 
 **Implementação:**
+
 - Reutilizar componente `LocationCard`
 - Apenas trocar props e imagem de fundo
 
@@ -323,12 +371,14 @@ export function useStories(storiesData, duration = 7000) {
 ### Tela 5: Countdown
 
 **Elementos:**
+
 - Imagem de fundo romântica
 - Contador regressivo em tempo real
 - Formato: "X dias, Y horas, Z minutos, W segundos"
 - Animação suave nos números
 
 **Estrutura:**
+
 ```vue
 <template>
   <FullscreenContainer :background-image="countdownImage">
@@ -359,9 +409,10 @@ export function useStories(storiesData, duration = 7000) {
 ```
 
 **Lógica:**
+
 ```javascript
 // composables/useCountdown.js
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 
 export function useCountdown(targetDate) {
   const days = ref(0);
@@ -376,7 +427,9 @@ export function useCountdown(targetDate) {
 
     if (diff > 0) {
       days.value = Math.floor(diff / (1000 * 60 * 60 * 24));
-      hours.value = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      hours.value = Math.floor(
+        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
       minutes.value = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       seconds.value = Math.floor((diff % (1000 * 60)) / 1000);
     }
@@ -396,12 +449,14 @@ export function useCountdown(targetDate) {
 ### Tela 6: Lista de Presentes
 
 **Elementos:**
+
 - Grid responsivo de presentes
 - Cada presente: imagem, nome, preço, botão +/-
 - Carrinho flutuante (fixo no bottom)
 - Modal com QR Code PIX ao finalizar
 
 **Estrutura:**
+
 ```vue
 <template>
   <div class="gifts-screen">
@@ -411,34 +466,54 @@ export function useCountdown(targetDate) {
     </div>
 
     <div class="gifts-grid">
-      <GiftCard v-for="gift in gifts" :key="gift.id" :gift="gift" @add="addToCart" @remove="removeFromCart" :quantity="getQuantityInCart(gift.id)" />
+      <GiftCard
+        v-for="gift in gifts"
+        :key="gift.id"
+        :gift="gift"
+        @add="addToCart"
+        @remove="removeFromCart"
+        :quantity="getQuantityInCart(gift.id)"
+      />
     </div>
 
-    <ShoppingCart v-if="cartItemCount > 0" :items="cartItems" :total="cartTotal" @checkout="openCheckout" />
+    <ShoppingCart
+      v-if="cartItemCount > 0"
+      :items="cartItems"
+      :total="cartTotal"
+      @checkout="openCheckout"
+    />
 
-    <QRCodeModal v-if="showQRCode" :pix-code="pixCode" :amount="cartTotal" @close="closeCheckout" />
+    <QRCodeModal
+      v-if="showQRCode"
+      :pix-code="pixCode"
+      :amount="cartTotal"
+      @close="closeCheckout"
+    />
   </div>
 </template>
 ```
 
 **Store do Carrinho:**
+
 ```javascript
 // stores/cart.js
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
-export const useCartStore = defineStore('cart', {
+export const useCartStore = defineStore("cart", {
   state: () => ({
     items: [], // { giftId, name, price, quantity }
   }),
 
   getters: {
-    itemCount: (state) => state.items.reduce((sum, item) => sum + item.quantity, 0),
-    total: (state) => state.items.reduce((sum, item) => sum + (item.price * item.quantity), 0),
+    itemCount: (state) =>
+      state.items.reduce((sum, item) => sum + item.quantity, 0),
+    total: (state) =>
+      state.items.reduce((sum, item) => sum + item.price * item.quantity, 0),
   },
 
   actions: {
     addItem(gift) {
-      const existingItem = this.items.find(item => item.giftId === gift.id);
+      const existingItem = this.items.find((item) => item.giftId === gift.id);
       if (existingItem) {
         existingItem.quantity++;
       } else {
@@ -452,11 +527,11 @@ export const useCartStore = defineStore('cart', {
     },
 
     removeItem(giftId) {
-      const existingItem = this.items.find(item => item.giftId === giftId);
+      const existingItem = this.items.find((item) => item.giftId === giftId);
       if (existingItem) {
         existingItem.quantity--;
         if (existingItem.quantity === 0) {
-          this.items = this.items.filter(item => item.giftId !== giftId);
+          this.items = this.items.filter((item) => item.giftId !== giftId);
         }
       }
     },
@@ -469,34 +544,40 @@ export const useCartStore = defineStore('cart', {
 ```
 
 **Lista de Presentes:**
+
 ```json
 // data/gifts.json
 [
   {
     "id": 1,
     "name": "Jogo de Panelas",
-    "price": 350.00,
+    "price": 350.0,
     "image": "/src/assets/images/presentes/panelas.jpg"
   },
   {
     "id": 2,
     "name": "Liquidificador",
-    "price": 180.00,
+    "price": 180.0,
     "image": "/src/assets/images/presentes/liquidificador.jpg"
   },
   {
     "id": 3,
     "name": "Jogo de Toalhas",
-    "price": 120.00,
+    "price": 120.0,
     "image": "/src/assets/images/presentes/toalhas.jpg"
   }
 ]
 ```
 
 **QR Code PIX:**
+
 ```javascript
 // utils/pix.js
-export function generatePixPayload(pixKey, amount, recipientName = 'Rawane e Gustavo') {
+export function generatePixPayload(
+  pixKey,
+  amount,
+  recipientName = "Rawane e Gustavo",
+) {
   // Implementação do PIX Copia e Cola (EMV)
   // Formato: chave PIX + valor + nome
 
@@ -514,22 +595,22 @@ export function generatePixPayload(pixKey, amount, recipientName = 'Rawane e Gus
   // ID 60: Merchant City
   // ID 62: Additional Data Field Template
 
-  let payload = '';
-  payload += '00020126'; // Payload Format + Point of Initiation
+  let payload = "";
+  payload += "00020126"; // Payload Format + Point of Initiation
 
   // Merchant Account (chave PIX)
-  const pixKeyField = `0014BR.GOV.BCB.PIX01${pixKey.length.toString().padStart(2, '0')}${pixKey}`;
-  payload += `26${pixKeyField.length.toString().padStart(2, '0')}${pixKeyField}`;
+  const pixKeyField = `0014BR.GOV.BCB.PIX01${pixKey.length.toString().padStart(2, "0")}${pixKey}`;
+  payload += `26${pixKeyField.length.toString().padStart(2, "0")}${pixKeyField}`;
 
-  payload += '52040000'; // Merchant Category Code
-  payload += '5303986'; // Currency (BRL)
-  payload += `54${amountStr.length.toString().padStart(2, '0')}${amountStr}`; // Amount
-  payload += `59${name.length.toString().padStart(2, '0')}${name}`; // Name
-  payload += '6009SAO PAULO'; // City
+  payload += "52040000"; // Merchant Category Code
+  payload += "5303986"; // Currency (BRL)
+  payload += `54${amountStr.length.toString().padStart(2, "0")}${amountStr}`; // Amount
+  payload += `59${name.length.toString().padStart(2, "0")}${name}`; // Name
+  payload += "6009SAO PAULO"; // City
 
   // CRC16 calculation (simplified - use a library in production)
-  const crc16 = calculateCRC16(payload + '6304');
-  payload += '6304' + crc16;
+  const crc16 = calculateCRC16(payload + "6304");
+  payload += "6304" + crc16;
 
   return payload;
 }
@@ -537,7 +618,7 @@ export function generatePixPayload(pixKey, amount, recipientName = 'Rawane e Gus
 function calculateCRC16(str) {
   // Implementação simplificada - usar biblioteca crc em produção
   // Para MVP, pode retornar um valor fixo ou usar biblioteca
-  return '0000'; // Placeholder
+  return "0000"; // Placeholder
 }
 ```
 
@@ -550,6 +631,7 @@ function calculateCRC16(str) {
 ### Abordagem: Scroll Snap + Transições CSS
 
 **Implementação:**
+
 ```vue
 <!-- App.vue -->
 <template>
@@ -580,6 +662,7 @@ function calculateCRC16(str) {
 ```
 
 **Composable de Navegação:**
+
 ```javascript
 // composables/useScreenTransition.js
 export function useScreenTransition() {
@@ -589,7 +672,7 @@ export function useScreenTransition() {
 
     window.scrollTo({
       top: targetScroll,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -605,6 +688,7 @@ export function useScreenTransition() {
 ```
 
 **Transições Personalizadas:**
+
 ```css
 /* animations.css */
 @keyframes slideUpIn {
@@ -633,37 +717,46 @@ export function useScreenTransition() {
 /* Mobile first */
 /* xs: 0-575px (padrão) */
 /* sm: 576px-767px */
-@media (min-width: 576px) { }
+@media (min-width: 576px) {
+}
 
 /* md: 768px-991px */
-@media (min-width: 768px) { }
+@media (min-width: 768px) {
+}
 
 /* lg: 992px-1199px */
-@media (min-width: 992px) { }
+@media (min-width: 992px) {
+}
 
 /* xl: 1200px+ */
-@media (min-width: 1200px) { }
+@media (min-width: 1200px) {
+}
 ```
 
 ### Ajustes por Tela
 
 **Tela 1 (Hero):**
+
 - Mobile: Texto centralizado, padding 20px, botão full-width
 - Desktop: Texto maior, botão fixo width, mais espaçamento
 
 **Tela 2 (Stories):**
+
 - Mobile: Barras de progresso mais finas, texto menor
 - Desktop: Limitar largura do texto a 60%, aumentar font-size
 
 **Telas 3-4 (Localizações):**
+
 - Mobile: Card full-width com padding reduzido
 - Desktop: Card centralizado com max-width 600px
 
 **Tela 5 (Countdown):**
+
 - Mobile: Grid 2x2 (2 dias/horas, 2 minutos/segundos)
 - Desktop: Grid 1x4 (horizontal)
 
 **Tela 6 (Presentes):**
+
 - Mobile: Grid 1 coluna
 - Tablet: Grid 2 colunas
 - Desktop: Grid 3-4 colunas
@@ -689,6 +782,7 @@ export function useScreenTransition() {
 ## 🚀 Fases de Implementação
 
 ### Fase 1: Setup e Fundação (Prioridade Máxima)
+
 **Estimativa:** Base do projeto
 
 1. **Instalar dependências**
@@ -712,6 +806,7 @@ export function useScreenTransition() {
 ---
 
 ### Fase 2: Telas Principais (Prioridade Alta)
+
 **Ordem de implementação:**
 
 1. **Tela 1: Hero**
@@ -737,6 +832,7 @@ export function useScreenTransition() {
 ---
 
 ### Fase 3: Stories (Prioridade Alta)
+
 **Complexidade média:**
 
 1. **Componentes**
@@ -759,6 +855,7 @@ export function useScreenTransition() {
 ---
 
 ### Fase 4: Lista de Presentes e Carrinho (Prioridade Alta)
+
 **Complexidade alta:**
 
 1. **Store e lógica**
@@ -783,6 +880,7 @@ export function useScreenTransition() {
 ---
 
 ### Fase 5: Sistema PIX (Prioridade Alta)
+
 **Complexidade média:**
 
 1. **Utilitário PIX**
@@ -805,6 +903,7 @@ export function useScreenTransition() {
 ---
 
 ### Fase 6: Navegação e Transições (Prioridade Média)
+
 **Polimento:**
 
 1. **Sistema de navegação**
@@ -825,6 +924,7 @@ export function useScreenTransition() {
 ---
 
 ### Fase 7: Polimento e Otimização (Prioridade Baixa)
+
 **Refinamento:**
 
 1. **Performance**
@@ -851,29 +951,34 @@ export function useScreenTransition() {
 ## 🎯 Detalhes de UX Importantes
 
 ### 1. **Loading e Estados**
+
 - Adicionar skeleton loaders para imagens
 - Mostrar feedback visual ao adicionar item no carrinho (animação)
 - Desabilitar botões durante processamento
 
 ### 2. **Feedback Visual**
+
 - Hover states em todos botões
 - Active states em elementos clicáveis
 - Smooth transitions (0.3s ease)
 - Ripple effect em botões principais
 
 ### 3. **Micro-interações**
+
 - Coração pulsando ao adicionar presente
 - Confetti ao finalizar compra (opcional, biblioteca `canvas-confetti`)
 - Bounce nas setas de navegação
 - Fade in gradual dos elementos ao scrollar
 
 ### 4. **Mensagens e Textos**
+
 - Mensagens de erro amigáveis
 - Confirmação ao limpar carrinho
 - Instrução clara de como pagar com PIX
 - Textos curtos e diretos
 
 ### 5. **Mobile UX**
+
 - Touch target mínimo de 44px
 - Evitar hover-only interactions
 - Gestos nativos (swipe, tap, hold)
@@ -887,34 +992,34 @@ export function useScreenTransition() {
 
 ```javascript
 // vite.config.js
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import path from 'path';
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import path from "path";
 
 export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@/assets/styles/variables.css";`
-      }
-    }
+        additionalData: `@import "@/assets/styles/variables.css";`,
+      },
+    },
   },
   build: {
     rollupOptions: {
       output: {
         manualChunks: {
-          'vendor': ['vue', 'pinia'],
-          'utils': ['dayjs', 'qrcode.vue3']
-        }
-      }
-    }
-  }
+          vendor: ["vue", "pinia"],
+          utils: ["dayjs", "qrcode.vue3"],
+        },
+      },
+    },
+  },
 });
 ```
 
@@ -922,19 +1027,19 @@ export default defineConfig({
 
 ```javascript
 // main.js
-import { createApp } from 'vue';
-import { createPinia } from 'pinia';
-import App from './App.vue';
+import { createApp } from "vue";
+import { createPinia } from "pinia";
+import App from "./App.vue";
 
 // Estilos globais
-import '@/assets/styles/reset.css';
-import '@/assets/styles/variables.css';
-import '@/assets/styles/global.css';
-import '@/assets/styles/animations.css';
+import "@/assets/styles/reset.css";
+import "@/assets/styles/variables.css";
+import "@/assets/styles/global.css";
+import "@/assets/styles/animations.css";
 
 const app = createApp(App);
 app.use(createPinia());
-app.mount('#app');
+app.mount("#app");
 ```
 
 ### Index.html (Fontes)
@@ -942,24 +1047,30 @@ app.mount('#app');
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Casamento Rawane & Gustavo | 26/04/2026</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casamento Rawane & Gustavo | 16/05/2026</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Meta tags -->
-  <meta name="description" content="Venha celebrar conosco o casamento de Rawane e Gustavo em 26 de abril de 2026!">
-  <meta name="theme-color" content="#b1b9e7">
-</head>
-<body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.js"></script>
-</body>
+    <!-- Meta tags -->
+    <meta
+      name="description"
+      content="Venha celebrar conosco o casamento de Rawane e Gustavo em 16 de maio de 2026!"
+    />
+    <meta name="theme-color" content="#b1b9e7" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
 ```
 
@@ -968,6 +1079,7 @@ app.mount('#app');
 ## 📋 Checklist de Implementação
 
 ### Setup
+
 - [ ] Instalar dependências (`qrcode.vue3`, `dayjs`, `sass`)
 - [ ] Configurar estilos globais (variables, reset, global, animations)
 - [ ] Adicionar fontes Google Fonts
@@ -975,11 +1087,13 @@ app.mount('#app');
 - [ ] Criar arquivos JSON de dados
 
 ### Componentes Base
+
 - [ ] FullscreenContainer.vue
 - [ ] ScrollArrow.vue
 - [ ] LocationCard.vue
 
 ### Telas
+
 - [ ] HeroScreen.vue (Tela 1)
 - [ ] StoriesScreen.vue (Tela 2)
   - [ ] ProgressBar.vue
@@ -997,15 +1111,18 @@ app.mount('#app');
   - [ ] useCart.js composable
 
 ### Utilitários
+
 - [ ] pix.js (geração de payload PIX)
 - [ ] currency.js (formatação de moeda)
 
 ### Navegação
+
 - [ ] Implementar scroll snap no App.vue
 - [ ] useScreenTransition.js composable
 - [ ] Conectar ScrollArrows com navegação
 
 ### Polimento
+
 - [ ] Otimizar imagens
 - [ ] Testar responsividade em todos breakpoints
 - [ ] Adicionar loading states

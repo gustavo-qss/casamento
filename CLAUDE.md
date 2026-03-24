@@ -2,12 +2,13 @@
 
 Referência completa do projeto para uso em todas as sessões.
 stuff
+
 ## Contexto do Projeto
 
 Site de casamento fullscreen em Vue. Os convidados navegam por 6 telas e podem presentear o casal via lista de presentes com pagamento integrado ao Mercado Pago.
 
 - **Casal:** Rawane & Gustavo
-- **Data do casamento:** 26 de abril de 2026 (`2026-04-26T16:00:00`).
+- **Data do casamento:** 16 de maio de 2026 (`2026-05-16T16:00:00`).
 - **Repositorio frontend:** `C:\Users\lurik\Desktop\site-casamento\frontend`
 - **Repositorio backend (a criar):** `casamento-api/` (NestJS, fora desta pasta)
 - **Deploy frontend:** GitHub Pages (branch `main`)
@@ -33,17 +34,18 @@ site-casamento/
 
 ### Stack
 
-| Item | Versao / Detalhe |
-|---|---|
-| Vue | 3.5.25 |
-| Pinia | 3.0.4 |
-| Vite | 7.2.4 |
-| dayjs | 1.11.19 |
+| Item   | Versao / Detalhe                                      |
+| ------ | ----------------------------------------------------- |
+| Vue    | 3.5.25                                                |
+| Pinia  | 3.0.4                                                 |
+| Vite   | 7.2.4                                                 |
+| dayjs  | 1.11.19                                               |
 | qrcode | 1.5.4 (gera QR localmente — sera substituido pelo MP) |
-| sass | 1.97.1 |
-| Node | ^20.19.0 ou >=22.12.0 |
+| sass   | 1.97.1                                                |
+| Node   | ^20.19.0 ou >=22.12.0                                 |
 
 **Rodar dev:**
+
 ```bash
 cd frontend
 npm run dev     # porta 5173
@@ -111,24 +113,20 @@ frontend/
 ### Design System (variables.css)
 
 **Cores:**
+
 ```css
---primary-lavender: #b1b9e7
---primary-blue:     #bfd5ed
---soft-pink:        #f4d9e6
---cream:            #faf7f2
---gold:             #d4af37
---lavender-dark:    #9098c7
---blue-dark:        #8ca9c4
---text-dark:        #333333
---white:            #ffffff
---gray-light:       #f5f5f5
+--primary-lavender: #b1b9e7 --primary-blue: #bfd5ed --soft-pink: #f4d9e6
+  --cream: #faf7f2 --gold: #d4af37 --lavender-dark: #9098c7 --blue-dark: #8ca9c4
+  --text-dark: #333333 --white: #ffffff --gray-light: #f5f5f5;
 ```
 
 **Fontes (Google Fonts):**
+
 ```css
---font-display: 'Playfair Display', serif    /* titulos */
---font-body:    'Montserrat', sans-serif     /* corpo */
---font-script:  'Great Vibes', cursive       /* detalhes romanticos */
+--font-display:
+  "Playfair Display", serif /* titulos */ --font-body: "Montserrat",
+  sans-serif /* corpo */ --font-script: "Great Vibes",
+  cursive /* detalhes romanticos */;
 ```
 
 **Espacamentos:** `--spacing-xs` ate `--spacing-2xl` (0.5rem a 4rem)
@@ -153,27 +151,29 @@ VITE_MP_PUBLIC_KEY=  <- Public Key do Mercado Pago (NAO e o Access Token)
 ### Locais
 
 **Cerimonia:**
+
 - Igreja Nossa Senhora de Fatima
 - 16h00 — Rua das Flores, 123 - Centro
 
 **Recepcao:**
+
 - Espaco Jardim Encantado
 - 18h00 — Av. Principal, 456 - Jardim Europa
 
 ### Lista de Presentes (gifts.json) — 10 itens
 
-| ID | Nome | Preco |
-|---|---|---|
-| 1 | Jogo de Panelas Tramontina | R$ 450,00 |
-| 2 | Liquidificador Philips Walita | R$ 280,00 |
-| 3 | Jogo de Toalhas Premium | R$ 180,00 |
-| 4 | Cafeteira Nespresso | R$ 650,00 |
-| 5 | Jogo de Jantar Porcelana | R$ 380,00 |
-| 6 | Micro-ondas Electrolux | R$ 520,00 |
-| 7 | Aspirador Robo | R$ 890,00 |
-| 8 | Jogo de Lencois King | R$ 220,00 |
-| 9 | Air Fryer Philco | R$ 420,00 |
-| 10 | Ferro a Vapor Arno | R$ 160,00 |
+| ID  | Nome                          | Preco     |
+| --- | ----------------------------- | --------- |
+| 1   | Jogo de Panelas Tramontina    | R$ 450,00 |
+| 2   | Liquidificador Philips Walita | R$ 280,00 |
+| 3   | Jogo de Toalhas Premium       | R$ 180,00 |
+| 4   | Cafeteira Nespresso           | R$ 650,00 |
+| 5   | Jogo de Jantar Porcelana      | R$ 380,00 |
+| 6   | Micro-ondas Electrolux        | R$ 520,00 |
+| 7   | Aspirador Robo                | R$ 890,00 |
+| 8   | Jogo de Lencois King          | R$ 220,00 |
+| 9   | Air Fryer Philco              | R$ 420,00 |
+| 10  | Ferro a Vapor Arno            | R$ 160,00 |
 
 ---
 
@@ -211,15 +211,16 @@ O Access Token do MP da acesso total a conta (sacar, reembolsar). Ele deve ficar
 
 ### Stack
 
-| Item | Detalhe |
-|---|---|
-| Framework | NestJS |
-| SDK | `mercadopago` (oficial) |
+| Item      | Detalhe                                 |
+| --------- | --------------------------------------- |
+| Framework | NestJS                                  |
+| SDK       | `mercadopago` (oficial)                 |
 | Validacao | `class-validator` + `class-transformer` |
-| Config | `@nestjs/config` |
-| Porta dev | 3000 |
+| Config    | `@nestjs/config`                        |
+| Porta dev | 3000                                    |
 
 **Criar o projeto:**
+
 ```bash
 npm install -g @nestjs/cli
 nest new casamento-api
@@ -259,18 +260,18 @@ PORT=3000
 
 ### Endpoints
 
-| Metodo | Rota | Descricao |
-|---|---|---|
-| POST | `/api/payments/preference` | Cria preferencia Checkout Pro (cartao + PIX + boleto) |
-| GET | `/api/payments/status/:id` | Consulta status de um pagamento pelo ID |
-| POST | `/api/webhook/mp` | Recebe notificacoes de pagamento do MP |
+| Metodo | Rota                       | Descricao                                             |
+| ------ | -------------------------- | ----------------------------------------------------- |
+| POST   | `/api/payments/preference` | Cria preferencia Checkout Pro (cartao + PIX + boleto) |
+| GET    | `/api/payments/status/:id` | Consulta status de um pagamento pelo ID               |
+| POST   | `/api/webhook/mp`          | Recebe notificacoes de pagamento do MP                |
 
 ### Configuracao do main.ts
 
 ```ts
 app.enableCors({ origin: process.env.FRONTEND_URL });
 app.useGlobalPipes(new ValidationPipe());
-app.setGlobalPrefix('api');
+app.setGlobalPrefix("api");
 ```
 
 ### Logica do payments.service.ts
@@ -283,18 +284,18 @@ const mp = new MercadoPagoConfig({ accessToken: process.env.MP_ACCESS_TOKEN });
 const preference = new Preference(mp);
 const result = await preference.create({
   body: {
-    items: dto.items.map(item => ({
+    items: dto.items.map((item) => ({
       title: item.name,
       unit_price: item.price,
       quantity: item.quantity,
-      currency_id: 'BRL',
+      currency_id: "BRL",
     })),
     back_urls: {
       success: `${FRONTEND_URL}?payment=success`,
       failure: `${FRONTEND_URL}?payment=failure`,
       pending: `${FRONTEND_URL}?payment=pending`,
     },
-    auto_return: 'approved',
+    auto_return: "approved",
     notification_url: `${BACKEND_URL}/api/webhook/mp`,
   },
 });
@@ -310,27 +311,27 @@ const result = await payment.get({ id: paymentId });
 
 ## Componentes a Criar / Modificar (frontend)
 
-| Arquivo | Acao | Descricao |
-|---|---|---|
-| `frontend/src/composables/usePayment.js` | **Criar** | Chama a API NestJS, faz redirect para MP |
-| `frontend/src/components/ui/CheckoutModal.vue` | **Criar** | Substitui QRCodeModal; mostra resumo e botao "Pagar com MP" |
-| `frontend/src/components/ui/PaymentSuccess.vue` | **Criar** | Tela de confirmacao pos-pagamento (le query params) |
-| `frontend/src/components/screens/GiftsScreen.vue` | **Modificar** | Usar CheckoutModal no lugar de QRCodeModal |
-| `frontend/src/App.vue` | **Modificar** | Detectar `?payment=success` na URL e exibir PaymentSuccess |
+| Arquivo                                           | Acao          | Descricao                                                   |
+| ------------------------------------------------- | ------------- | ----------------------------------------------------------- |
+| `frontend/src/composables/usePayment.js`          | **Criar**     | Chama a API NestJS, faz redirect para MP                    |
+| `frontend/src/components/ui/CheckoutModal.vue`    | **Criar**     | Substitui QRCodeModal; mostra resumo e botao "Pagar com MP" |
+| `frontend/src/components/ui/PaymentSuccess.vue`   | **Criar**     | Tela de confirmacao pos-pagamento (le query params)         |
+| `frontend/src/components/screens/GiftsScreen.vue` | **Modificar** | Usar CheckoutModal no lugar de QRCodeModal                  |
+| `frontend/src/App.vue`                            | **Modificar** | Detectar `?payment=success` na URL e exibir PaymentSuccess  |
 
 ### Logica do usePayment.js
 
 ```js
-const API_BASE = import.meta.env.VITE_API_URL
+const API_BASE = import.meta.env.VITE_API_URL;
 
 async function startCheckout(amount, items) {
   const res = await fetch(`${API_BASE}/payments/preference`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ amount, items }),
-  })
-  const { checkoutUrl } = await res.json()
-  window.location.href = checkoutUrl  // redireciona para o MP
+  });
+  const { checkoutUrl } = await res.json();
+  window.location.href = checkoutUrl; // redireciona para o MP
 }
 ```
 
@@ -381,6 +382,7 @@ async function startCheckout(amount, items) {
 ## Referencias
 
 ### Mercado Pago
+
 - Checkout Pro (visao geral): https://www.mercadopago.com.br/developers/pt/docs/checkout-pro/landing
 - Criar aplicacao MP: https://www.mercadopago.com.br/developers/pt/docs/checkout-pro/create-application
 - Criar preferencia (API): https://www.mercadopago.com.br/developers/pt/reference/preferences/_checkout_preferences/post
@@ -390,15 +392,18 @@ async function startCheckout(amount, items) {
 - SDK JS frontend: https://www.mercadopago.com.br/developers/pt/docs/sdks-library/client-side/mp-js-v2
 
 ### NestJS
+
 - Documentacao oficial: https://docs.nestjs.com
 - ConfigModule: https://docs.nestjs.com/techniques/configuration
 - ValidationPipe: https://docs.nestjs.com/techniques/validation
 
 ### Frontend
+
 - Vue 3: https://vuejs.org
 - Pinia: https://pinia.vuejs.org
 - Vite: https://vitejs.dev
 
 ### Deploy
+
 - Railway: https://railway.app
 - GitHub Pages: https://pages.github.com

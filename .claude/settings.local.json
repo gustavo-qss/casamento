@@ -9,7 +9,10 @@
       "Bash(git push)",
       "Bash(node -e:*)",
       "Bash(npm run:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(find /home/gustavo/Desktop/casamento/casamento-api/src -type f -name *.ts)",
+      "Bash(npx tsc:*)",
+      "Bash(./node_modules/.bin/tsc --noEmit)"
     ]
   }
 }
