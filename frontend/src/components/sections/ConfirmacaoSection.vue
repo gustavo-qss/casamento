@@ -44,7 +44,7 @@ const emit = defineEmits(["open-rsvp"]);
         <strong style="color: var(--navy-dark)">
           adoraríamos que ficasse para o jantar conosco na recepção
           também</strong
-        >. A festa
+        >. O jantar
         <strong style="color: var(--navy-dark)"
           >tem adesão para cobrir o evento</strong
         >, mas se vier só à cerimônia ficamos igualmente felizes em te ver lá.

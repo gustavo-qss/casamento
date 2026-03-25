@@ -30,7 +30,8 @@ const name = ref("");
 const phone = ref("");
 const guestsCount = ref(1);
 const childrenUnder4 = ref(0);
-const childrenUnder8 = ref(0);
+const childrenUnder10 = ref(0);
+const childrenAge11 = ref(0);
 const dietary = ref("");
 const nameHint = ref(false);
 const phoneHint = ref(false);
@@ -50,11 +51,17 @@ function incrementChildren4() {
 function decrementChildren4() {
   if (childrenUnder4.value > 0) childrenUnder4.value--;
 }
-function incrementChildren8() {
-  if (childrenUnder8.value < MAX_CHILDREN) childrenUnder8.value++;
+function incrementChildren10() {
+  if (childrenUnder10.value < MAX_CHILDREN) childrenUnder10.value++;
 }
-function decrementChildren8() {
-  if (childrenUnder8.value > 0) childrenUnder8.value--;
+function decrementChildren10() {
+  if (childrenUnder10.value > 0) childrenUnder10.value--;
+}
+function incrementChildren11() {
+  if (childrenAge11.value < MAX_CHILDREN) childrenAge11.value++;
+}
+function decrementChildren11() {
+  if (childrenAge11.value > 0) childrenAge11.value--;
 }
 
 function handlePhoneInput(e) {
@@ -76,20 +83,22 @@ function submitForm() {
 
 // ── PIX (step 3) ───────────────────────────────────────────
 const pricePerPerson = Number(import.meta.env.VITE_PIX_PRICE_PER_PERSON) || 0;
-const priceChild0to4 = Number(import.meta.env.VITE_PIX_PRICE_CHILD_0_4) || 0;
-const priceChild4to8 = Number(import.meta.env.VITE_PIX_PRICE_CHILD_4_8) || 0;
+const priceChild0to4  = Number(import.meta.env.VITE_PIX_PRICE_CHILD_0_4)  || 0;
+const priceChild5to10 = Number(import.meta.env.VITE_PIX_PRICE_CHILD_5_10) || 0;
+const priceChild11    = Number(import.meta.env.VITE_PIX_PRICE_CHILD_11)   || 0;
 const pixKey = import.meta.env.VITE_PIX_KEY || "";
 const pixName = import.meta.env.VITE_PIX_NAME || "Rawane e Gustavo";
 
 const totalAmount = computed(
   () =>
-    pricePerPerson * guestsCount.value +
-    priceChild0to4 * childrenUnder4.value +
-    priceChild4to8 * childrenUnder8.value,
+    pricePerPerson  * guestsCount.value    +
+    priceChild0to4  * childrenUnder4.value +
+    priceChild5to10 * childrenUnder10.value +
+    priceChild11    * childrenAge11.value,
 );
 
 const hasAnyPrice = computed(
-  () => pricePerPerson > 0 || priceChild0to4 > 0 || priceChild4to8 > 0,
+  () => pricePerPerson > 0 || priceChild0to4 > 0 || priceChild5to10 > 0 || priceChild11 > 0,
 );
 
 const pixPayload = computed(() =>
@@ -161,7 +170,8 @@ async function handleConfirm() {
         phone: phone.value,
         guestsCount: guestsCount.value,
         childrenUnder4: childrenUnder4.value,
-        childrenUnder8: childrenUnder8.value,
+        childrenUnder10: childrenUnder10.value,
+        childrenAge11: childrenAge11.value,
         dietary: dietary.value.trim(),
       },
       comprovanteFile.value,
@@ -186,7 +196,8 @@ async function retry() {
         phone: phone.value,
         guestsCount: guestsCount.value,
         childrenUnder4: childrenUnder4.value,
-        childrenUnder8: childrenUnder8.value,
+        childrenUnder10: childrenUnder10.value,
+        childrenAge11: childrenAge11.value,
         dietary: dietary.value.trim(),
       },
       comprovanteFile.value,
@@ -292,8 +303,8 @@ const fmt = (v) =>
 
           <p class="welcome-sub">
             Você está convidado para a cerimônia <em>e</em> para o jantar
-            conosco na recepção. Se puder ficar para a festa, há uma adesão para
-            cobrir o evento — mas se vier só à igreja, ficamos igualmente
+            conosco na recepção. Se puder ficar para o jantar, há uma adesão
+            para cobrir o evento, mas se vier só à igreja, ficamos igualmente
             felizes em te ver lá.
           </p>
 
@@ -363,7 +374,7 @@ const fmt = (v) =>
             </div>
 
             <div class="field">
-              <label class="field-label">Adultos</label>
+              <label class="field-label">Adultos <span class="optional">(12+ anos)</span></label>
               <div class="guests-counter">
                 <button
                   class="counter-btn"
@@ -412,23 +423,19 @@ const fmt = (v) =>
                   </div>
                 </div>
                 <div class="children-row">
-                  <span class="children-range">4 – 8 anos</span>
+                  <span class="children-range">5 – 10 anos</span>
                   <div class="guests-counter guests-counter--sm">
-                    <button
-                      class="counter-btn"
-                      @click="decrementChildren8"
-                      :disabled="childrenUnder8 <= 0"
-                    >
-                      −
-                    </button>
-                    <span class="counter-value">{{ childrenUnder8 }}</span>
-                    <button
-                      class="counter-btn"
-                      @click="incrementChildren8"
-                      :disabled="childrenUnder8 >= MAX_CHILDREN"
-                    >
-                      +
-                    </button>
+                    <button class="counter-btn" @click="decrementChildren10" :disabled="childrenUnder10 <= 0">−</button>
+                    <span class="counter-value">{{ childrenUnder10 }}</span>
+                    <button class="counter-btn" @click="incrementChildren10" :disabled="childrenUnder10 >= MAX_CHILDREN">+</button>
+                  </div>
+                </div>
+                <div class="children-row">
+                  <span class="children-range">11 anos</span>
+                  <div class="guests-counter guests-counter--sm">
+                    <button class="counter-btn" @click="decrementChildren11" :disabled="childrenAge11 <= 0">−</button>
+                    <span class="counter-value">{{ childrenAge11 }}</span>
+                    <button class="counter-btn" @click="incrementChildren11" :disabled="childrenAge11 >= MAX_CHILDREN">+</button>
                   </div>
                 </div>
               </div>
@@ -501,18 +508,13 @@ const fmt = (v) =>
                   fmt(priceChild0to4 * childrenUnder4)
                 }}</span>
               </div>
-              <div
-                v-if="priceChild4to8 > 0 && childrenUnder8 > 0"
-                class="breakdown-row"
-              >
-                <span class="breakdown-label"
-                  >{{ childrenUnder8 }}
-                  {{ childrenUnder8 === 1 ? "criança" : "crianças" }}
-                  (4–8)</span
-                >
-                <span class="breakdown-value">{{
-                  fmt(priceChild4to8 * childrenUnder8)
-                }}</span>
+              <div v-if="priceChild5to10 > 0 && childrenUnder10 > 0" class="breakdown-row">
+                <span class="breakdown-label">{{ childrenUnder10 }} {{ childrenUnder10 === 1 ? "criança" : "crianças" }} (5–10)</span>
+                <span class="breakdown-value">{{ fmt(priceChild5to10 * childrenUnder10) }}</span>
+              </div>
+              <div v-if="priceChild11 > 0 && childrenAge11 > 0" class="breakdown-row">
+                <span class="breakdown-label">{{ childrenAge11 }} {{ childrenAge11 === 1 ? "criança" : "crianças" }} (11)</span>
+                <span class="breakdown-value">{{ fmt(priceChild11 * childrenAge11) }}</span>
               </div>
               <div class="breakdown-total">
                 <span class="pix-amount-label">Total</span>

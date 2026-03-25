@@ -28,7 +28,14 @@ export class CreateRsvpDto {
   @Max(10)
   @IsOptional()
   @Type(() => Number)
-  childrenUnder8?: number;
+  childrenUnder10?: number;
+
+  @IsInt()
+  @Min(0)
+  @Max(10)
+  @IsOptional()
+  @Type(() => Number)
+  childrenAge11?: number;
 
   @IsString()
   @IsOptional()
