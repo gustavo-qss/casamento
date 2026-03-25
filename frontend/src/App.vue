@@ -49,6 +49,12 @@ onMounted(() => {
     showRSVP.value = true;
     window.history.replaceState({}, '', window.location.pathname);
   }
+
+  // QR code de lista de presentes
+  if (params.get('gifts') === 'true') {
+    showGifts.value = true;
+    window.history.replaceState({}, '', window.location.pathname);
+  }
 });
 </script>
 
