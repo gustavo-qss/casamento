@@ -22,10 +22,13 @@ export const useCartStore = defineStore('cart', {
       if (existingItem) {
         existingItem.quantity++;
       } else {
+        const price = typeof gift.price === 'string'
+          ? parseFloat(gift.price.replace(/\./g, '').replace(',', '.'))
+          : gift.price;
         this.items.push({
           giftId: gift.id,
           name: gift.name,
-          price: gift.price,
+          price,
           image: gift.image,
           quantity: 1,
         });

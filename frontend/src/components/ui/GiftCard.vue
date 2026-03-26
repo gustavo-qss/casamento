@@ -39,8 +39,12 @@ const emit = defineEmits(['add', 'remove']);
 const handleAdd = () => emit('add', props.gift);
 const handleRemove = () => emit('remove', props.gift.id);
 
-const formatCurrency = (value) =>
-  new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+const formatCurrency = (value) => {
+  const num = typeof value === 'string'
+    ? parseFloat(value.replace(/\./g, '').replace(',', '.'))
+    : value;
+  return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(num);
+};
 </script>
 
 <style scoped>
