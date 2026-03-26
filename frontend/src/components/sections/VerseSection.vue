@@ -31,7 +31,7 @@ useScrollReveal(section);
         Assim, eles já não são dois,<br>mas sim uma só carne. <br> Portanto, o que Deus uniu, ninguém o separe
       </blockquote>
 
-      <p class="verse-ref reveal reveal-delay-2">Mateus 19:6</p>
+      <p class="verse-ref reveal reveal-delay-2">Mateus 19, 6</p>
 
       <div class="initials-row reveal reveal-delay-3">
         <span class="initials-line"></span>

@@ -1,451 +1,563 @@
 [
- {
-   "id": 91,
-   "name": "Ajude nas parcelas do apê",
-   "price": "1.200,00",
-   "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80",
-   "description": ""
- },
- {
-   "id": 9,
-   "name": "Air Fryer Oven Philco 11L 8 Funções Visor 1800W PAF11B 110V",
-   "price": "359,91",
-   "image": "https://imgs.casasbahia.com.br/55071534/1g.png?imwidth=500",
-   "description": "Magazine Luiza"
- },
- {
-   "id": 10,
-   "name": "Panasonic Micro-ondas 34L Inox Antibactéria 220v NN-ST67LSRU",
-   "price": "644,94",
-   "image": "https://m.media-amazon.com/images/I/51C3VacjbGL._AC_SX679_.jpg",
-   "description": "Amazon"
- },
- {
-   "id": 11,
-   "name": "Kit 12 Utensílios De Cozinha Qualidade Premium Resistente",
-   "price": "67,16",
-   "image": "https://m.magazineluiza.com.br/a-static/420x420/kit-12-utensilios-de-cozinha-qualidade-premium-resistente-entrega-rapida/facilitalojavirtual/al0093-09/cb61749c3a99508eed34637b00095a59.jpeg",
-   "description": ""
- },
- {
-   "id": 1,
-   "name": "Primeira parcela do PS5 pra jogar GTA VI",
-   "price": "300,00",
-   "image": "https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$",
-   "description": ""
- },
- {
-   "id": 12,
-   "name": "JOGO 6 TAÇAS VINHO TINTO",
-   "price": "180,48",
-   "image": "https://m.media-amazon.com/images/I/718+3+IEbPL._AC_SX679_.jpg",
-   "description": ""
- },
- {
-   "id": 13,
-   "name": "Cafeteira Elétrica Britânia BCF19 18 xícaras",
-   "price": "119,00",
-   "image": "https://imgs.casasbahia.com.br/55066142/1g.jpg?imwidth=500",
-   "description": ""
- },
- {
-   "id": 14,
-   "name": "Cafeteira dolce gusto",
-   "price": "419,00",
-   "image": "https://www.nescafe-dolcegusto.com.br/media/catalog/product/cache/d22af66f75f51f60e100631e2c10a99a/p/l/plus_preta_tag_x_cara_220v_v2.png",
-   "description": ""
- },
- {
-   "id": 2,
-   "name": "Ajude a noiva ver o show de algum integrante do One Direction",
-   "price": "1.000,00",
-   "image": "/rawane_harry.jpg",
-   "description": ""
- },
- {
-   "id": 15,
-   "name": "Sanduicheira Inox Multiuso Oster",
-   "price": "199,90",
-   "image": "https://jcsbrasil.vteximg.com.br/arquivos/ids/238601-1000-1000/Prancheta-1.png?v=639047091968400000",
-   "description": ""
- },
- {
-   "id": 16,
-   "name": "Liquidificador Mondial Turbo L-1000BI 1000W",
-   "price": "200,00",
-   "image": "https://imgs.casasbahia.com.br/11823521/1g.jpg",
-   "description": "Liquidificador turbo 1000W com jarra de 3 litros, 12 velocidades e lâminas de inox Autolimpeza【23†L1337-L1340】."
- },
- {
-   "id": 17,
-   "name": "Fogão 4 Bocas Electrolux Efficient Mesa Vidro FE4IG",
-   "price": "1.499,45",
-   "image": "https://http2.mlstatic.com/D_Q_NP_648991-MLA99547848370_122025-O.webp",
-   "description": "Fogão a gás 4 bocas com mesa de vidro temperado, tripla chama e forno com sistema PerfectCook【39†L413-L416】."
- },
- {
-   "id": 4,
-   "name": "Um mês de ração pro diorgines",
-   "price": "150,00",
-   "image": "https://cobasi.vteximg.com.br/arquivos/ids/301809/Racao-para-Caes-Adultos-Racas-Pequenas-Golden-Formula-Light-Frango-e-Arroz-10.jpg?v=638122540449370000",
-   "description": ""
- },
- {
-   "id": 18,
-   "name": "Geladeira Panasonic Bt41x Frost Free 387l",
-   "price": "2.706,03",
-   "image": "https://static1.efacil.com.br/wcsstore/ExtendedSitesCatalogAssetStore/Imagens/1000/2221618_01.jpg",
-   "description": "Geladeira frost-free 300 litros branca, compacta por fora e com freezer de supercapacidade no interior【45†L139-L147】."
- },
- {
-   "id": 19,
-   "name": "Lavadora Brastemp 10kg BNF10AB",
-   "price": "3.428,10",
-   "image": "https://brastemp.vtexassets.com/arquivos/ids/271311-1200-auto?v=638997803447670000&width=1200&height=auto&aspect=true",
-   "description": "Lavadora de roupas 10kg com abertura frontal, Smart Sensor que otimiza o ciclo de lavagem e função Tira Manchas Pro【56†L229-L236】."
- },
- {
-   "id": 20,
-   "name": "Ar Condicionado Split 9000 BTUs LG +IA Dual Inverter Voice Frio S3NQ09",
-   "price": "2.100,00",
-   "image": "https://www.leveros.com.br/upload/produto/imagem/m_ar-condicionado-split-hw-lg-dual-inverter-voice-24-000-btus-r-32-quente-frio-220v.jpg",
-   "description": "Ar-condicionado de janela 7500 BTU/h, design moderno com painel removível para limpeza e função \"Sono Bom\"【61†L101-L110】."
- },
- {
-   "id": 6,
-   "name": "Um jantar a dois no Koala",
-   "price": "350,00",
-   "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF9nWfAQjWoR7SUsNUc_XKOWji98lcmau6iw&s",
-   "description": ""
- },
- {
-   "id": 21,
-   "name": "Batedeira Planetária Oster Preta 850W 12 Velocidades Tigela Inox 4L OBAT641",
-   "price": "455,05",
-   "image": "https://static1.efacil.com.br/wcsstore/ExtendedSitesCatalogAssetStore/Imagens/1000/280212501030210011-00023_02.jpg",
-   "description": "Batedeira planetária 600W com tigela de 4 litros, 8 velocidades e batedores de uso geral【72†L110-L117】."
- },
- {
-   "id": 22,
-   "name": "Samsung Smart TV Crystal UHD 4K 2024",
-   "price": "2.899,00",
-   "image": "https://http2.mlstatic.com/D_NQ_NP_795202-MLU77447438231_072024-O.webp",
-   "description": "Smart TV 50\" UHD 4K com processador Alpha 5 AI, HDR10 Pro para cores vibrantes【74†L1096-L1100】."
- },
- {
-   "id": 23,
-   "name": "Soundbar JBL Bar 2.1 Deep Bass (300W)",
-   "price": "1.600,00",
-   "image": "https://m.media-amazon.com/images/I/61-eZDbwf5L._AC_UF1000,1000_QL80_.jpg",
-   "description": "Soundbar 2.1 com subwoofer sem fio de 6,5'' e 300W de potência total, som surround e conexão Bluetooth【76†L316-L324】."
- },
- {
-   "id": 90,
-   "name": "Lua de mel no le monde",
-   "price": "574,23",
-   "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT66KQYJLwCIIqOC-z9dVBTcSAj9DFsQyFeQ&s",
-   "description": ""
- },
- {
-   "id": 24,
-   "name": "Conjunto de Mesa de Jantar Donna com 4 Cadeiras - Madeira Maciça",
-   "price": "1.140,46",
-   "image": "https://m.media-amazon.com/images/I/71L6n1a2LHL._AC_UF894,1000_QL80_.jpg",
-   "description": "Mesa de jantar retangular em madeira maciça Rainha com 4 cadeiras estofadas, design clássico e acabamento natural."
- },
- {
-   "id": 25,
-   "name": "Jogo de Panelas Tramontina em Aço Inox 5 Peças",
-   "price": "499,00",
-   "image": "https://73035.cdn.simplo7.net/static/73035/sku/10000004525710.jpg",
-   "description": "Conjunto de panelas em aço inox com cabos de silicone, incluindo caçarola, frigideira e panela média, indicadas para todos os tipos de fogão."
- },
- {
-   "id": 26,
-   "name": "Aspirador de Pó Mondial Turbo Cycle AP-35 1100W",
-   "price": "222,21",
-   "image": "https://i.zst.com.br/thumbs/12/1e/13/-1032672665.jpg",
-   "description": "Aspirador vertical 2 em 1 (vertical ou portátil) com 1100W de potência e filtro ciclone lavável【84†L260-L268】."
- },
- {
-   "id": 8,
-   "name": "Um kit da rare beauty pra Noiva estudar melhor",
-   "price": "400,00",
-   "image": "https://www.sephora.com.br/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dweb24a2d8/images/Color%20BR/RARE%20BEAUTY/2025/kit_trio/840122907586_1.jpg",
-   "description": ""
- },
- {
-   "id": 27,
-   "name": "Jogo de Toalhas de Banho 5 Peças 100% Algodão",
-   "price": "278,30",
-   "image": "https://m.media-amazon.com/images/I/71HyHh8grZL._AC_SY300_SX300_QL70_ML2_.jpg",
-   "description": "Conjunto de toalhas de banho (2 grandes, 2 de rosto, 1 piso) em algodão felpudo 100% fio penteado, alta maciez e absorção."
- },
- {
-   "id": 28,
-   "name": "Jogo de Pratos porcelana 12 Peças Roma - Branco",
-   "price": "311,02",
-   "image": "https://portobrasil.vtexassets.com/arquivos/ids/157576/61089R.jpg?v=637242844705630000",
-   "description": "Aparelho de jantar em faiança branca, 42 peças (6 lugares), compatível com micro-ondas e lava-louças【81†L40-L48】."
- },
- {
-   "id": 29,
-   "name": "Jogo de Talheres Tramontina Aço Inox 24 Peças",
-   "price": "120,00",
-   "image": "https://a-static.mlcdn.com.br/420x420/jogo-de-talheres-tramontina-inox-colher-faca-garfo-24-pecas-inox/ecomba/buzi-24/f023246dbc1bc2156f72e6fb2034b489.jpeg",
-   "description": "Jogo de talheres 24 peças em aço inox polido, inclui facas, garfos e colheres em design clássico e durável."
- },
- {
-   "id": 5,
-   "name": "Uma ida no mecânico pro fiesta",
-   "price": "1.000,00",
-   "image": "https://www.litoralcar.com.br/foto-resize/g/1168932/2225/ford-fiesta-flex-mec.-1.6-2013-21483021.webp",
-   "description": ""
- },
- {
-   "id": 30,
-   "name": "Conjunto 24 Potes Herméticos Empilháveis Tampa E Trava",
-   "price": "126,86",
-   "image": "https://a-static.mlcdn.com.br/420x420/conjunto-de-24-potes-hermeticos-decoteam-com-tampa-e-trava-croix/loibrasil/13403/bac79e2d7c9ab952797068b2b57e260b.jpeg",
-   "description": "Conjunto de 4 potes plásticos herméticos com tampas vedantes, ideais para armazenar e conservar alimentos na despensa ou geladeira."
- },
- {
-   "id": 31,
-   "name": "Mixer Mondial 350W 2 em 1",
-   "price": "180,41",
-   "image": "https://a-static.mlcdn.com.br/420x420/mixer-2-em-1-mondial-500w-vermelho-e-inox-m-10-2-velocidades/magazineluiza/236678000/65307241807833125cbcac46a331a839.jpg",
-   "description": "Mixer 2 em 1 de 350W com haste de imersão e copo liquidificador acoplável, portátil e prático para preparo de sopas, sucos e vitaminas."
- },
- {
-   "id": 32,
-   "name": "Ventilador de Teto 3 Pás Acrílica",
-   "price": "609,90",
-   "image": "https://cdn.leroymerlin.com.br/products/ventilador_de_teto_controle_remoto_nano_eco_3_pas_bivolt_92186024_6d19_600x600.jpg",
-   "description": "Ventilador de teto com 3 pás em acrílico, 130W de potência, controle remoto e módos de ventilação silenciosa."
- },
- {
-   "id": 7,
-   "name": "Uma placa de vídeo pro Noivo trabalhar melhor",
-   "price": "5.000,00",
-   "image": "https://images9.kabum.com.br/produtos/fotos/387449/placa-de-video-asus-nvidia-rog-strix-rtx-4090-edition-24-gb-gddr6x-argb-dlss-ray-tracing-90yv0iw0-m0nan00_1665170163_gg.jpg",
-   "description": ""
- },
- {
-   "id": 33,
-   "name": "Alexa Echo Pop",
-   "price": "379,00",
-   "image": "https://static.wixstatic.com/media/378b70_9cced3397eaa46e7b2377a81fef9122f~mv2.jpg/v1/fill/w_480,h_360,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/378b70_9cced3397eaa46e7b2377a81fef9122f~mv2.jpg",
-   "description": ""
- },
- {
-   "id": 34,
-   "name": "Ventilador de Mesa Mondial 40cm",
-   "price": "139,90",
-   "image": "https://m.magazineluiza.com.br/a-static/420x420/ventilador-de-mesa-mondial-super-power-40cm-6-pas-3-velocidades-vsp-40-ap/gazinshop/12750/0d44b41796ca3a83256ca782041bab7d.jpg",
-   "description": "Ventilador de mesa 40cm de diâmetro, 3 velocidades, inclinável, ideal para uso em escritório ou quarto, potente e silêncio."
- },
- {
-   "id": 35,
-   "name": "Jogo de Facas Inox 6 Peças Tramontina",
-   "price": "231,53",
-   "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQTfkG_Shna1wDS2FY2YHRtHl99y0b_3OtH0ACnKDBf-dkBbGQgFM5gFbmoff_cQv5yMjjB9uzSeH9UUHynW2YK-Exq1YKvqPPbcQinb-57lFouL1aQyR6ZNg",
-   "description": "Jogo de facas para cozinha (faca de chef, pão, carne e legumes) em aço inox com cabos ergonômicos resistentes, da Tramontina."
- },
- {
-   "id": 3,
-   "name": "Pague o casamento inteiro!",
-   "price": "20.000,00",
-   "image": "https://thumbs.dreamstime.com/b/chovendo-o-dinheiro-24560602.jpg",
-   "description": ""
- },
- {
-   "id": 36,
-   "name": "Ferro de Passar a Vapor Arno Ultragliss 1750W",
-   "price": "250,71",
-   "image": "https://m.media-amazon.com/images/I/61JAgtqvcEL._AC_SL1200_.jpg",
-   "description": "Ferro de passar 1750W com base Durilium Airglide, vapor contínuo de até 25 g/min e spray de água, remoção rápida de vincos."
- },
- {
-   "id": 37,
-   "name": "Sofá 4 Lugares Beny Com Chaise Esquerdo Linho Bege",
-   "price": "1.199,00",
-   "image": "https://product-hub-prd.madeiramadeira.com.br/666419306/images/26039380-d660-47e0-9dbd-1dacb9b488f52d05b95114da29565504b959db.png?width=700&canvas=1:1&bg-color=FFF",
-   "description": ""
- },
- {
-   "id": 38,
-   "name": "Kit Ferramentas WAP 110 Peças WF M110",
-   "price": "474,00",
-   "image": "https://lojawap.vtexassets.com/arquivos/ids/174307/7899831333493---WAP-WF-M110---00.png?v=638792170810670000",
-   "description": ""
- },
- {
-   "id": 92,
-   "name": "Ajude na dívida do casamento",
-   "price": "0,00",
-   "customPrice": true,
-   "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80",
-   "description": ""
- },
- {
-   "id": 39,
-   "name": "Pipoqueira Mallory Mickey c/ 2 baldes",
-   "price": "207,66",
-   "image": "https://cdn-assets-legacy.casar.com/thumb/208x208x1/dados/sitenoivos/wed972927/presentes/ik0HW_1768177352.jpeg",
-   "description": ""
- },
- {
-   "id": 40,
-   "name": "Churrasqueira elétrica Philco",
-   "price": "236,62",
-   "image": "https://philco.vtexassets.com/arquivos/ids/195786/Churrasqueira-Eletrica-PCQ1500D_--29-.jpg?v=638711593940570000",
-   "description": ""
- },
- {
-   "id": 41,
-   "name": "Espremedor de Laranja",
-   "price": "238,81",
-   "image": "https://dleyjack4mlu0.cloudfront.net/Custom/Content/Products/14/46/1446_espremedor-de-frutas-mondial-cozinha-e-10-eletrico-inox-250w_m1_637387199500032283.webp",
-   "description": ""
- },
- {
-   "id": 42,
-   "name": "Grill Britânia Multi Grill",
-   "price": "259,58",
-   "image": "https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/multi-grill-britania-1200w-placa-removivel-coletora-de-gordura/magazineluiza/218920500/356f53aca256c37258ed46daa5428462.jpg",
-   "description": ""
- },
- {
-   "id": 43,
-   "name": "Conjunto para sobremesa Planet em prata 13 peças",
-   "price": "265,66",
-   "image": "https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/conjunto-13-pecas-para-sobremesa-de-prata-planet-23cm-rojemac/madeiramadeira-openapi/316828/dacc789aaaa42290590260c4d48bfa2e.jpeg",
-   "description": ""
- },
- {
-   "id": 44,
-   "name": "Panela de pressão elétrica Electrolux 6L",
-   "price": "446,47",
-   "image": "https://i.zst.com.br/thumbs/12/c/12/121343084.jpg",
-   "description": ""
- },
- {
-   "id": 45,
-   "name": "Purificador de água",
-   "price": "513,73",
-   "image": "https://d1likr6vgtxkkw.cloudfront.net/Custom/Content/Products/16/59/16598_purificador-de-agua-efficient-8l-pe15p-bivolt-preto-electrolux_z1_638676134083318556.webp",
-   "description": ""
- },
- {
-   "id": 46,
-   "name": "Guarda-roupas",
-   "price": "1.461,95",
-   "image": "https://imgs.casasbahia.com.br/1568874334/1xg.jpg?imwidth=500",
-   "description": ""
- },
- {
-   "id": 47,
-   "name": "Forno a Gás de Embutir",
-   "price": "1.868,24",
-   "image": "https://m.media-amazon.com/images/I/51JdvXXHcYL.jpg",
-   "description": ""
- },
- {
-   "id": 48,
-   "name": "Adega de Vinhos",
-   "price": "1.504,51",
-   "image": "https://m.media-amazon.com/images/I/41g2PlQcSvL._AC_SX342_SY445_QL70_ML2_.jpg",
-   "description": ""
- },
- {
-   "id": 49,
-   "name": "Jogo de Xícaras para Café com Pires - 12 peças",
-   "price": "293,96",
-   "image": "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/j/o/jogo-de-xicaras-de-cha-com-pires-royal-havan-casa_1059553.jpg",
-   "description": ""
- },
- {
-   "id": 50,
-   "name": "Armário de Cozinha",
-   "price": "1.648,43",
-   "image": "https://images.tcdn.com.br/img/img_prod/571683/armario_de_cozinha_modulada_completa_reta_8_pecas_3_50m_215_botanic_kappesberg_36526_1_6a8324f3eda418a3aa16729193be4c0d.jpg",
-   "description": ""
- },
- {
-   "id": 51,
-   "name": "Aparador Muse",
-   "price": "444,51",
-   "image": "https://www.muma.com.br/media/iopt/catalog/product/cache/4c4278ec3c53112f90b46bb15500dc78/a/p/aparador-massa.webp",
-   "description": ""
- },
- {
-   "id": 52,
-   "name": "Conjunto de Baixelas Tramontina",
-   "price": "155,42",
-   "image": "https://images.tcdn.com.br/img/img_prod/361962/1678_1_20260309172742.jpg",
-   "description": ""
- },
- {
-   "id": 53,
-   "name": "Bule de chá",
-   "price": "77,71",
-   "image": "https://img.camicado.com.br/item/100413398/zoom/1.jpg",
-   "description": ""
- },
- {
-   "id": 54,
-   "name": "Conjunto de Potes Vidro",
-   "price": "95,74",
-   "image": "https://http2.mlstatic.com/D_NQ_NP_617954-MLB74829978119_022024-O.webp",
-   "description": ""
- },
- {
-   "id": 55,
-   "name": "Escorredor de Louças Aço Inoxidável",
-   "price": "130,45",
-   "image": "https://m.media-amazon.com/images/I/71DDQxrJZzL._AC_UF350,350_QL80_.jpg",
-   "description": ""
- },
- {
-   "id": 56,
-   "name": "Formas para Bolos",
-   "price": "169,58",
-   "image": "https://m.media-amazon.com/images/I/51RKjJvDP8L._AC_SY300_SX300_QL70_ML2_.jpg",
-   "description": ""
- },
- {
-   "id": 57,
-   "name": "Jogo de Lençol Casal",
-   "price": "125,27",
-   "image": "https://images.tcdn.com.br/img/img_prod/636855/kit_jogo_de_lencol_casal_188x138x30_cama_box_algodao_percal_attuale_16062_1_77e84d923c1e59b2a663240a5d459f0f.jpg",
-   "description": ""
- },
- {
-   "id": 58,
-   "name": "Jogo para sobremesa 12 peças",
-   "price": "99,37",
-   "image": "https://archives.lojasnossolar.com.br/images/nossolar/sku/16780/252177_237162_800.webp",
-   "description": ""
- },
- {
-   "id": 59,
-   "name": "Kit de travessas porcelana",
-   "price": "181,33",
-   "image": "https://http2.mlstatic.com/D_NQ_NP_757698-MLB89107204656_082025-O.webp",
-   "description": ""
- },
- {
-   "id": 60,
-   "name": "Kit Jogo Americano",
-   "price": "145,06",
-   "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRD8H9srHPjg5PxLAq5m1aI0DEEyH05d8DEw&s",
-   "description": ""
- },
- {
-   "id": 61,
-   "name": "Lava Louças em Inox 14 Serviços",
-   "price": "4.301,82",
-   "image": "https://73035.cdn.simplo7.net/static/73035/sku/12520014844.jpg",
-   "description": ""
- }
+  {
+    "id": 91,
+    "name": "Ajude nas parcelas do apê",
+    "price": "1.200,00",
+    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80",
+    "description": ""
+  },
+  {
+    "id": 9,
+    "name": "Air Fryer Oven Philco 11L 8 Funções Visor 1800W PAF11B 110V",
+    "price": "359,91",
+    "image": "https://imgs.casasbahia.com.br/55071534/1g.png?imwidth=500",
+    "description": "Magazine Luiza"
+  },
+  {
+    "id": 10,
+    "name": "Panasonic Micro-ondas 34L Inox Antibactéria 220v NN-ST67LSRU",
+    "price": "644,94",
+    "image": "https://m.media-amazon.com/images/I/51C3VacjbGL._AC_SX679_.jpg",
+    "description": "Amazon"
+  },
+  {
+    "id": 11,
+    "name": "Kit 12 Utensílios De Cozinha Qualidade Premium Resistente",
+    "price": "67,16",
+    "image": "https://m.magazineluiza.com.br/a-static/420x420/kit-12-utensilios-de-cozinha-qualidade-premium-resistente-entrega-rapida/facilitalojavirtual/al0093-09/cb61749c3a99508eed34637b00095a59.jpeg",
+    "description": ""
+  },
+  {
+    "id": 1,
+    "name": "Primeira parcela do PS5 pra jogar GTA VI",
+    "price": "300,00",
+    "image": "https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$",
+    "description": ""
+  },
+  {
+    "id": 12,
+    "name": "JOGO 6 TAÇAS VINHO TINTO",
+    "price": "180,48",
+    "image": "https://m.media-amazon.com/images/I/718+3+IEbPL._AC_SX679_.jpg",
+    "description": ""
+  },
+  {
+    "id": 13,
+    "name": "Cafeteira Elétrica Britânia BCF19 18 xícaras",
+    "price": "119,00",
+    "image": "https://imgs.casasbahia.com.br/55066142/1g.jpg?imwidth=500",
+    "description": ""
+  },
+  {
+    "id": 14,
+    "name": "Cafeteira dolce gusto",
+    "price": "419,00",
+    "image": "https://www.nescafe-dolcegusto.com.br/media/catalog/product/cache/d22af66f75f51f60e100631e2c10a99a/p/l/plus_preta_tag_x_cara_220v_v2.png",
+    "description": ""
+  },
+  {
+    "id": 2,
+    "name": "Ajude a noiva ver o show de algum integrante do One Direction",
+    "price": "1.000,00",
+    "image": "/rawane_harry.jpg",
+    "description": ""
+  },
+  {
+    "id": 15,
+    "name": "Sanduicheira Inox Multiuso Oster",
+    "price": "199,90",
+    "image": "https://jcsbrasil.vteximg.com.br/arquivos/ids/238601-1000-1000/Prancheta-1.png?v=639047091968400000",
+    "description": ""
+  },
+  {
+    "id": 16,
+    "name": "Liquidificador Mondial Turbo L-1000BI 1000W",
+    "price": "200,00",
+    "image": "https://imgs.casasbahia.com.br/11823521/1g.jpg",
+    "description": "Liquidificador turbo 1000W com jarra de 3 litros, 12 velocidades e lâminas de inox Autolimpeza【23†L1337-L1340】."
+  },
+  {
+    "id": 17,
+    "name": "Fogão 4 Bocas Electrolux Efficient Mesa Vidro FE4IG",
+    "price": "1.499,45",
+    "image": "https://http2.mlstatic.com/D_Q_NP_648991-MLA99547848370_122025-O.webp",
+    "description": "Fogão a gás 4 bocas com mesa de vidro temperado, tripla chama e forno com sistema PerfectCook【39†L413-L416】."
+  },
+  {
+    "id": 4,
+    "name": "Um mês de ração pro diorgines",
+    "price": "150,00",
+    "image": "https://cobasi.vteximg.com.br/arquivos/ids/301809/Racao-para-Caes-Adultos-Racas-Pequenas-Golden-Formula-Light-Frango-e-Arroz-10.jpg?v=638122540449370000",
+    "description": ""
+  },
+  {
+    "id": 18,
+    "name": "Geladeira Panasonic Bt41x Frost Free 387l",
+    "price": "2.706,03",
+    "image": "https://static1.efacil.com.br/wcsstore/ExtendedSitesCatalogAssetStore/Imagens/1000/2221618_01.jpg",
+    "description": "Geladeira frost-free 300 litros branca, compacta por fora e com freezer de supercapacidade no interior【45†L139-L147】."
+  },
+  {
+    "id": 19,
+    "name": "Lavadora Brastemp 10kg BNF10AB",
+    "price": "3.428,10",
+    "image": "https://brastemp.vtexassets.com/arquivos/ids/271311-1200-auto?v=638997803447670000&width=1200&height=auto&aspect=true",
+    "description": "Lavadora de roupas 10kg com abertura frontal, Smart Sensor que otimiza o ciclo de lavagem e função Tira Manchas Pro【56†L229-L236】."
+  },
+  {
+    "id": 20,
+    "name": "Ar Condicionado Split 9000 BTUs LG +IA Dual Inverter Voice Frio S3NQ09",
+    "price": "2.100,00",
+    "image": "https://www.leveros.com.br/upload/produto/imagem/m_ar-condicionado-split-hw-lg-dual-inverter-voice-24-000-btus-r-32-quente-frio-220v.jpg",
+    "description": "Ar-condicionado de janela 7500 BTU/h, design moderno com painel removível para limpeza e função \"Sono Bom\"【61†L101-L110】."
+  },
+  {
+    "id": 6,
+    "name": "Um jantar a dois no Koala",
+    "price": "350,00",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF9nWfAQjWoR7SUsNUc_XKOWji98lcmau6iw&s",
+    "description": ""
+  },
+  {
+    "id": 21,
+    "name": "Batedeira Planetária Oster Preta 850W 12 Velocidades Tigela Inox 4L OBAT641",
+    "price": "455,05",
+    "image": "https://static1.efacil.com.br/wcsstore/ExtendedSitesCatalogAssetStore/Imagens/1000/280212501030210011-00023_02.jpg",
+    "description": "Batedeira planetária 600W com tigela de 4 litros, 8 velocidades e batedores de uso geral【72†L110-L117】."
+  },
+  {
+    "id": 22,
+    "name": "Samsung Smart TV Crystal UHD 4K 2024",
+    "price": "2.899,00",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_795202-MLU77447438231_072024-O.webp",
+    "description": "Smart TV 50\" UHD 4K com processador Alpha 5 AI, HDR10 Pro para cores vibrantes【74†L1096-L1100】."
+  },
+  {
+    "id": 23,
+    "name": "Soundbar JBL Bar 2.1 Deep Bass (300W)",
+    "price": "1.600,00",
+    "image": "https://m.media-amazon.com/images/I/61-eZDbwf5L._AC_UF1000,1000_QL80_.jpg",
+    "description": "Soundbar 2.1 com subwoofer sem fio de 6,5'' e 300W de potência total, som surround e conexão Bluetooth【76†L316-L324】."
+  },
+  {
+    "id": 90,
+    "name": "Lua de mel no le monde",
+    "price": "574,23",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT66KQYJLwCIIqOC-z9dVBTcSAj9DFsQyFeQ&s",
+    "description": ""
+  },
+  {
+    "id": 24,
+    "name": "Conjunto de Mesa de Jantar Donna com 4 Cadeiras - Madeira Maciça",
+    "price": "1.140,46",
+    "image": "https://m.media-amazon.com/images/I/71L6n1a2LHL._AC_UF894,1000_QL80_.jpg",
+    "description": "Mesa de jantar retangular em madeira maciça Rainha com 4 cadeiras estofadas, design clássico e acabamento natural."
+  },
+  {
+    "id": 25,
+    "name": "Jogo de Panelas Tramontina em Aço Inox 5 Peças",
+    "price": "499,00",
+    "image": "https://73035.cdn.simplo7.net/static/73035/sku/10000004525710.jpg",
+    "description": "Conjunto de panelas em aço inox com cabos de silicone, incluindo caçarola, frigideira e panela média, indicadas para todos os tipos de fogão."
+  },
+  {
+    "id": 26,
+    "name": "Aspirador de Pó Mondial Turbo Cycle AP-35 1100W",
+    "price": "222,21",
+    "image": "https://i.zst.com.br/thumbs/12/1e/13/-1032672665.jpg",
+    "description": "Aspirador vertical 2 em 1 (vertical ou portátil) com 1100W de potência e filtro ciclone lavável【84†L260-L268】."
+  },
+  {
+    "id": 8,
+    "name": "Um kit da rare beauty pra Noiva estudar melhor",
+    "price": "400,00",
+    "image": "https://www.sephora.com.br/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dweb24a2d8/images/Color%20BR/RARE%20BEAUTY/2025/kit_trio/840122907586_1.jpg",
+    "description": ""
+  },
+  {
+    "id": 27,
+    "name": "Jogo de Toalhas de Banho 5 Peças 100% Algodão",
+    "price": "278,30",
+    "image": "https://m.media-amazon.com/images/I/71HyHh8grZL._AC_SY300_SX300_QL70_ML2_.jpg",
+    "description": "Conjunto de toalhas de banho (2 grandes, 2 de rosto, 1 piso) em algodão felpudo 100% fio penteado, alta maciez e absorção."
+  },
+  {
+    "id": 28,
+    "name": "Jogo de Pratos porcelana 12 Peças Roma - Branco",
+    "price": "311,02",
+    "image": "https://portobrasil.vtexassets.com/arquivos/ids/157576/61089R.jpg?v=637242844705630000",
+    "description": "Aparelho de jantar em faiança branca, 42 peças (6 lugares), compatível com micro-ondas e lava-louças【81†L40-L48】."
+  },
+  {
+    "id": 29,
+    "name": "Jogo de Talheres Tramontina Aço Inox 24 Peças",
+    "price": "120,00",
+    "image": "https://a-static.mlcdn.com.br/420x420/jogo-de-talheres-tramontina-inox-colher-faca-garfo-24-pecas-inox/ecomba/buzi-24/f023246dbc1bc2156f72e6fb2034b489.jpeg",
+    "description": "Jogo de talheres 24 peças em aço inox polido, inclui facas, garfos e colheres em design clássico e durável."
+  },
+  {
+    "id": 5,
+    "name": "Uma ida no mecânico pro fiesta",
+    "price": "1.000,00",
+    "image": "https://www.litoralcar.com.br/foto-resize/g/1168932/2225/ford-fiesta-flex-mec.-1.6-2013-21483021.webp",
+    "description": ""
+  },
+  {
+    "id": 30,
+    "name": "Conjunto 24 Potes Herméticos Empilháveis Tampa E Trava",
+    "price": "126,86",
+    "image": "https://a-static.mlcdn.com.br/420x420/conjunto-de-24-potes-hermeticos-decoteam-com-tampa-e-trava-croix/loibrasil/13403/bac79e2d7c9ab952797068b2b57e260b.jpeg",
+    "description": "Conjunto de 4 potes plásticos herméticos com tampas vedantes, ideais para armazenar e conservar alimentos na despensa ou geladeira."
+  },
+  {
+    "id": 31,
+    "name": "Mixer Mondial 350W 2 em 1",
+    "price": "180,41",
+    "image": "https://a-static.mlcdn.com.br/420x420/mixer-2-em-1-mondial-500w-vermelho-e-inox-m-10-2-velocidades/magazineluiza/236678000/65307241807833125cbcac46a331a839.jpg",
+    "description": "Mixer 2 em 1 de 350W com haste de imersão e copo liquidificador acoplável, portátil e prático para preparo de sopas, sucos e vitaminas."
+  },
+  {
+    "id": 32,
+    "name": "Ventilador de Teto 3 Pás Acrílica",
+    "price": "609,90",
+    "image": "https://cdn.leroymerlin.com.br/products/ventilador_de_teto_controle_remoto_nano_eco_3_pas_bivolt_92186024_6d19_600x600.jpg",
+    "description": "Ventilador de teto com 3 pás em acrílico, 130W de potência, controle remoto e módos de ventilação silenciosa."
+  },
+  {
+    "id": 7,
+    "name": "Uma placa de vídeo pro Noivo trabalhar melhor",
+    "price": "5.000,00",
+    "image": "https://images9.kabum.com.br/produtos/fotos/387449/placa-de-video-asus-nvidia-rog-strix-rtx-4090-edition-24-gb-gddr6x-argb-dlss-ray-tracing-90yv0iw0-m0nan00_1665170163_gg.jpg",
+    "description": ""
+  },
+  {
+    "id": 33,
+    "name": "Alexa Echo Pop",
+    "price": "379,00",
+    "image": "https://static.wixstatic.com/media/378b70_9cced3397eaa46e7b2377a81fef9122f~mv2.jpg/v1/fill/w_480,h_360,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/378b70_9cced3397eaa46e7b2377a81fef9122f~mv2.jpg",
+    "description": ""
+  },
+  {
+    "id": 34,
+    "name": "Ventilador de Mesa Mondial 40cm",
+    "price": "139,90",
+    "image": "https://m.magazineluiza.com.br/a-static/420x420/ventilador-de-mesa-mondial-super-power-40cm-6-pas-3-velocidades-vsp-40-ap/gazinshop/12750/0d44b41796ca3a83256ca782041bab7d.jpg",
+    "description": "Ventilador de mesa 40cm de diâmetro, 3 velocidades, inclinável, ideal para uso em escritório ou quarto, potente e silêncio."
+  },
+  {
+    "id": 35,
+    "name": "Jogo de Facas Inox 6 Peças Tramontina",
+    "price": "231,53",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQTfkG_Shna1wDS2FY2YHRtHl99y0b_3OtH0ACnKDBf-dkBbGQgFM5gFbmoff_cQv5yMjjB9uzSeH9UUHynW2YK-Exq1YKvqPPbcQinb-57lFouL1aQyR6ZNg",
+    "description": "Jogo de facas para cozinha (faca de chef, pão, carne e legumes) em aço inox com cabos ergonômicos resistentes, da Tramontina."
+  },
+  {
+    "id": 3,
+    "name": "Pague o casamento inteiro!",
+    "price": "20.000,00",
+    "image": "https://thumbs.dreamstime.com/b/chovendo-o-dinheiro-24560602.jpg",
+    "description": ""
+  },
+  {
+    "id": 36,
+    "name": "Ferro de Passar a Vapor Arno Ultragliss 1750W",
+    "price": "250,71",
+    "image": "https://m.media-amazon.com/images/I/61JAgtqvcEL._AC_SL1200_.jpg",
+    "description": "Ferro de passar 1750W com base Durilium Airglide, vapor contínuo de até 25 g/min e spray de água, remoção rápida de vincos."
+  },
+  {
+    "id": 37,
+    "name": "Sofá 4 Lugares Beny Com Chaise Esquerdo Linho Bege",
+    "price": "1.199,00",
+    "image": "https://product-hub-prd.madeiramadeira.com.br/666419306/images/26039380-d660-47e0-9dbd-1dacb9b488f52d05b95114da29565504b959db.png?width=700&canvas=1:1&bg-color=FFF",
+    "description": ""
+  },
+  {
+    "id": 38,
+    "name": "Kit Ferramentas WAP 110 Peças WF M110",
+    "price": "474,00",
+    "image": "https://lojawap.vtexassets.com/arquivos/ids/174307/7899831333493---WAP-WF-M110---00.png?v=638792170810670000",
+    "description": ""
+  },
+  {
+    "id": 92,
+    "name": "Ajude na dívida do casamento",
+    "price": "0,00",
+    "customPrice": true,
+    "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80",
+    "description": ""
+  },
+  {
+    "id": 39,
+    "name": "Pipoqueira Mallory Mickey c/ 2 baldes",
+    "price": "207,66",
+    "image": "https://cdn-assets-legacy.casar.com/thumb/208x208x1/dados/sitenoivos/wed972927/presentes/ik0HW_1768177352.jpeg",
+    "description": ""
+  },
+  {
+    "id": 40,
+    "name": "Churrasqueira elétrica Philco",
+    "price": "236,62",
+    "image": "https://philco.vtexassets.com/arquivos/ids/195786/Churrasqueira-Eletrica-PCQ1500D_--29-.jpg?v=638711593940570000",
+    "description": ""
+  },
+  {
+    "id": 41,
+    "name": "Espremedor de Laranja",
+    "price": "238,81",
+    "image": "https://dleyjack4mlu0.cloudfront.net/Custom/Content/Products/14/46/1446_espremedor-de-frutas-mondial-cozinha-e-10-eletrico-inox-250w_m1_637387199500032283.webp",
+    "description": ""
+  },
+  {
+    "id": 42,
+    "name": "Grill Britânia Multi Grill",
+    "price": "259,58",
+    "image": "https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/multi-grill-britania-1200w-placa-removivel-coletora-de-gordura/magazineluiza/218920500/356f53aca256c37258ed46daa5428462.jpg",
+    "description": ""
+  },
+  {
+    "id": 43,
+    "name": "Conjunto para sobremesa Planet em prata 13 peças",
+    "price": "265,66",
+    "image": "https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/conjunto-13-pecas-para-sobremesa-de-prata-planet-23cm-rojemac/madeiramadeira-openapi/316828/dacc789aaaa42290590260c4d48bfa2e.jpeg",
+    "description": ""
+  },
+  {
+    "id": 44,
+    "name": "Panela de pressão elétrica Electrolux 6L",
+    "price": "446,47",
+    "image": "https://i.zst.com.br/thumbs/12/c/12/121343084.jpg",
+    "description": ""
+  },
+  {
+    "id": 45,
+    "name": "Purificador de água",
+    "price": "513,73",
+    "image": "https://d1likr6vgtxkkw.cloudfront.net/Custom/Content/Products/16/59/16598_purificador-de-agua-efficient-8l-pe15p-bivolt-preto-electrolux_z1_638676134083318556.webp",
+    "description": ""
+  },
+  {
+    "id": 46,
+    "name": "Guarda-roupas",
+    "price": "1.461,95",
+    "image": "https://imgs.casasbahia.com.br/1568874334/1xg.jpg?imwidth=500",
+    "description": ""
+  },
+  {
+    "id": 47,
+    "name": "Forno a Gás de Embutir",
+    "price": "1.868,24",
+    "image": "https://m.media-amazon.com/images/I/51JdvXXHcYL.jpg",
+    "description": ""
+  },
+  {
+    "id": 48,
+    "name": "Adega de Vinhos",
+    "price": "1.504,51",
+    "image": "https://m.media-amazon.com/images/I/41g2PlQcSvL._AC_SX342_SY445_QL70_ML2_.jpg",
+    "description": ""
+  },
+  {
+    "id": 49,
+    "name": "Jogo de Xícaras para Café com Pires - 12 peças",
+    "price": "293,96",
+    "image": "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/j/o/jogo-de-xicaras-de-cha-com-pires-royal-havan-casa_1059553.jpg",
+    "description": ""
+  },
+  {
+    "id": 50,
+    "name": "Armário de Cozinha",
+    "price": "1.648,43",
+    "image": "https://images.tcdn.com.br/img/img_prod/571683/armario_de_cozinha_modulada_completa_reta_8_pecas_3_50m_215_botanic_kappesberg_36526_1_6a8324f3eda418a3aa16729193be4c0d.jpg",
+    "description": ""
+  },
+  {
+    "id": 51,
+    "name": "Aparador Muse",
+    "price": "444,51",
+    "image": "https://www.muma.com.br/media/iopt/catalog/product/cache/4c4278ec3c53112f90b46bb15500dc78/a/p/aparador-massa.webp",
+    "description": ""
+  },
+  {
+    "id": 52,
+    "name": "Conjunto de Baixelas Tramontina",
+    "price": "155,42",
+    "image": "https://images.tcdn.com.br/img/img_prod/361962/1678_1_20260309172742.jpg",
+    "description": ""
+  },
+  {
+    "id": 53,
+    "name": "Bule de chá",
+    "price": "77,71",
+    "image": "https://img.camicado.com.br/item/100413398/zoom/1.jpg",
+    "description": ""
+  },
+  {
+    "id": 54,
+    "name": "Conjunto de Potes Vidro",
+    "price": "95,74",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_617954-MLB74829978119_022024-O.webp",
+    "description": ""
+  },
+  {
+    "id": 55,
+    "name": "Escorredor de Louças Aço Inoxidável",
+    "price": "130,45",
+    "image": "https://m.media-amazon.com/images/I/71DDQxrJZzL._AC_UF350,350_QL80_.jpg",
+    "description": ""
+  },
+  {
+    "id": 56,
+    "name": "Formas para Bolos",
+    "price": "169,58",
+    "image": "https://m.media-amazon.com/images/I/51RKjJvDP8L._AC_SY300_SX300_QL70_ML2_.jpg",
+    "description": ""
+  },
+  {
+    "id": 57,
+    "name": "Jogo de Lençol Casal",
+    "price": "125,27",
+    "image": "https://images.tcdn.com.br/img/img_prod/636855/kit_jogo_de_lencol_casal_188x138x30_cama_box_algodao_percal_attuale_16062_1_77e84d923c1e59b2a663240a5d459f0f.jpg",
+    "description": ""
+  },
+  {
+    "id": 58,
+    "name": "Jogo para sobremesa 12 peças",
+    "price": "99,37",
+    "image": "https://archives.lojasnossolar.com.br/images/nossolar/sku/16780/252177_237162_800.webp",
+    "description": ""
+  },
+  {
+    "id": 59,
+    "name": "Kit de travessas porcelana",
+    "price": "181,33",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_757698-MLB89107204656_082025-O.webp",
+    "description": ""
+  },
+  {
+    "id": 60,
+    "name": "Kit Jogo Americano",
+    "price": "145,06",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRD8H9srHPjg5PxLAq5m1aI0DEEyH05d8DEw&s",
+    "description": ""
+  },
+  {
+    "id": 61,
+    "name": "Lava Louças em Inox 14 Serviços",
+    "price": "4.301,82",
+    "image": "https://73035.cdn.simplo7.net/static/73035/sku/12520014844.jpg",
+    "description": ""
+  },
+  {
+    "id": 62,
+    "name": "Ferro de Passar a Vapor",
+    "price": "124,90",
+    "image": "https://lojasbecker.vtexassets.com/arquivos/ids/3287164/1-f-32-ferro-de-passar-roupas-azul-frent.jpg?v=638615746649300000",
+    "description": ""
+  },
+  {
+    "id": 63,
+    "name": "Organizador De Gaveta Porta Talheres Com Extensor Cozinha",
+    "price": "67,90",
+    "image": "https://cdn.awsli.com.br/1866/1866589/produto/995898479779eded8d.jpg",
+    "description": ""
+  },
+  {
+    "id": 64,
+    "name": "Rack para Tv até 80 Polegadas 180cm 3 Portas Retrô Multimóveis Mp1103 Off White/Madeirado",
+    "price": "363,36",
+    "image": "https://m.media-amazon.com/images/I/61M-mgzlsKL._AC_SX679_.jpg",
+    "description": ""
+  },
+  {
+    "id": 65,
+    "name": "Aparelho de Jantar e Chá 20 Peças Oxford de Cerâmica Bege e Marrom Redondo Unni Brisa",
+    "price": "229,41",
+    "image": "https://a-static.mlcdn.com.br/450pxx450px/aparelho-de-jantar-e-cha-20-pecas-oxford-de-ceramica-bege-e-marrom-redondo-unni-brisa/magazineluiza/237715800/a16542ceb053e172fc1f4df54f8347da.jpg",
+    "description": ""
+  },
+  {
+    "id": 66,
+    "name": "Bomboniere",
+    "price": "80,00",
+    "image": "https://artegift.fbitsstatic.net/img/p/bomboniere-oriental-mini-73037/260144-3.jpg?w=825&h=825&v=no-value",
+    "description": ""
+  },
+  {
+    "id": 67,
+    "name": "Tábua De Passar Roupas Linha Flow",
+    "price": "373,26",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-824i1-me649820i7sx63@resize_w450_nl.webp",
+    "description": ""
+  },
+  {
+    "id": 68,
+    "name": "Varal De Parede Retrátil Secreto Mágico",
+    "price": "119,90",
+    "image": "https://m.media-amazon.com/images/I/31e2L2R2wqL._AC_.jpg",
+    "description": ""
+  },
+  {
+    "id": 71,
+    "name": "Cabeceira Alta Cama De King Box Kit 10 Módulos",
+    "price": "444,51",
+    "image": "https://product-hub-prd.madeiramadeira.com.br/781337161/images/5f6affcb-0713-4673-b721-8a8e66be18b8lickhomemalluestofadoslado.jpg?width=700&canvas=1:1&bg-color=FFF",
+    "description": ""
+  },
+  {
+    "id": 73,
+    "name": "Mesa Escrivaninha para Escritório em L Estilo Industrial 100% MDF",
+    "price": "608,30",
+    "image": "https://storage.panoverse-cdn.com.br/lojadallacosta.img/produto/341/mesa-para-escritorio-100-mdf-industrial-freijo-preto-dalla-costa-1804-large.jpg",
+    "description": ""
+  },
+  {
+    "id": 74,
+    "name": "Primeiro lugar na fila do buffet",
+    "price": "67,33",
+    "image": "https://bordalo.observador.pt/v2/q:60/rs:fill:980/c:770:433:nowe:0:0/plain/https://s3.observador.pt/wp-content/uploads/2016/09/29124952/meme_770x433_acf_cropped.jpg",
+    "description": ""
+  },
+  {
+    "id": 69,
+    "name": "Cama Box Baú Airtech King",
+    "price": "2.799,90",
+    "image": "https://i.imgur.com/RdvygGz.png",
+    "description": ""
+  },
+  {
+    "id": 75,
+    "name": "Dancinha do TikTok com o casal",
+    "price": "107,00",
+    "image": "https://play-lh.googleusercontent.com/BdahGuzgujz2DiIKDq60L-6TYQKdDnI1ijYCvcyY3w7hdVFRh_necQpKTgafimhH5Mc",
+    "description": ""
+  },
+  {
+    "id": 72,
+    "name": "Cooktop a Gás Philco 5 Queimadores Cook Chef Bivolt",
+    "price": "424,76",
+    "image": "https://m.media-amazon.com/images/I/51v90dxFzPL._AC_SX679_.jpg",
+    "description": ""
+  },
+  {
+    "id": 76,
+    "name": "Ortopedista pro diorgines",
+    "price": "724,76",
+    "image": "/diorgines.jpeg",
+    "description": ""
+  },
+  {
+    "id": 70,
+    "name": "Kit 2 Mesas de Cabeceira Retrô com Gaveta Channel",
+    "price": "449,90",
+    "image": "https://m.media-amazon.com/images/I/51EAZhHuPmL._AC_SX679_.jpg",
+    "description": ""
+  },
+  {
+    "id": 77,
+    "name": "Jogar o buquê na sua direção",
+    "price": "112,84",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUDW2Ly79XwMVRySUuCfsPRxonfbddJZn19Q&s",
+    "description": ""
+  }
 ]
