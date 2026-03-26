@@ -1,5 +1,20 @@
 [
  {
+   "id": 91,
+   "name": "Ajude nas parcelas do apê",
+   "price": "1.200,00",
+   "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80",
+   "description": ""
+ },
+ {
+   "id": 92,
+   "name": "Ajude na dívida do casamento",
+   "price": "0,00",
+   "customPrice": true,
+   "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80",
+   "description": ""
+ },
+ {
    "id": 1,
    "name": "Primeira parcela do PS5 pra jogar GTA VI",
    "price": "300,00",
@@ -9,7 +24,7 @@
  {
    "id": 2,
    "name": "Ajude a noiva ver o show de algum integrante do One Direction",
-   "price": "500,00",
+   "price": "1.000,00",
    "image": "/rawane_harry.jpg",
    "description": ""
  },
@@ -43,17 +58,23 @@
  },
  {
    "id": 7,
-   "name": "Uma placa de vídeo pro Gustavo trabalhar melhor",
+   "name": "Uma placa de vídeo pro Noivo trabalhar melhor",
    "price": "5.000,00",
    "image": "https://images9.kabum.com.br/produtos/fotos/387449/placa-de-video-asus-nvidia-rog-strix-rtx-4090-edition-24-gb-gddr6x-argb-dlss-ray-tracing-90yv0iw0-m0nan00_1665170163_gg.jpg",
    "description": ""
  },
  {
    "id": 8,
-   "name": "Um kit da rare beauty pra Rawane estudar melhor",
-   "price": "",
+   "name": "Um kit da rare beauty pra Noiva estudar melhor",
+   "price": "400,00",
    "image": "https://www.sephora.com.br/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dweb24a2d8/images/Color%20BR/RARE%20BEAUTY/2025/kit_trio/840122907586_1.jpg",
    "description": ""
+ },
+ {
+  "id": 90,
+  "name": "Lua de mel no le monde",
+  "price": "574,23",
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT66KQYJLwCIIqOC-z9dVBTcSAj9DFsQyFeQ&s",
  },
  {
    "id": 9,

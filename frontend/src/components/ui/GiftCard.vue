@@ -5,7 +5,19 @@
     </div>
     <div class="gift-content">
       <h3 class="gift-name">{{ gift.name }}</h3>
-      <p class="gift-price">{{ formatCurrency(gift.price) }}</p>
+
+      <div v-if="gift.customPrice" class="custom-price-wrapper">
+        <span class="custom-price-prefix">R$</span>
+        <input
+          v-model="customAmount"
+          type="number"
+          min="1"
+          step="1"
+          placeholder="0"
+          class="custom-price-input"
+        />
+      </div>
+      <p v-else class="gift-price">{{ formatCurrency(gift.price) }}</p>
 
       <div class="gift-actions">
         <button
@@ -21,6 +33,7 @@
           @click="handleAdd"
           class="btn-quantity btn-add"
           :class="{ 'btn-add--has-qty': quantity > 0 }"
+          :disabled="gift.customPrice && (!customAmount || customAmount <= 0)"
           :aria-label="quantity > 0 ? 'Adicionar mais' : 'Adicionar ao carrinho'"
         >+</button>
       </div>
@@ -29,6 +42,8 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
 const props = defineProps({
   gift: { type: Object, required: true },
   quantity: { type: Number, default: 0 },
@@ -36,7 +51,17 @@ const props = defineProps({
 
 const emit = defineEmits(['add', 'remove']);
 
-const handleAdd = () => emit('add', props.gift);
+const customAmount = ref('');
+
+const handleAdd = () => {
+  if (props.gift.customPrice) {
+    const amount = parseFloat(customAmount.value);
+    if (!amount || amount <= 0) return;
+    emit('add', { ...props.gift, price: amount });
+  } else {
+    emit('add', props.gift);
+  }
+};
 const handleRemove = () => emit('remove', props.gift.id);
 
 const formatCurrency = (value) => {
@@ -109,6 +134,41 @@ const formatCurrency = (value) => {
   color: var(--navy-accent);
   margin: 0;
   letter-spacing: -0.2px;
+}
+
+.custom-price-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1.5px solid var(--navy-accent);
+  padding-bottom: 2px;
+}
+
+.custom-price-prefix {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  color: var(--navy-accent);
+}
+
+.custom-price-input {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  color: var(--navy-accent);
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  -moz-appearance: textfield;
+}
+
+.custom-price-input::-webkit-outer-spin-button,
+.custom-price-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.btn-quantity:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }
 
 /* ===== AÇÕES ===== */
