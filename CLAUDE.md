@@ -1,6 +1,6 @@
 # CLAUDE.md — Site de Casamento Rawane & Gustavo
 
-Referência completa do projeto para uso em todas as sessões.
+Referência completa do projeto para uso em todas as sessões
 stuff
 
 ## Contexto do Projeto
