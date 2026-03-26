@@ -33,7 +33,7 @@ const logoImg    = getPublicPath('logo.png');
 
       <p class="closing-love reveal reveal-delay-4">Com amor,</p>
       <img :src="logoImg" alt="Rawane e Gustavo" class="closing-logo reveal reveal-delay-5" />
-      <p class="closing-date reveal reveal-delay-6">06 &bull; 05 &bull; 2026</p>
+      <p class="closing-date reveal reveal-delay-6">16 &bull; 05 &bull; 2026</p>
     </div>
   </section>
 </template>
