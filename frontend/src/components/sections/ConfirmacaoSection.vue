@@ -50,12 +50,22 @@ const emit = defineEmits(["open-rsvp"]);
         >, mas se vier só à cerimônia ficamos igualmente felizes em te ver lá.
       </p>
 
-      <div class="confirmacao-divider reveal reveal-delay-4">
+      <div class="confirmacao-deadline reveal reveal-delay-4">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <span>Confirme até <strong>05 de maio</strong></span>
+      </div>
+
+      <div class="confirmacao-divider reveal reveal-delay-5">
         <span></span><span class="sep-dot">✦</span><span></span>
       </div>
 
       <button
-        class="confirmacao-btn reveal reveal-delay-5"
+        class="confirmacao-btn reveal reveal-delay-6"
         @click="emit('open-rsvp')"
       >
         <svg
@@ -143,6 +153,30 @@ const emit = defineEmits(["open-rsvp"]);
   line-height: 1.8;
   font-weight: 300;
   margin: 0;
+}
+
+.confirmacao-deadline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius-full);
+  background: rgba(180, 60, 60, 0.08);
+  border: 1px solid rgba(180, 60, 60, 0.25);
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
+  color: #9b2c2c;
+  letter-spacing: 0.04em;
+}
+
+.confirmacao-deadline svg {
+  flex-shrink: 0;
+  stroke: #9b2c2c;
+  opacity: 0.8;
+}
+
+.confirmacao-deadline strong {
+  font-weight: 700;
 }
 
 .confirmacao-divider {
