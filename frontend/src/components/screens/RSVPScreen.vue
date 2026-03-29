@@ -309,7 +309,7 @@ const fmt = (v) =>
           </p>
 
           <button class="btn-welcome" @click="goNext">
-            Confirmar minha presença
+            Próximo: Confirmar presença 
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <path
                 d="M9 18l6-6-6-6"
@@ -374,7 +374,7 @@ const fmt = (v) =>
             </div>
 
             <div class="field">
-              <label class="field-label">Adultos <span class="optional">(12+ anos)</span></label>
+              <label class="field-label">Adultos <span class="optional">(12+ anos)</span> <span class="price-hint">R$ 107,00</span></label>
               <div class="guests-counter">
                 <button
                   class="counter-btn"
@@ -403,7 +403,7 @@ const fmt = (v) =>
               </label>
               <div class="children-rows">
                 <div class="children-row">
-                  <span class="children-range">0 – 4 anos</span>
+                  <span class="children-range">0 – 4 anos <span class="price-hint">{{ priceChild0to4 === 0 ? 'gratuito' : fmt(priceChild0to4) }}</span></span>
                   <div class="guests-counter guests-counter--sm">
                     <button
                       class="counter-btn"
@@ -423,7 +423,7 @@ const fmt = (v) =>
                   </div>
                 </div>
                 <div class="children-row">
-                  <span class="children-range">5 – 10 anos</span>
+                  <span class="children-range">5 – 10 anos <span class="price-hint">{{ priceChild5to10 === 0 ? 'gratuito' : fmt(priceChild5to10) }}</span></span>
                   <div class="guests-counter guests-counter--sm">
                     <button class="counter-btn" @click="decrementChildren10" :disabled="childrenUnder10 <= 0">−</button>
                     <span class="counter-value">{{ childrenUnder10 }}</span>
@@ -431,7 +431,7 @@ const fmt = (v) =>
                   </div>
                 </div>
                 <div class="children-row">
-                  <span class="children-range">11 anos</span>
+                  <span class="children-range">11 anos <span class="price-hint">{{ priceChild11 === 0 ? 'gratuito' : fmt(priceChild11) }}</span></span>
                   <div class="guests-counter guests-counter--sm">
                     <button class="counter-btn" @click="decrementChildren11" :disabled="childrenAge11 <= 0">−</button>
                     <span class="counter-value">{{ childrenAge11 }}</span>
@@ -1230,6 +1230,14 @@ const fmt = (v) =>
   font-size: clamp(0.82rem, 2.2vw, 0.92rem);
   color: var(--navy-dark);
   font-weight: 400;
+}
+
+.price-hint {
+  font-size: 0.7em;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
 }
 
 .guests-counter--sm {
