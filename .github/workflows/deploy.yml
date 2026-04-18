@@ -43,7 +43,7 @@ jobs:
           VITE_PIX_NAME: ${{ secrets.VITE_PIX_NAME }}
           VITE_PIX_PRICE_CHILD_0_4: ${{ secrets.VITE_PIX_PRICE_CHILD_0_4 }}
           VITE_PIX_PRICE_CHILD_11: ${{ secrets.VITE_PIX_PRICE_CHILD_11 }}
-          VITE_PIX_PRICE_CHILD_4_8: ${{ secrets.VITE_PIX_PRICE_CHILD_4_8 }}
+          VITE_PIX_PRICE_CHILD_5_10: ${{ secrets.VITE_PIX_PRICE_CHILD_5_10 }}
           VITE_PIX_PRICE_PER_PERSON: ${{ secrets.VITE_PIX_PRICE_PER_PERSON }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
