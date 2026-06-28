@@ -185,11 +185,11 @@ const scrollToNext = () => {
 }
 
 .cta-button:hover {
-  background: rgba(197, 223, 245, 0.15);
+  background: rgba(242, 230, 214, 0.15);
   border-color: var(--ice-blue);
   color: var(--ice-blue);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(197, 223, 245, 0.2);
+  box-shadow: 0 8px 24px rgba(242, 230, 214, 0.2);
 }
 
 /* ===== MINI COUNTDOWN ===== */

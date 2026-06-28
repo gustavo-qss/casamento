@@ -79,9 +79,9 @@ onMounted(() => {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(6, 14, 28, 0.25) 0%,
-    rgba(6, 14, 28, 0.55) 60%,
-    rgba(6, 14, 28, 0.75) 100%
+    rgba(42, 24, 18, 0.25) 0%,
+    rgba(42, 24, 18, 0.55) 60%,
+    rgba(42, 24, 18, 0.75) 100%
   );
 }
 
@@ -122,7 +122,7 @@ onMounted(() => {
   width: clamp(180px, 52vw, 320px);
   height: auto;
   /* Converte qualquer cor → branco puro */
-  filter: brightness(0) invert(1) drop-shadow(0 2px 20px rgba(6, 14, 28, 0.5));
+  filter: brightness(0) invert(1) drop-shadow(0 2px 20px rgba(42, 24, 18, 0.5));
   display: block;
 }
 

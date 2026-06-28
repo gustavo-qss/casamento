@@ -30,7 +30,29 @@
       </div>
     </Transition>
 
+    <!-- Moldura de madeira entalhada (com pregos de ferro e luz de vela) -->
+    <div class="story-frame" aria-hidden="true"></div>
+
     <div class="story-content">
+      <span class="story-flame" aria-hidden="true">
+        <svg viewBox="0 0 24 32" width="20" height="26">
+          <path
+            d="M12 1C12 1 4 9 4 17a8 8 0 0 0 16 0c0-3-2-5.5-3.5-8C15 12 14 13 13 12c1.5-4-1-9-1-11z"
+            fill="url(#flameGrad)"
+          />
+          <path
+            d="M12 12c0 0-3 3-3 6a3 3 0 0 0 6 0c0-2-1.5-3.5-3-6z"
+            fill="#fff6df"
+          />
+          <defs>
+            <linearGradient id="flameGrad" x1="12" y1="1" x2="12" y2="25" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#f6c453" />
+              <stop offset="0.55" stop-color="#e3a94c" />
+              <stop offset="1" stop-color="#b85f35" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
       <p class="story-text fade-in">{{ currentStory.text }}</p>
     </div>
 
@@ -141,7 +163,7 @@ const handleBack = () => {
 /* Desktop: Container estilo Instagram (celular centralizado) */
 @media (min-width: 769px) {
   .stories-screen {
-    background: radial-gradient(ellipse at center, #1e1e2e 0%, #0a0a12 100%);
+    background: radial-gradient(ellipse at center, #2a1d16 0%, #140d09 100%);
   }
 
   .stories-screen::before {
@@ -155,10 +177,10 @@ const handleBack = () => {
     max-height: 800px;
     background-color: var(--navy-deep);
     border-radius: 28px;
-    border: 1px solid rgba(197, 223, 245, 0.12);
+    border: 1px solid rgba(242, 230, 214, 0.12);
     box-shadow:
       0 12px 48px rgba(0, 0, 0, 0.7),
-      0 0 0 1px rgba(197, 223, 245, 0.05) inset;
+      0 0 0 1px rgba(242, 230, 214, 0.05) inset;
     z-index: 0;
   }
 
@@ -172,6 +194,19 @@ const handleBack = () => {
     transform: translate(-50%, -50%);
     border-radius: 24px;
     overflow: hidden;
+  }
+
+  /* Moldura acompanha o "celular" de 420px no desktop */
+  .story-frame {
+    width: 420px;
+    height: 90vh;
+    max-height: 800px;
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 24px;
+    border-width: 16px;
   }
 
   .progress-bars {
@@ -233,6 +268,42 @@ const handleBack = () => {
   z-index: 1;
 }
 
+/* ===== MOLDURA DE MADEIRA (sobre a foto) ===== */
+.story-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  border-style: solid;
+  border-width: clamp(13px, 4.2vw, 20px);
+  border-color: #5c3a20;
+  /* veio de madeira nas bordas */
+  border-image: var(--wood-grain) 30 / clamp(13px, 4.2vw, 20px) / 0 repeat;
+  box-shadow:
+    inset 0 0 0 2px var(--wood-deep),
+    inset 0 0 0 4px rgba(0, 0, 0, 0.28),
+    inset 0 0 38px rgba(0, 0, 0, 0.55),
+    inset 0 0 95px rgba(227, 169, 76, 0.18),  /* brilho de vela */
+    0 0 0 2px var(--wood-deep),
+    0 14px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* pregos de ferro nos cantos superiores da moldura */
+.story-frame::before,
+.story-frame::after {
+  content: "";
+  position: absolute;
+  top: -11px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #837a6f, var(--iron) 70%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  z-index: 6;
+}
+.story-frame::before { left: -11px; }
+.story-frame::after  { right: -11px; }
+
 /* Content */
 .story-content {
   position: absolute;
@@ -245,6 +316,16 @@ const handleBack = () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* ===== CHAMA DE VELA (ornamento do texto) ===== */
+.story-flame {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  filter: drop-shadow(0 0 10px rgba(227, 169, 76, 0.75))
+          drop-shadow(0 0 22px rgba(184, 95, 53, 0.5));
+  transform-origin: 50% 90%;
+  animation: candleFlicker 2.4s ease-in-out infinite;
 }
 
 .story-text {
@@ -261,7 +342,7 @@ const handleBack = () => {
   background: none;
   backdrop-filter: none;
   border-radius: 0;
-  border-top: 1px solid rgba(197, 223, 245, 0.4);
+  border-top: 1px solid rgba(242, 230, 214, 0.4);
   text-shadow:
     0 2px 20px rgba(0, 0, 0, 0.9),
     0 1px 4px rgba(0, 0, 0, 0.9);

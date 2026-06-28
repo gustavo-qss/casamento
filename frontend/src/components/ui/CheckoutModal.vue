@@ -236,7 +236,7 @@ const fmt = (v) =>
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(6, 14, 28, 0.75);
+  background: rgba(42, 24, 18, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,7 +256,7 @@ const fmt = (v) =>
   overflow-y: auto;
   position: relative;
   animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 24px 64px rgba(6, 14, 28, 0.4);
+  box-shadow: 0 24px 64px rgba(42, 24, 18, 0.4);
   transition: background 0.45s ease;
 }
 
@@ -429,7 +429,7 @@ const fmt = (v) =>
 .btn-primary:hover:not(:disabled) {
   background: var(--navy-mid);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(13, 31, 60, 0.35);
+  box-shadow: 0 6px 20px rgba(74, 42, 28, 0.35);
 }
 .btn-primary:disabled { opacity: 0.38; cursor: not-allowed; }
 
@@ -484,7 +484,7 @@ const fmt = (v) =>
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1.5px solid rgba(13, 31, 60, 0.2);
+  border-bottom: 1.5px solid rgba(74, 42, 28, 0.2);
   padding: var(--spacing-xs) 0;
   font-family: var(--font-body);
   font-size: var(--text-small);
@@ -498,7 +498,7 @@ const fmt = (v) =>
 .field-textarea {
   width: 100%;
   background: rgba(255, 255, 255, 0.65);
-  border: 1.5px solid rgba(13, 31, 60, 0.15);
+  border: 1.5px solid rgba(74, 42, 28, 0.15);
   border-radius: var(--radius-sm);
   padding: var(--spacing-sm);
   font-family: var(--font-body);
@@ -528,7 +528,7 @@ const fmt = (v) =>
   border-radius: var(--radius-md);
   overflow: hidden;
   margin-bottom: var(--spacing-lg);
-  box-shadow: 0 4px 24px rgba(13, 31, 60, 0.12);
+  box-shadow: 0 4px 24px rgba(74, 42, 28, 0.12);
 }
 
 .preview-in-enter-active { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -538,7 +538,7 @@ const fmt = (v) =>
 
 .card-ribbon {
   background: var(--navy-dark);
-  color: rgba(197, 223, 245, 0.6);
+  color: rgba(242, 230, 214, 0.6);
   font-family: var(--font-body);
   font-size: 0.58rem;
   letter-spacing: 4px;
@@ -606,7 +606,7 @@ const fmt = (v) =>
 }
 .btn-skip {
   background: transparent;
-  border: 1px solid rgba(13, 31, 60, 0.2);
+  border: 1px solid rgba(74, 42, 28, 0.2);
   color: var(--text-muted);
   font-family: var(--font-body);
   font-size: 0.78rem;
@@ -653,7 +653,7 @@ const fmt = (v) =>
 .loader-spinner {
   position: absolute;
   inset: 0;
-  border: 2px solid rgba(197, 223, 245, 0.15);
+  border: 2px solid rgba(242, 230, 214, 0.15);
   border-top-color: var(--ice-blue);
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -669,7 +669,7 @@ const fmt = (v) =>
   font-family: var(--font-body);
   font-size: 0.8rem;
   letter-spacing: 1.5px;
-  color: rgba(197, 223, 245, 0.55);
+  color: rgba(242, 230, 214, 0.55);
   text-transform: uppercase;
   margin: 0;
   animation: fadeIn 0.3s ease-out;
@@ -702,7 +702,7 @@ const fmt = (v) =>
 .error-msg {
   font-family: var(--font-body);
   font-size: var(--text-small);
-  color: rgba(197, 223, 245, 0.7);
+  color: rgba(242, 230, 214, 0.7);
   margin: 0 0 var(--spacing-lg);
 }
 .error-actions {
@@ -728,13 +728,13 @@ const fmt = (v) =>
 .btn-cancel {
   background: transparent;
   border: none;
-  color: rgba(197, 223, 245, 0.4);
+  color: rgba(242, 230, 214, 0.4);
   font-family: var(--font-body);
   font-size: 0.78rem;
   cursor: pointer;
   transition: color var(--transition-fast);
 }
-.btn-cancel:hover { color: rgba(197, 223, 245, 0.7); }
+.btn-cancel:hover { color: rgba(242, 230, 214, 0.7); }
 
 /* ── Keyframes ── */
 @keyframes fadeIn {

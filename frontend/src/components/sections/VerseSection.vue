@@ -13,15 +13,15 @@ useScrollReveal(section);
       <!-- Ornamento topo — dentro do flex, sem position absolute -->
       <div class="ornament-wrap reveal reveal-fade">
         <svg viewBox="0 0 280 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="ornament-svg">
-          <path d="M140 24 C122 8  90 4  62 16 C44 24  36 40  52 44 C68 48  88 32 108 28 C124 25 134 27 140 24Z" fill="#9098c7" opacity="0.2"/>
-          <path d="M140 24 C158 8 190 4 218 16 C236 24 244 40 228 44 C212 48 192 32 172 28 C156 25 146 27 140 24Z" fill="#9098c7" opacity="0.2"/>
-          <circle cx="140" cy="24" r="3.5" fill="#9098c7" opacity="0.4"/>
-          <circle cx="112" cy="22" r="2"   fill="#9098c7" opacity="0.25"/>
-          <circle cx="168" cy="22" r="2"   fill="#9098c7" opacity="0.25"/>
-          <line x1="62"  y1="24" x2="28"  y2="24" stroke="#9098c7" stroke-width="0.8" opacity="0.3"/>
-          <line x1="218" y1="24" x2="252" y2="24" stroke="#9098c7" stroke-width="0.8" opacity="0.3"/>
-          <circle cx="28"  cy="24" r="1.5" fill="#9098c7" opacity="0.25"/>
-          <circle cx="252" cy="24" r="1.5" fill="#9098c7" opacity="0.25"/>
+          <path d="M140 24 C122 8  90 4  62 16 C44 24  36 40  52 44 C68 48  88 32 108 28 C124 25 134 27 140 24Z" fill="#b06a44" opacity="0.2"/>
+          <path d="M140 24 C158 8 190 4 218 16 C236 24 244 40 228 44 C212 48 192 32 172 28 C156 25 146 27 140 24Z" fill="#b06a44" opacity="0.2"/>
+          <circle cx="140" cy="24" r="3.5" fill="#b06a44" opacity="0.4"/>
+          <circle cx="112" cy="22" r="2"   fill="#b06a44" opacity="0.25"/>
+          <circle cx="168" cy="22" r="2"   fill="#b06a44" opacity="0.25"/>
+          <line x1="62"  y1="24" x2="28"  y2="24" stroke="#b06a44" stroke-width="0.8" opacity="0.3"/>
+          <line x1="218" y1="24" x2="252" y2="24" stroke="#b06a44" stroke-width="0.8" opacity="0.3"/>
+          <circle cx="28"  cy="24" r="1.5" fill="#b06a44" opacity="0.25"/>
+          <circle cx="252" cy="24" r="1.5" fill="#b06a44" opacity="0.25"/>
         </svg>
       </div>
 
@@ -44,15 +44,15 @@ useScrollReveal(section);
       <!-- Ornamento base — espelhado verticalmente via CSS -->
       <div class="ornament-wrap ornament-flip reveal reveal-fade">
         <svg viewBox="0 0 280 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="ornament-svg">
-          <path d="M140 24 C122 8  90 4  62 16 C44 24  36 40  52 44 C68 48  88 32 108 28 C124 25 134 27 140 24Z" fill="#9098c7" opacity="0.2"/>
-          <path d="M140 24 C158 8 190 4 218 16 C236 24 244 40 228 44 C212 48 192 32 172 28 C156 25 146 27 140 24Z" fill="#9098c7" opacity="0.2"/>
-          <circle cx="140" cy="24" r="3.5" fill="#9098c7" opacity="0.4"/>
-          <circle cx="112" cy="22" r="2"   fill="#9098c7" opacity="0.25"/>
-          <circle cx="168" cy="22" r="2"   fill="#9098c7" opacity="0.25"/>
-          <line x1="62"  y1="24" x2="28"  y2="24" stroke="#9098c7" stroke-width="0.8" opacity="0.3"/>
-          <line x1="218" y1="24" x2="252" y2="24" stroke="#9098c7" stroke-width="0.8" opacity="0.3"/>
-          <circle cx="28"  cy="24" r="1.5" fill="#9098c7" opacity="0.25"/>
-          <circle cx="252" cy="24" r="1.5" fill="#9098c7" opacity="0.25"/>
+          <path d="M140 24 C122 8  90 4  62 16 C44 24  36 40  52 44 C68 48  88 32 108 28 C124 25 134 27 140 24Z" fill="#b06a44" opacity="0.2"/>
+          <path d="M140 24 C158 8 190 4 218 16 C236 24 244 40 228 44 C212 48 192 32 172 28 C156 25 146 27 140 24Z" fill="#b06a44" opacity="0.2"/>
+          <circle cx="140" cy="24" r="3.5" fill="#b06a44" opacity="0.4"/>
+          <circle cx="112" cy="22" r="2"   fill="#b06a44" opacity="0.25"/>
+          <circle cx="168" cy="22" r="2"   fill="#b06a44" opacity="0.25"/>
+          <line x1="62"  y1="24" x2="28"  y2="24" stroke="#b06a44" stroke-width="0.8" opacity="0.3"/>
+          <line x1="218" y1="24" x2="252" y2="24" stroke="#b06a44" stroke-width="0.8" opacity="0.3"/>
+          <circle cx="28"  cy="24" r="1.5" fill="#b06a44" opacity="0.25"/>
+          <circle cx="252" cy="24" r="1.5" fill="#b06a44" opacity="0.25"/>
         </svg>
       </div>
 

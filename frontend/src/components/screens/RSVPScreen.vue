@@ -289,9 +289,9 @@ const fmt = (v) =>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path
                 d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                stroke="rgba(197,223,245,0.6)"
+                stroke="rgba(242, 230, 214,0.6)"
                 stroke-width="1.5"
-                fill="rgba(197,223,245,0.08)"
+                fill="rgba(242, 230, 214,0.08)"
               />
             </svg>
             <span class="deco-line"></span>
@@ -763,7 +763,7 @@ const fmt = (v) =>
 .rsvp-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(6, 14, 28, 0.82);
+  background: rgba(42, 24, 18, 0.82);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -784,7 +784,7 @@ const fmt = (v) =>
   overflow-y: auto;
   position: relative;
   animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 32px 80px rgba(6, 14, 28, 0.6);
+  box-shadow: 0 32px 80px rgba(42, 24, 18, 0.6);
   transition: background 0.4s ease;
   scrollbar-width: none;
 }
@@ -816,12 +816,12 @@ const fmt = (v) =>
   justify-content: center;
   transition: background var(--transition-fast);
   z-index: 2;
-  color: rgba(197, 223, 245, 0.5);
+  color: rgba(242, 230, 214, 0.5);
 }
 
 .rsvp-card.step-mode-2 .btn-close,
 .rsvp-card.step-mode-3 .btn-close {
-  color: rgba(13, 31, 60, 0.4);
+  color: rgba(74, 42, 28, 0.4);
 }
 
 .btn-close:hover {
@@ -848,9 +848,9 @@ const fmt = (v) =>
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  border: 2px solid rgba(13, 31, 60, 0.2);
+  border: 2px solid rgba(74, 42, 28, 0.2);
   background: transparent;
-  color: rgba(13, 31, 60, 0.4);
+  color: rgba(74, 42, 28, 0.4);
   font-family: var(--font-body);
   font-size: 0.65rem;
   font-weight: 700;
@@ -874,7 +874,7 @@ const fmt = (v) =>
 .stepper-line {
   width: 52px;
   height: 1px;
-  background: rgba(13, 31, 60, 0.15);
+  background: rgba(74, 42, 28, 0.15);
   flex-shrink: 0;
   transition: background 0.4s ease;
 }
@@ -931,7 +931,7 @@ const fmt = (v) =>
 .deco-line {
   flex: 1;
   height: 1px;
-  background: rgba(197, 223, 245, 0.15);
+  background: rgba(242, 230, 214, 0.15);
 }
 
 .welcome-script {
@@ -958,7 +958,7 @@ const fmt = (v) =>
 .welcome-sub {
   font-family: var(--font-body);
   font-size: clamp(0.82rem, 2.5vw, 0.95rem);
-  color: rgba(197, 223, 245, 0.55);
+  color: rgba(242, 230, 214, 0.55);
   line-height: 1.75;
   margin: 0;
 }
@@ -968,22 +968,22 @@ const fmt = (v) =>
   align-items: center;
   gap: 0.6rem;
   padding: 1rem 2.2rem;
-  border: 1.5px solid rgba(197, 223, 245, 0.4);
+  border: 1.5px solid rgba(242, 230, 214, 0.4);
   border-radius: var(--radius-full);
-  background: rgba(197, 223, 245, 0.07);
+  background: rgba(242, 230, 214, 0.07);
   backdrop-filter: blur(4px);
   font-family: var(--font-body);
   font-size: clamp(0.72rem, 2vw, 0.85rem);
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(197, 223, 245, 0.88);
+  color: rgba(242, 230, 214, 0.88);
   cursor: pointer;
   transition: all var(--transition-normal);
   margin-top: var(--spacing-xs);
 }
 .btn-welcome:hover {
-  background: rgba(197, 223, 245, 0.14);
+  background: rgba(242, 230, 214, 0.14);
   border-color: var(--ice-blue);
   color: var(--ice-blue);
   transform: translateY(-2px);
@@ -993,7 +993,7 @@ const fmt = (v) =>
   font-family: var(--font-body);
   font-size: 0.65rem;
   letter-spacing: 0.25em;
-  color: rgba(197, 223, 245, 0.25);
+  color: rgba(242, 230, 214, 0.25);
   margin: 0;
   text-transform: uppercase;
 }
@@ -1072,7 +1072,7 @@ const fmt = (v) =>
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1.5px solid rgba(13, 31, 60, 0.18);
+  border-bottom: 1.5px solid rgba(74, 42, 28, 0.18);
   padding: var(--spacing-xs) 0;
   font-family: var(--font-body);
   font-size: clamp(0.88rem, 2.5vw, 1rem);
@@ -1098,8 +1098,8 @@ const fmt = (v) =>
 
 .field-textarea {
   width: 100%;
-  background: rgba(13, 31, 60, 0.03);
-  border: 1.5px solid rgba(13, 31, 60, 0.12);
+  background: rgba(74, 42, 28, 0.03);
+  border: 1.5px solid rgba(74, 42, 28, 0.12);
   border-radius: var(--radius-sm);
   padding: var(--spacing-sm);
   font-family: var(--font-body);
@@ -1126,7 +1126,7 @@ const fmt = (v) =>
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1.5px solid rgba(13, 31, 60, 0.2);
+  border: 1.5px solid rgba(74, 42, 28, 0.2);
   background: transparent;
   color: var(--navy-dark);
   font-size: 1.1rem;
@@ -1188,7 +1188,7 @@ const fmt = (v) =>
 .btn-primary:hover {
   background: var(--navy-mid);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(13, 31, 60, 0.25);
+  box-shadow: 0 6px 20px rgba(74, 42, 28, 0.25);
 }
 
 .btn-back {
@@ -1284,7 +1284,7 @@ const fmt = (v) =>
 .breakdown-value {
   font-family: var(--font-body);
   font-size: 0.75rem;
-  color: rgba(197, 223, 245, 0.6);
+  color: rgba(242, 230, 214, 0.6);
   font-weight: 500;
 }
 
@@ -1292,7 +1292,7 @@ const fmt = (v) =>
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(197, 223, 245, 0.1);
+  border-top: 1px solid rgba(242, 230, 214, 0.1);
   margin-top: 0.35rem;
   padding-top: 0.55rem;
 }
@@ -1326,7 +1326,7 @@ const fmt = (v) =>
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(13, 31, 60, 0.1);
+  box-shadow: 0 4px 20px rgba(74, 42, 28, 0.1);
 }
 
 .pix-copy-row {
@@ -1343,7 +1343,7 @@ const fmt = (v) =>
   justify-content: center;
   gap: 6px;
   padding: 10px var(--spacing-sm);
-  border: 1.5px solid rgba(13, 31, 60, 0.15);
+  border: 1.5px solid rgba(74, 42, 28, 0.15);
   border-radius: var(--radius-sm);
   background: transparent;
   font-family: var(--font-body);
@@ -1371,7 +1371,7 @@ const fmt = (v) =>
 .upload-divider span:not(.upload-divider-text) {
   flex: 1;
   height: 1px;
-  background: rgba(13, 31, 60, 0.1);
+  background: rgba(74, 42, 28, 0.1);
 }
 .upload-divider-text {
   font-family: var(--font-body);
@@ -1384,7 +1384,7 @@ const fmt = (v) =>
 
 .upload-area {
   width: 100%;
-  border: 1.5px dashed rgba(13, 31, 60, 0.2);
+  border: 1.5px dashed rgba(74, 42, 28, 0.2);
   border-radius: var(--radius-md);
   padding: var(--spacing-lg) var(--spacing-md);
   display: flex;
@@ -1396,14 +1396,14 @@ const fmt = (v) =>
   box-sizing: border-box;
   margin-bottom: var(--spacing-sm);
   text-align: center;
-  color: rgba(13, 31, 60, 0.35);
+  color: rgba(74, 42, 28, 0.35);
 }
 .upload-area:hover {
   border-color: var(--navy-dark);
-  background: rgba(13, 31, 60, 0.03);
+  background: rgba(74, 42, 28, 0.03);
 }
 .upload-area.has-file {
-  border-color: rgba(13, 31, 60, 0.25);
+  border-color: rgba(74, 42, 28, 0.25);
   cursor: default;
   padding: var(--spacing-md);
 }
@@ -1435,7 +1435,7 @@ const fmt = (v) =>
   object-fit: cover;
   border-radius: var(--radius-sm);
   flex-shrink: 0;
-  border: 1px solid rgba(13, 31, 60, 0.1);
+  border: 1px solid rgba(74, 42, 28, 0.1);
 }
 
 .file-info {
@@ -1467,7 +1467,7 @@ const fmt = (v) =>
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1px solid rgba(13, 31, 60, 0.15);
+  border: 1px solid rgba(74, 42, 28, 0.15);
   background: transparent;
   color: var(--text-muted);
   cursor: pointer;
@@ -1494,7 +1494,7 @@ const fmt = (v) =>
 .upload-note {
   font-family: var(--font-body);
   font-size: 0.68rem;
-  color: rgba(13, 31, 60, 0.4);
+  color: rgba(74, 42, 28, 0.4);
   margin: 0 0 var(--spacing-sm);
   text-align: center;
 }
@@ -1518,7 +1518,7 @@ const fmt = (v) =>
 .loader-spinner {
   position: absolute;
   inset: 0;
-  border: 2px solid rgba(197, 223, 245, 0.12);
+  border: 2px solid rgba(242, 230, 214, 0.12);
   border-top-color: var(--ice-blue);
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -1533,7 +1533,7 @@ const fmt = (v) =>
   font-family: var(--font-body);
   font-size: 0.8rem;
   letter-spacing: 1.5px;
-  color: rgba(197, 223, 245, 0.55);
+  color: rgba(242, 230, 214, 0.55);
   text-transform: uppercase;
   margin: 0;
 }
@@ -1561,7 +1561,7 @@ const fmt = (v) =>
 .error-msg {
   font-family: var(--font-body);
   font-size: 0.88rem;
-  color: rgba(197, 223, 245, 0.65);
+  color: rgba(242, 230, 214, 0.65);
   margin: 0;
   text-align: center;
   max-width: 300px;
@@ -1593,14 +1593,14 @@ const fmt = (v) =>
 .btn-cancel {
   background: transparent;
   border: none;
-  color: rgba(197, 223, 245, 0.4);
+  color: rgba(242, 230, 214, 0.4);
   font-family: var(--font-body);
   font-size: 0.8rem;
   cursor: pointer;
   transition: color var(--transition-fast);
 }
 .btn-cancel:hover {
-  color: rgba(197, 223, 245, 0.7);
+  color: rgba(242, 230, 214, 0.7);
 }
 
 /* ── Confirmado ── */
@@ -1655,7 +1655,7 @@ const fmt = (v) =>
 .confirmed-msg {
   font-family: var(--font-body);
   font-size: clamp(0.82rem, 2.5vw, 0.95rem);
-  color: rgba(197, 223, 245, 0.55);
+  color: rgba(242, 230, 214, 0.55);
   line-height: 1.75;
   margin: 0;
 }
@@ -1669,11 +1669,11 @@ const fmt = (v) =>
 .confirmed-divider span:not(.sep-dot) {
   flex: 1;
   height: 1px;
-  background: rgba(197, 223, 245, 0.15);
+  background: rgba(242, 230, 214, 0.15);
 }
 .sep-dot {
   font-size: 0.6rem;
-  color: rgba(197, 223, 245, 0.3);
+  color: rgba(242, 230, 214, 0.3);
 }
 
 .confirmed-actions {
@@ -1689,19 +1689,19 @@ const fmt = (v) =>
   justify-content: center;
   gap: 0.6rem;
   padding: 13px var(--spacing-lg);
-  border: 1.5px solid rgba(197, 223, 245, 0.35);
+  border: 1.5px solid rgba(242, 230, 214, 0.35);
   border-radius: var(--radius-md);
-  background: rgba(197, 223, 245, 0.07);
+  background: rgba(242, 230, 214, 0.07);
   font-family: var(--font-body);
   font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-  color: rgba(197, 223, 245, 0.8);
+  color: rgba(242, 230, 214, 0.8);
   text-decoration: none;
   transition: all var(--transition-normal);
 }
 .btn-calendar:hover {
-  background: rgba(197, 223, 245, 0.14);
+  background: rgba(242, 230, 214, 0.14);
   border-color: var(--ice-blue);
   color: var(--ice-blue);
 }
@@ -1709,7 +1709,7 @@ const fmt = (v) =>
 .btn-site {
   background: transparent;
   border: none;
-  color: rgba(197, 223, 245, 0.3);
+  color: rgba(242, 230, 214, 0.3);
   font-family: var(--font-body);
   font-size: 0.78rem;
   cursor: pointer;
@@ -1717,7 +1717,7 @@ const fmt = (v) =>
   transition: color var(--transition-fast);
 }
 .btn-site:hover {
-  color: rgba(197, 223, 245, 0.6);
+  color: rgba(242, 230, 214, 0.6);
 }
 
 /* ── Keyframes ── */

@@ -26,7 +26,7 @@ const emit = defineEmits(["open-rsvp"]);
         >
           <path
             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-            stroke="rgba(197,223,245,0.5)"
+            stroke="rgba(242, 230, 214,0.5)"
             stroke-width="1.5"
             fill="none"
             stroke-linejoin="round"
@@ -90,7 +90,7 @@ const emit = defineEmits(["open-rsvp"]);
 
 <style scoped>
 .confirmacao {
-  background: var(--pearl);
+  background: var(--parchment-bg);
   padding: clamp(4rem, 12vw, 7rem) var(--spacing-md);
 }
 
@@ -109,7 +109,7 @@ const emit = defineEmits(["open-rsvp"]);
   font-size: clamp(0.6rem, 1.8vw, 0.75rem);
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(13, 31, 60, 0.4);
+  color: rgba(74, 42, 28, 0.4);
   font-weight: 300;
 }
 
@@ -124,7 +124,7 @@ const emit = defineEmits(["open-rsvp"]);
 .ornament-line {
   flex: 1;
   height: 1px;
-  background: rgba(13, 31, 60, 0.12);
+  background: rgba(74, 42, 28, 0.12);
 }
 
 .ornament-heart {
@@ -149,7 +149,7 @@ const emit = defineEmits(["open-rsvp"]);
 .confirmacao-sub {
   font-family: var(--font-body);
   font-size: clamp(0.88rem, 2.5vw, 1.05rem);
-  color: rgba(13, 31, 60, 0.55);
+  color: rgba(74, 42, 28, 0.55);
   line-height: 1.8;
   font-weight: 300;
   margin: 0;
@@ -189,12 +189,12 @@ const emit = defineEmits(["open-rsvp"]);
 .confirmacao-divider span:not(.sep-dot) {
   flex: 1;
   height: 1px;
-  background: rgba(13, 31, 60, 0.1);
+  background: rgba(74, 42, 28, 0.1);
 }
 
 .sep-dot {
   font-size: 0.6rem;
-  color: rgba(13, 31, 60, 0.25);
+  color: rgba(74, 42, 28, 0.25);
 }
 
 .confirmacao-btn {
@@ -203,7 +203,7 @@ const emit = defineEmits(["open-rsvp"]);
   gap: 0.65rem;
   margin-top: var(--spacing-xs);
   padding: 1rem 2.4rem;
-  border: 1.5px solid rgba(13, 31, 60, 0.3);
+  border: 1.5px solid rgba(74, 42, 28, 0.3);
   border-radius: var(--radius-full);
   background: transparent;
   font-family: var(--font-body);
@@ -221,7 +221,7 @@ const emit = defineEmits(["open-rsvp"]);
   border-color: var(--navy-dark);
   color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(13, 31, 60, 0.2);
+  box-shadow: 0 8px 24px rgba(74, 42, 28, 0.2);
 }
 
 .confirmacao-btn svg {

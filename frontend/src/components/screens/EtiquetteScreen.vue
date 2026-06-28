@@ -98,7 +98,7 @@ const rules = [
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: var(--pearl);
+  background: var(--parchment-bg);
   overflow-x: hidden;
 }
 
@@ -157,8 +157,8 @@ const rules = [
   gap: 1px;
   width: 100%;
   max-width: 860px;
-  background: rgba(13, 31, 60, 0.08);
-  border: 1px solid rgba(13, 31, 60, 0.08);
+  background: rgba(74, 42, 28, 0.08);
+  border: 1px solid rgba(74, 42, 28, 0.08);
   border-radius: var(--radius-lg);
   overflow: hidden;
 }

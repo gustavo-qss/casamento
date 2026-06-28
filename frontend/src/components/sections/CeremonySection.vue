@@ -82,10 +82,10 @@ const { church } = weddingInfo;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(6, 14, 28, 0.05)  0%,
-    rgba(6, 14, 28, 0.22) 35%,
-    rgba(6, 14, 28, 0.72) 70%,
-    rgba(6, 14, 28, 0.92) 100%
+    rgba(42, 24, 18, 0.05)  0%,
+    rgba(42, 24, 18, 0.22) 35%,
+    rgba(42, 24, 18, 0.72) 70%,
+    rgba(42, 24, 18, 0.92) 100%
   );
 }
 
@@ -106,7 +106,7 @@ const { church } = weddingInfo;
   font-size: clamp(0.6rem, 1.8vw, 0.75rem);
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(197, 223, 245, 0.65);
+  color: rgba(242, 230, 214, 0.65);
   font-weight: 300;
 }
 
@@ -124,7 +124,7 @@ const { church } = weddingInfo;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(197, 223, 245, 0.8);
+  color: rgba(242, 230, 214, 0.8);
   font-family: var(--font-body);
   font-size: clamp(0.85rem, 2.5vw, 1rem);
   font-weight: 300;
@@ -133,7 +133,7 @@ const { church } = weddingInfo;
 
 .ceremony-time svg {
   flex-shrink: 0;
-  stroke: rgba(197, 223, 245, 0.7);
+  stroke: rgba(242, 230, 214, 0.7);
 }
 
 .ceremony-separator {
@@ -147,12 +147,12 @@ const { church } = weddingInfo;
 .ceremony-separator span:not(.sep-dot) {
   flex: 1;
   height: 1px;
-  background: rgba(197, 223, 245, 0.25);
+  background: rgba(242, 230, 214, 0.25);
 }
 
 .sep-dot {
   font-size: 0.55rem;
-  color: rgba(197, 223, 245, 0.4);
+  color: rgba(242, 230, 214, 0.4);
 }
 
 .ceremony-place {
@@ -173,7 +173,7 @@ const { church } = weddingInfo;
 .ceremony-address {
   font-family: var(--font-body);
   font-size: clamp(0.75rem, 2.2vw, 0.9rem);
-  color: rgba(197, 223, 245, 0.58);
+  color: rgba(242, 230, 214, 0.58);
   margin: 0;
   font-weight: 300;
   line-height: 1.55;
@@ -237,18 +237,18 @@ const { church } = weddingInfo;
     background: linear-gradient(
       to right,
       transparent 55%,
-      rgba(6, 14, 28, 0.55) 100%
+      rgba(42, 24, 18, 0.55) 100%
     );
   }
 
   /* Painel de conteúdo com fundo próprio */
   .ceremony-content {
-    background: rgba(6, 14, 28, 0.97);
+    background: rgba(42, 24, 18, 0.97);
     justify-content: center;
     padding: 3.5rem 4rem;
     gap: 1.4rem;
     width: auto;
-    border-left: 1px solid rgba(197, 223, 245, 0.08);
+    border-left: 1px solid rgba(242, 230, 214, 0.08);
   }
 
   .ceremony-title {

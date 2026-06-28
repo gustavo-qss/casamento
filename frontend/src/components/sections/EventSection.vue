@@ -84,10 +84,10 @@ const { reception } = weddingInfo;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(6, 14, 28, 0.05)  0%,
-    rgba(6, 14, 28, 0.25) 35%,
-    rgba(6, 14, 28, 0.75) 70%,
-    rgba(6, 14, 28, 0.92) 100%
+    rgba(42, 24, 18, 0.05)  0%,
+    rgba(42, 24, 18, 0.25) 35%,
+    rgba(42, 24, 18, 0.75) 70%,
+    rgba(42, 24, 18, 0.92) 100%
   );
 }
 
@@ -108,7 +108,7 @@ const { reception } = weddingInfo;
   font-size: clamp(0.6rem, 1.8vw, 0.75rem);
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(197, 223, 245, 0.65);
+  color: rgba(242, 230, 214, 0.65);
   font-weight: 300;
 }
 
@@ -126,7 +126,7 @@ const { reception } = weddingInfo;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(197, 223, 245, 0.8);
+  color: rgba(242, 230, 214, 0.8);
   font-family: var(--font-body);
   font-size: clamp(0.85rem, 2.5vw, 1rem);
   font-weight: 300;
@@ -135,7 +135,7 @@ const { reception } = weddingInfo;
 
 .event-time svg {
   flex-shrink: 0;
-  stroke: rgba(197, 223, 245, 0.7);
+  stroke: rgba(242, 230, 214, 0.7);
 }
 
 .event-separator {
@@ -149,12 +149,12 @@ const { reception } = weddingInfo;
 .event-separator span:not(.sep-dot) {
   flex: 1;
   height: 1px;
-  background: rgba(197, 223, 245, 0.25);
+  background: rgba(242, 230, 214, 0.25);
 }
 
 .sep-dot {
   font-size: 0.55rem;
-  color: rgba(197, 223, 245, 0.4);
+  color: rgba(242, 230, 214, 0.4);
 }
 
 .event-place {
@@ -176,7 +176,7 @@ const { reception } = weddingInfo;
 .event-address {
   font-family: var(--font-body);
   font-size: clamp(0.78rem, 2.2vw, 0.92rem);
-  color: rgba(197, 223, 245, 0.6);
+  color: rgba(242, 230, 214, 0.6);
   margin: 0;
   font-weight: 300;
   line-height: 1.5;
@@ -241,18 +241,18 @@ const { reception } = weddingInfo;
     background: linear-gradient(
       to left,
       transparent 55%,
-      rgba(6, 14, 28, 0.55) 100%
+      rgba(42, 24, 18, 0.55) 100%
     );
   }
 
   .event-content {
     order: 1; /* painel à esquerda */
-    background: rgba(6, 14, 28, 0.97);
+    background: rgba(42, 24, 18, 0.97);
     justify-content: center;
     padding: 3.5rem 4rem;
     gap: 1.4rem;
     width: auto;
-    border-right: 1px solid rgba(197, 223, 245, 0.08);
+    border-right: 1px solid rgba(242, 230, 214, 0.08);
   }
 
   .event-title {

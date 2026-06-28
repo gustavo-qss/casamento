@@ -71,7 +71,7 @@ const screenNames = [
 .dot--active {
   background: var(--ice-blue);
   border-color: var(--ice-blue);
-  box-shadow: 0 0 0 3px rgba(197, 223, 245, 0.2);
+  box-shadow: 0 0 0 3px rgba(242, 230, 214, 0.2);
 }
 
 /* ===== TOOLTIP ===== */
@@ -112,25 +112,25 @@ const screenNames = [
 }
 
 .dots-nav--dark .dot-tooltip {
-  background: rgba(6, 14, 28, 0.75);
+  background: rgba(42, 24, 18, 0.75);
   color: var(--white);
   backdrop-filter: blur(6px);
 }
 
 /* ===== VARIANT LIGHT (Gifts — header navy, body pearl) ===== */
 .dots-nav--light .dot {
-  border-color: rgba(13, 31, 60, 0.25);
+  border-color: rgba(74, 42, 28, 0.25);
 }
 
 .dots-nav--light .dot--active {
   background: var(--navy-dark);
   border-color: var(--navy-dark);
-  box-shadow: 0 0 0 3px rgba(13, 31, 60, 0.12);
+  box-shadow: 0 0 0 3px rgba(74, 42, 28, 0.12);
 }
 
 .dots-nav--light .dot:hover:not(.dot--active) {
   border-color: var(--navy-mid);
-  background: rgba(13, 31, 60, 0.1);
+  background: rgba(74, 42, 28, 0.1);
 }
 
 .dots-nav--light .dot-tooltip {

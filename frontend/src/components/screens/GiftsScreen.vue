@@ -23,6 +23,10 @@
           @remove="handleRemoveGift"
         />
       </div>
+
+      <div v-if="showNext" class="gifts-next">
+        <ScrollArrow @click="handleNext" />
+      </div>
     </div>
 
     <ShoppingCart
@@ -47,10 +51,17 @@ import GiftCard from '../ui/GiftCard.vue';
 import ShoppingCart from '../ui/ShoppingCart.vue';
 import CheckoutModal from '../ui/CheckoutModal.vue';
 import BackButton from '../ui/BackButton.vue';
+import ScrollArrow from '../ui/ScrollArrow.vue';
 import { useCart } from '@/composables/useCart';
 import giftsData from '@/data/gifts.json';
 
-const emit = defineEmits(['back']);
+defineProps({
+  // Quando true, exibe seta para avançar (usado no fluxo stories do /instagram).
+  // No site polaroid a tela é um overlay e não deve avançar.
+  showNext: { type: Boolean, default: false },
+});
+
+const emit = defineEmits(['back', 'next']);
 
 const gifts = ref(giftsData);
 const showCheckout = ref(false);
@@ -62,6 +73,7 @@ const handleRemoveGift = (giftId) => removeItem(giftId);
 const handleCheckout = () => { showCheckout.value = true; };
 const handleCloseModal = () => { showCheckout.value = false; };
 const handleBack = () => emit('back');
+const handleNext = () => emit('next');
 </script>
 
 <style scoped>
@@ -69,16 +81,21 @@ const handleBack = () => emit('back');
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: var(--pearl);
+  background: var(--parchment-bg);
 }
 
 /* ===== HEADER NAVY ===== */
 .gifts-header {
-  background: var(--navy-dark);
+  background-color: var(--wood-mid);
+  background-image: var(--wood-grain),
+    linear-gradient(180deg, rgba(227, 169, 76, 0.12), rgba(0, 0, 0, 0.4));
   padding: clamp(80px, 14vh, 140px) var(--spacing-md) clamp(50px, 8vh, 90px);
   text-align: center;
   position: relative;
   overflow: hidden;
+  box-shadow:
+    inset 0 -3px 0 var(--wood-deep),
+    inset 0 6px 14px rgba(0, 0, 0, 0.35);
 }
 
 /* Detalhe: linha de luz no topo do header */
@@ -136,7 +153,25 @@ const handleBack = () => emit('back');
 .gifts-body {
   padding: var(--spacing-2xl) var(--spacing-md);
   padding-bottom: 140px;
-  background: var(--pearl);
+  background: transparent;
+}
+
+/* ===== SETA AVANÇAR (fluxo stories) ===== */
+.gifts-next {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-2xl);
+}
+
+.gifts-next :deep(.scroll-arrow) {
+  position: static;
+  transform: none;
+  color: var(--navy-dark) !important;
+}
+
+.gifts-next :deep(.scroll-arrow:hover) {
+  color: var(--navy-accent) !important;
+  transform: scale(1.2);
 }
 
 /* ===== GRID ===== */

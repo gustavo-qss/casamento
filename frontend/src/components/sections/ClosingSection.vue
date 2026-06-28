@@ -65,9 +65,9 @@ const logoImg    = getPublicPath('logo.png');
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(6, 14, 28, 0.12) 0%,
-    rgba(6, 14, 28, 0.55) 48%,
-    rgba(6, 14, 28, 0.88) 100%
+    rgba(42, 24, 18, 0.12) 0%,
+    rgba(42, 24, 18, 0.55) 48%,
+    rgba(42, 24, 18, 0.88) 100%
   );
 }
 
@@ -125,7 +125,7 @@ const logoImg    = getPublicPath('logo.png');
 .closing-logo {
   width: clamp(160px, 48vw, 280px);
   height: auto;
-  filter: brightness(0) invert(1) drop-shadow(0 2px 16px rgba(6, 14, 28, 0.5));
+  filter: brightness(0) invert(1) drop-shadow(0 2px 16px rgba(42, 24, 18, 0.5));
   display: block;
 }
 

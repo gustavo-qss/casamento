@@ -1,45 +1,102 @@
 /* ========================================
    VARIÁVEIS CSS - Site de Casamento
-   Rawane & Gustavo — Tema Navy Blue
+   Tema Terracota — outono / dried flowers
+   Paleta extraída da nova identidade visual:
+   terracota, creme, marrons quentes, tan/bege
+   e florais secos (dálias, pampas, folhas).
    ======================================== */
 
 :root {
-  /* ===== NAVY — CORES PRINCIPAIS ===== */
-  --navy-deep:   #060e1c;
-  --navy-dark:   #0d1f3c;
-  --navy-mid:    #162a4e;
-  --navy-light:  #1e3d6b;
-  --navy-accent: #2a5298;
+  /* ===== TERRACOTA — ESCALA ESCURA (base do tema) ===== */
+  /* hex casados com as tripletas rgba usadas nos componentes */
+  --espresso:     #2a1812;   /* rgb(42,24,18)  — mais escuro, overlays    */
+  --brown-deep:   #4a2a1c;   /* rgb(74,42,28)  — texto / botões / dark    */
+  --brown-mid:    #6e3c26;   /* marrom quente médio                       */
+  --clay:         #95502f;   /* argila                                    */
+  --terracotta:   #b85f35;   /* terracota vibrante — cor de destaque      */
+  --rust:         #a8502c;   /* ferrugem (blocos sólidos)                 */
 
-  /* ===== AZUIS CLAROS (acentos sobre navy) ===== */
-  --ice-blue:    #c5dff5;
-  --powder-blue: #8ab4d4;
-  --pale-blue:   #e8f2fc;
+  /* ===== ACENTOS CLAROS (sobre fundos escuros) ===== */
+  --cream-accent: #f2e6d6;   /* rgb(242,230,214) — texto/bordas em escuro */
+  --tan:          #d4b896;   /* tan / bege médio                          */
+  --pale-sand:    #f8f0e4;   /* areia palidíssima                         */
 
-  /* ===== NEUTROS ===== */
-  --pearl:       #f7f4ef;
-  --cream:       #faf7f2;
-  --white:       #ffffff;
-  --gray-light:  #f0f0f0;
-  --gray-medium: #cccccc;
-  --text-dark:   #0d1f3c;
-  --text-muted:  #4a6080;
+  /* ===== NEUTROS QUENTES (pergaminho) ===== */
+  --pearl:       #ede0c6;   /* pergaminho — fundo de telas claras            */
+  --cream:       #f3e8d2;   /* pergaminho claro                              */
+  --white:       #fbf4e6;   /* "papel" — não branco puro, p/ vibe envelhecida */
+  --gray-light:  #e7d9bd;
+  --gray-medium: #cdb693;
+  --text-dark:   #3a2113;   /* tinta marrom-escura sobre pergaminho          */
+  --text-muted:  #7c5a40;
 
-  /* ===== MANTER COMPATIBILIDADE (telas legadas) ===== */
-  --primary-lavender: #b1b9e7;
-  --primary-blue:     #bfd5ed;
-  --soft-pink:        #f4d9e6;
-  --gold:             #d4af37;
-  --sage:             #b7c9b3;
-  --lavender-dark:    #9098c7;
-  --blue-dark:        #8ca9c4;
+  /* ===== MADEIRA / TAVERNA (tema medieval) ===== */
+  --wood:        #6b4326;   /* carvalho                                      */
+  --wood-mid:    #4d2f1a;   /* madeira escurecida                            */
+  --wood-dark:   #38220f;   /* viga / madeira tingida                        */
+  --wood-deep:   #241408;   /* madeira carbonizada (quase preto)             */
+  --iron:        #2c2620;   /* ferro forjado                                 */
+  --candle:      #e3a94c;   /* luz de vela / dourado quente                  */
+  --parchment:      #ede0c6;
+  --parchment-deep: #ddc8a2;
+  --moss:        #6f7444;   /* raízes / vinhas secas                         */
+
+  /* ===== TEXTURAS (CSS puro, sem assets) ===== */
+  --wood-grain:
+    repeating-linear-gradient(
+      91deg,
+      #5b3920 0px, #5b3920 3px,
+      #6d4727 3px, #6d4727 6px,
+      #58371f 6px, #58371f 8px,
+      #714b2c 8px, #714b2c 13px,
+      #5f3d23 13px, #5f3d23 16px
+    );
+  --parchment-bg:
+    /* manchas de envelhecimento (claras e escuras) */
+    radial-gradient(ellipse 38% 26% at 12% 18%, rgba(255, 250, 235, 0.55), transparent 60%),
+    radial-gradient(ellipse 42% 30% at 88% 82%, rgba(150, 100, 55, 0.16), transparent 62%),
+    radial-gradient(ellipse 30% 22% at 70% 12%, rgba(184, 95, 53, 0.10), transparent 60%),
+    radial-gradient(ellipse 34% 24% at 25% 88%, rgba(120, 80, 40, 0.10), transparent 62%),
+    radial-gradient(circle at 50% 45%, rgba(227, 169, 76, 0.08), transparent 70%),
+    /* fibras do papel */
+    repeating-linear-gradient(0deg, rgba(120, 80, 40, 0.035) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(90deg, rgba(120, 80, 40, 0.028) 0 1px, transparent 1px 5px),
+    var(--parchment);
+
+  /* ===== TONS DECORATIVOS / FLORAIS SECOS ===== */
+  --blush:       #f3ddc9;   /* pétala clara / peach                       */
+  --dusty-rose:  #e0b89c;   /* rosa empoeirado quente                     */
+  --wheat:       #eccdb2;   /* trigo / creme rosado                       */
+  --olive-dry:   #b9a884;   /* folhagem seca / oliva                      */
+  --gold:        #c2974a;   /* dourado outonal                            */
+  --leaf-brown:  #b06a44;   /* folha/ramo marrom-terracota               */
+  --leaf-soft:   #c08a64;   /* ramo claro                                 */
+
+  /* ===== ALIASES DE COMPATIBILIDADE (telas legadas) =====
+     Nomes antigos do tema navy mapeados para o tema terracota.
+     Mantidos para não quebrar referências existentes. */
+  --navy-deep:   var(--espresso);
+  --navy-dark:   var(--brown-deep);
+  --navy-mid:    var(--brown-mid);
+  --navy-light:  var(--clay);
+  --navy-accent: var(--terracotta);
+  --ice-blue:    var(--cream-accent);
+  --powder-blue: var(--tan);
+  --pale-blue:   var(--pale-sand);
+  --primary-lavender: var(--dusty-rose);
+  --primary-blue:     var(--wheat);
+  --soft-pink:        var(--blush);
+  --sage:             var(--olive-dry);
+  --lavender-dark:    var(--leaf-brown);
+  --blue-dark:        var(--leaf-soft);
 
   /* ===== GRADIENTES ===== */
-  --gradient-navy:         linear-gradient(160deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
-  --gradient-navy-soft:    linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
+  --gradient-navy:         linear-gradient(160deg, var(--espresso) 0%, var(--brown-mid) 100%);
+  --gradient-navy-soft:    linear-gradient(135deg, var(--brown-deep) 0%, var(--clay) 100%);
+  --gradient-terracotta:   linear-gradient(135deg, var(--rust) 0%, var(--terracotta) 100%);
   --gradient-overlay-dark: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 100%);
-  --gradient-overlay:      linear-gradient(180deg, rgba(6, 14, 28, 0.4) 0%, rgba(6, 14, 28, 0.7) 100%);
-  --overlay-cinematic:     linear-gradient(to bottom, transparent 30%, rgba(6, 14, 28, 0.2) 60%, rgba(6, 14, 28, 0.75) 100%);
+  --gradient-overlay:      linear-gradient(180deg, rgba(42, 24, 18, 0.4) 0%, rgba(42, 24, 18, 0.7) 100%);
+  --overlay-cinematic:     linear-gradient(to bottom, transparent 30%, rgba(42, 24, 18, 0.2) 60%, rgba(42, 24, 18, 0.75) 100%);
 
   /* ===== TIPOGRAFIA ===== */
   --font-display: 'Playfair Display', serif;
@@ -71,8 +128,8 @@
   --shadow-sm:   0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-md:   0 4px 16px rgba(0, 0, 0, 0.12);
   --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.18);
-  --shadow-navy: 0 8px 32px rgba(6, 14, 28, 0.35);
-  --shadow-soft: 0 4px 20px rgba(13, 31, 60, 0.15);
+  --shadow-navy: 0 8px 32px rgba(42, 24, 18, 0.35);
+  --shadow-soft: 0 4px 20px rgba(74, 42, 28, 0.15);
 
   /* ===== TRANSIÇÕES ===== */
   --transition-fast:         0.2s ease;
@@ -89,8 +146,8 @@
   --z-cart:       50;
   --z-modal:      100;
 
-  /* ===== ACCENTS NAVY ===== */
-  --navy-border:    rgba(197, 223, 245, 0.18);
-  --navy-border-lg: rgba(197, 223, 245, 0.3);
-  --ice-glow:       rgba(197, 223, 245, 0.25);
+  /* ===== ACCENTS ===== */
+  --navy-border:    rgba(242, 230, 214, 0.18);
+  --navy-border-lg: rgba(242, 230, 214, 0.3);
+  --ice-glow:       rgba(242, 230, 214, 0.25);
 }

@@ -102,7 +102,7 @@ const handleBack = () => emit('back');
   top: 20%;
   height: 60%;
   width: 1px;
-  background: rgba(197, 223, 245, 0.3);
+  background: rgba(242, 230, 214, 0.3);
 }
 
 .countdown-number {
@@ -161,11 +161,11 @@ const handleBack = () => emit('back');
   /* Linhas divisórias no grid 2x2 */
   .countdown-item:nth-child(1),
   .countdown-item:nth-child(2) {
-    border-bottom: 1px solid rgba(197, 223, 245, 0.25);
+    border-bottom: 1px solid rgba(242, 230, 214, 0.25);
   }
 
   .countdown-item:nth-child(odd) {
-    border-right: 1px solid rgba(197, 223, 245, 0.25);
+    border-right: 1px solid rgba(242, 230, 214, 0.25);
   }
 
   .countdown-number {

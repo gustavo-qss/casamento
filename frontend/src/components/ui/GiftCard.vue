@@ -73,29 +73,56 @@ const formatCurrency = (value) => {
 </script>
 
 <style scoped>
+/* Placa emoldurada em madeira */
 .gift-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
+  position: relative;
+  padding: 10px;
+  background-color: var(--wood);
+  background-image: var(--wood-grain),
+    linear-gradient(180deg, rgba(227, 169, 76, 0.1), rgba(0, 0, 0, 0.3));
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow:
+    inset 0 0 0 2px rgba(0, 0, 0, 0.4),
+    inset 0 2px 8px rgba(0, 0, 0, 0.4),
+    0 10px 26px rgba(36, 20, 8, 0.35);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
-  border: 1px solid rgba(13, 31, 60, 0.06);
 }
 
 .gift-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 36px rgba(13, 31, 60, 0.14);
+  box-shadow:
+    inset 0 0 0 2px rgba(0, 0, 0, 0.4),
+    inset 0 2px 8px rgba(0, 0, 0, 0.4),
+    0 18px 38px rgba(36, 20, 8, 0.45);
 }
+
+/* Pregos de ferro nos cantos superiores */
+.gift-card::before,
+.gift-card::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #6b6258, var(--iron) 70%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+.gift-card::before { left: 6px; }
+.gift-card::after  { right: 6px; }
 
 /* ===== IMAGEM ===== */
 .gift-image-wrapper {
   width: 100%;
   height: 200px;
   overflow: hidden;
-  background: var(--pale-blue);
+  background: var(--parchment-deep);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 }
 
 .gift-image {
@@ -109,22 +136,24 @@ const formatCurrency = (value) => {
   transform: scale(1.05);
 }
 
-/* ===== CONTEÚDO ===== */
+/* ===== CONTEÚDO (pergaminho) ===== */
 .gift-content {
   padding: var(--spacing-md);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
   flex: 1;
+  background: var(--white);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
 .gift-name {
-  font-family: var(--font-body);
-  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.9vw, 1.08rem);
+  font-weight: 500;
   color: var(--navy-dark);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .gift-price {
@@ -203,7 +232,7 @@ const formatCurrency = (value) => {
 .btn-add:hover {
   background: var(--navy-light);
   transform: scale(1.08);
-  box-shadow: 0 4px 14px rgba(13, 31, 60, 0.3);
+  box-shadow: 0 4px 14px rgba(74, 42, 28, 0.3);
 }
 
 .btn-add--has-qty {

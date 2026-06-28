@@ -218,6 +218,14 @@
   animation: shine 2s infinite;
 }
 
+/* ===== CANDLE FLICKER (chama de vela) ===== */
+@keyframes candleFlicker {
+  0%, 100% { transform: scale(1) rotate(-1deg);   opacity: 0.92; }
+  25%      { transform: scale(1.06) rotate(1deg);  opacity: 1; }
+  50%      { transform: scale(0.97) rotate(-1.5deg); opacity: 0.85; }
+  75%      { transform: scale(1.03) rotate(0.5deg); opacity: 0.97; }
+}
+
 /* ===== KEN BURNS (Hero Backgrounds) ===== */
 @keyframes kenBurns {
   from {

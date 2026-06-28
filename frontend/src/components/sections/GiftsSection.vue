@@ -16,11 +16,11 @@ const emit = defineEmits(['open-gifts']);
 
       <div class="gifts-icon reveal reveal-delay-2">
         <svg width="52" height="52" viewBox="0 0 56 56" fill="none">
-          <rect x="8" y="24" width="40" height="26" rx="3" stroke="rgba(197,223,245,0.55)" stroke-width="1.5"/>
-          <rect x="4" y="18" width="48" height="8" rx="2" stroke="rgba(197,223,245,0.55)" stroke-width="1.5"/>
-          <path d="M28 18 L28 50" stroke="rgba(197,223,245,0.35)" stroke-width="1.5"/>
+          <rect x="8" y="24" width="40" height="26" rx="3" stroke="rgba(242, 230, 214,0.55)" stroke-width="1.5"/>
+          <rect x="4" y="18" width="48" height="8" rx="2" stroke="rgba(242, 230, 214,0.55)" stroke-width="1.5"/>
+          <path d="M28 18 L28 50" stroke="rgba(242, 230, 214,0.35)" stroke-width="1.5"/>
           <path d="M28 18 C28 18 20 14 20 8 C20 4 24 2 28 6 C32 2 36 4 36 8 C36 14 28 18 28 18Z"
-                stroke="rgba(197,223,245,0.55)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+                stroke="rgba(242, 230, 214,0.55)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
         </svg>
       </div>
 
@@ -67,7 +67,7 @@ const emit = defineEmits(['open-gifts']);
   font-size: clamp(0.6rem, 1.8vw, 0.75rem);
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(197, 223, 245, 0.45);
+  color: rgba(242, 230, 214, 0.45);
   font-weight: 300;
 }
 
@@ -102,18 +102,18 @@ const emit = defineEmits(['open-gifts']);
 .gifts-divider span:not(.gifts-dot) {
   flex: 1;
   height: 1px;
-  background: rgba(197, 223, 245, 0.2);
+  background: rgba(242, 230, 214, 0.2);
 }
 
 .gifts-dot {
   font-size: 0.6rem;
-  color: rgba(197, 223, 245, 0.35);
+  color: rgba(242, 230, 214, 0.35);
 }
 
 .gifts-sub {
   font-family: var(--font-body);
   font-size: clamp(0.88rem, 2.5vw, 1.05rem);
-  color: rgba(197, 223, 245, 0.6);
+  color: rgba(242, 230, 214, 0.6);
   line-height: 1.75;
   font-weight: 300;
   margin: 0;
@@ -126,22 +126,22 @@ const emit = defineEmits(['open-gifts']);
   gap: 0.6rem;
   margin-top: var(--spacing-xs);
   padding: 1rem 2.2rem;
-  border: 1.5px solid rgba(197, 223, 245, 0.45);
+  border: 1.5px solid rgba(242, 230, 214, 0.45);
   border-radius: var(--radius-full);
-  background: rgba(197, 223, 245, 0.06);
+  background: rgba(242, 230, 214, 0.06);
   backdrop-filter: blur(4px);
   font-family: var(--font-body);
   font-size: clamp(0.72rem, 2vw, 0.86rem);
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(197, 223, 245, 0.88);
+  color: rgba(242, 230, 214, 0.88);
   cursor: pointer;
   transition: all var(--transition-normal);
 }
 
 .gifts-btn:hover {
-  background: rgba(197, 223, 245, 0.14);
+  background: rgba(242, 230, 214, 0.14);
   border-color: var(--ice-blue);
   color: var(--ice-blue);
   transform: translateY(-2px);

@@ -134,8 +134,8 @@ const pad = (n) => String(n).padStart(2, '0');
   inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(6, 14, 28, 0.62) 0%,
-    rgba(13, 31, 60, 0.82) 100%
+    rgba(42, 24, 18, 0.62) 0%,
+    rgba(74, 42, 28, 0.82) 100%
   );
   pointer-events: none;
 }
@@ -158,7 +158,7 @@ const pad = (n) => String(n).padStart(2, '0');
   font-weight: 300;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: rgba(197, 223, 245, 0.6);
+  color: rgba(242, 230, 214, 0.6);
 }
 
 .countdown-grid {
@@ -190,14 +190,14 @@ const pad = (n) => String(n).padStart(2, '0');
   font-size: clamp(0.5rem, 1.4vw, 0.65rem);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(197, 223, 245, 0.55);
+  color: rgba(242, 230, 214, 0.55);
   font-weight: 300;
 }
 
 .count-sep {
   font-family: var(--font-display);
   font-size: clamp(2rem, 8vw, 3.2rem);
-  color: rgba(197, 223, 245, 0.35);
+  color: rgba(242, 230, 214, 0.35);
   line-height: 1;
   margin-bottom: 1.2rem;
   font-weight: 300;
@@ -206,7 +206,7 @@ const pad = (n) => String(n).padStart(2, '0');
 .countdown-sub {
   font-family: var(--font-script);
   font-size: clamp(1.7rem, 6vw, 2rem);
-  color: rgba(197, 223, 245, 0.65);
+  color: rgba(242, 230, 214, 0.65);
   margin: 0;
   line-height: 1.3;
 }
@@ -246,7 +246,7 @@ const pad = (n) => String(n).padStart(2, '0');
   .triptych-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(6, 14, 28, 0.18);
+    background: rgba(42, 24, 18, 0.18);
     pointer-events: none;
   }
 
@@ -255,8 +255,8 @@ const pad = (n) => String(n).padStart(2, '0');
     z-index: 1;
     background: linear-gradient(
       160deg,
-      rgba(6, 14, 28, 0.55) 0%,
-      rgba(13, 31, 60, 0.78) 100%
+      rgba(42, 24, 18, 0.55) 0%,
+      rgba(74, 42, 28, 0.78) 100%
     );
   }
 
