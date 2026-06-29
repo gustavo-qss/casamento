@@ -30,30 +30,37 @@
       </div>
     </Transition>
 
-    <!-- Moldura de madeira entalhada (com pregos de ferro e luz de vela) -->
-    <div class="story-frame" aria-hidden="true"></div>
+    <!-- Moldura de madeira (textura real) com vinhas nos cantos -->
+    <div class="story-frame" aria-hidden="true">
+      <VineCorner class="vine vine--tl" />
+      <VineCorner class="vine vine--tr" />
+      <VineCorner class="vine vine--bl" />
+      <VineCorner class="vine vine--br" />
+    </div>
 
     <div class="story-content">
-      <span class="story-flame" aria-hidden="true">
-        <svg viewBox="0 0 24 32" width="20" height="26">
-          <path
-            d="M12 1C12 1 4 9 4 17a8 8 0 0 0 16 0c0-3-2-5.5-3.5-8C15 12 14 13 13 12c1.5-4-1-9-1-11z"
-            fill="url(#flameGrad)"
-          />
-          <path
-            d="M12 12c0 0-3 3-3 6a3 3 0 0 0 6 0c0-2-1.5-3.5-3-6z"
-            fill="#fff6df"
-          />
-          <defs>
-            <linearGradient id="flameGrad" x1="12" y1="1" x2="12" y2="25" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#f6c453" />
-              <stop offset="0.55" stop-color="#e3a94c" />
-              <stop offset="1" stop-color="#b85f35" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </span>
-      <p class="story-text fade-in">{{ currentStory.text }}</p>
+      <div class="story-scroll fade-in">
+        <span class="story-flame" aria-hidden="true">
+          <svg viewBox="0 0 24 32" width="22" height="28">
+            <path
+              d="M12 1C12 1 4 9 4 17a8 8 0 0 0 16 0c0-3-2-5.5-3.5-8C15 12 14 13 13 12c1.5-4-1-9-1-11z"
+              fill="url(#flameGrad)"
+            />
+            <path
+              d="M12 12c0 0-3 3-3 6a3 3 0 0 0 6 0c0-2-1.5-3.5-3-6z"
+              fill="#fff6df"
+            />
+            <defs>
+              <linearGradient id="flameGrad" x1="12" y1="1" x2="12" y2="25" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#f6c453" />
+                <stop offset="0.55" stop-color="#e3a94c" />
+                <stop offset="1" stop-color="#b85f35" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <p class="story-text">{{ currentStory.text }}</p>
+      </div>
     </div>
 
     <!-- Navigation Areas (invisíveis, para clique) -->
@@ -67,6 +74,7 @@
 <script setup>
 import { ref } from 'vue';
 import ProgressBar from '@/components/ui/ProgressBar.vue';
+import VineCorner from '@/components/ui/VineCorner.vue';
 import BackButton from '@/components/ui/BackButton.vue';
 import { useStories } from '@/composables/useStories.js';
 import { getPublicPath } from '@/utils/assets';
@@ -268,84 +276,111 @@ const handleBack = () => {
   z-index: 1;
 }
 
-/* ===== MOLDURA DE MADEIRA (sobre a foto) ===== */
+/* ===== MOLDURA DE MADEIRA (textura real) ===== */
 .story-frame {
   position: absolute;
   inset: 0;
   z-index: 5;
   pointer-events: none;
   border-style: solid;
-  border-width: clamp(13px, 4.2vw, 20px);
-  border-color: #5c3a20;
-  /* veio de madeira nas bordas */
-  border-image: var(--wood-grain) 30 / clamp(13px, 4.2vw, 20px) / 0 repeat;
+  border-width: clamp(16px, 5vw, 26px);
+  border-color: #3a2412;
+  border-image: var(--tex-wood) 80 round;
   box-shadow:
-    inset 0 0 0 2px var(--wood-deep),
-    inset 0 0 0 4px rgba(0, 0, 0, 0.28),
-    inset 0 0 38px rgba(0, 0, 0, 0.55),
-    inset 0 0 95px rgba(227, 169, 76, 0.18),  /* brilho de vela */
-    0 0 0 2px var(--wood-deep),
-    0 14px 40px rgba(0, 0, 0, 0.5);
+    inset 0 0 0 3px rgba(0, 0, 0, 0.5),
+    inset 0 0 42px rgba(0, 0, 0, 0.6),
+    inset 0 0 115px rgba(227, 169, 76, 0.2),   /* luz de vela */
+    0 0 0 2px #1c0f06,
+    0 16px 44px rgba(0, 0, 0, 0.55);
 }
 
-/* pregos de ferro nos cantos superiores da moldura */
-.story-frame::before,
-.story-frame::after {
-  content: "";
+/* Vinhas com folhas e flor nos cantos */
+.vine {
   position: absolute;
-  top: -11px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #837a6f, var(--iron) 70%);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  width: clamp(46px, 13vw, 76px);
+  height: clamp(46px, 13vw, 76px);
   z-index: 6;
 }
-.story-frame::before { left: -11px; }
-.story-frame::after  { right: -11px; }
+.vine--tl { top: -7px;    left: -7px; }
+.vine--tr { top: -7px;    right: -7px;   transform: scaleX(-1); }
+.vine--bl { bottom: -7px; left: -7px;    transform: scaleY(-1); }
+.vine--br { bottom: -7px; right: -7px;   transform: scale(-1, -1); }
 
 /* Content */
 .story-content {
   position: absolute;
-  bottom: 25%;
+  bottom: 11%;
   left: 0;
   right: 0;
   z-index: var(--z-overlay);
-  padding: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== PERGAMINHO (scroll do texto) ===== */
+.story-scroll {
+  position: relative;
+  max-width: 520px;
+  width: min(86%, 520px);
+  margin: 0 auto;
+  padding: clamp(1.4rem, 4vw, 2.1rem) clamp(1.5rem, 5vw, 2.4rem);
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  color: #3a2113;
+  background:
+    var(--tex-parchment) repeat,
+    linear-gradient(180deg, #f3e6ca 0%, #e3cda4 100%);
+  background-size: 220px, auto;
+  border-radius: 5px;
+  border: 1px solid rgba(74, 42, 28, 0.4);
+  box-shadow:
+    inset 0 0 34px rgba(120, 80, 40, 0.28),
+    0 10px 30px rgba(0, 0, 0, 0.55);
 }
+
+/* rolos de madeira nas pontas (estilo pergaminho pendurado) */
+.story-scroll::before,
+.story-scroll::after {
+  content: "";
+  position: absolute;
+  left: -12px;
+  right: -12px;
+  height: 16px;
+  background:
+    var(--tex-wood) repeat,
+    linear-gradient(180deg, #6b4326, #3a2412);
+  background-size: 120px, auto;
+  border-radius: 9px;
+  box-shadow:
+    inset 0 1px 0 rgba(227, 169, 76, 0.3),
+    0 2px 6px rgba(0, 0, 0, 0.55);
+}
+.story-scroll::before { top: -9px; }
+.story-scroll::after  { bottom: -9px; }
 
 /* ===== CHAMA DE VELA (ornamento do texto) ===== */
 .story-flame {
   display: block;
-  margin-bottom: var(--spacing-sm);
-  filter: drop-shadow(0 0 10px rgba(227, 169, 76, 0.75))
-          drop-shadow(0 0 22px rgba(184, 95, 53, 0.5));
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 9px rgba(227, 169, 76, 0.8))
+          drop-shadow(0 0 20px rgba(184, 95, 53, 0.55));
   transform-origin: 50% 90%;
   animation: candleFlicker 2.4s ease-in-out infinite;
 }
 
 .story-text {
-  color: var(--white);
-  font-family: var(--font-display);
-  font-size: clamp(1.05rem, 2.5vw, 1.4rem);
-  font-style: italic;
+  font-family: var(--font-rune);
+  font-size: clamp(1.05rem, 3vw, 1.4rem);
   font-weight: 400;
   text-align: center;
-  line-height: 1.65;
-  max-width: 800px;
+  line-height: 1.6;
+  max-width: 46ch;
   margin: 0;
-  padding: var(--spacing-md) 0 0;
-  background: none;
-  backdrop-filter: none;
-  border-radius: 0;
-  border-top: 1px solid rgba(242, 230, 214, 0.4);
-  text-shadow:
-    0 2px 20px rgba(0, 0, 0, 0.9),
-    0 1px 4px rgba(0, 0, 0, 0.9);
+  color: #3a2113;
+  text-shadow: 0 1px 0 rgba(255, 250, 235, 0.45);
 }
 
 /* Tap Areas para navegação */

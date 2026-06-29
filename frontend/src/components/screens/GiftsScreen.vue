@@ -86,9 +86,12 @@ const handleNext = () => emit('next');
 
 /* ===== HEADER NAVY ===== */
 .gifts-header {
-  background-color: var(--wood-mid);
-  background-image: var(--wood-grain),
-    linear-gradient(180deg, rgba(227, 169, 76, 0.12), rgba(0, 0, 0, 0.4));
+  background-color: #3a2412;
+  background-image:
+    linear-gradient(180deg, rgba(227, 169, 76, 0.14), rgba(0, 0, 0, 0.45)),
+    var(--tex-grain) repeat,
+    var(--tex-wood) repeat;
+  background-size: auto, 180px, 240px;
   padding: clamp(80px, 14vh, 140px) var(--spacing-md) clamp(50px, 8vh, 90px);
   text-align: center;
   position: relative;
@@ -127,8 +130,8 @@ const handleNext = () => emit('next');
 }
 
 .gifts-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-family: var(--font-fantasy);
+  font-size: clamp(1.9rem, 5.2vw, 3.4rem);
   font-weight: 400;
   color: var(--white);
   line-height: 1.05;

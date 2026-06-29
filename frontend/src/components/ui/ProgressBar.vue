@@ -35,21 +35,26 @@ const progressWidth = computed(() => {
 </script>
 
 <style scoped>
+/* Trilho de madeira/ferro envelhecido com preenchimento de brasa dourada */
 .progress-bar-container {
   position: relative;
-  height: 3px;
+  height: 6px;
   flex: 1;
   overflow: hidden;
   border-radius: var(--radius-full);
+  box-shadow:
+    inset 0 1px 2px rgba(0, 0, 0, 0.6),
+    0 1px 0 rgba(227, 169, 76, 0.15);
 }
 
 .progress-bar-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15)),
+    #3a2412;
+  border: 1px solid rgba(0, 0, 0, 0.45);
+  border-radius: var(--radius-full);
 }
 
 .progress-bar-fill {
@@ -57,8 +62,12 @@ const progressWidth = computed(() => {
   top: 0;
   left: 0;
   height: 100%;
-  background: var(--white);
   border-radius: var(--radius-full);
+  background:
+    linear-gradient(180deg, #ffd98a 0%, #e3a94c 45%, #b85f35 100%);
+  box-shadow:
+    0 0 8px rgba(227, 169, 76, 0.8),
+    0 0 2px rgba(255, 217, 138, 0.9) inset;
   transition: width 0.05s linear;
 }
 
@@ -69,7 +78,7 @@ const progressWidth = computed(() => {
 
 @media (max-width: 768px) {
   .progress-bar-container {
-    height: 2px;
+    height: 5px;
   }
 }
 </style>

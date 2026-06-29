@@ -45,18 +45,19 @@ const screenNames = [
   z-index: var(--z-navigation);
 }
 
-/* ===== DOT BASE ===== */
+/* ===== DOT BASE (rebite de bronze) ===== */
 .dot {
   position: relative;
-  width: 7px;
-  height: 7px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
-  background: transparent;
+  border: 1px solid rgba(227, 169, 76, 0.4);
+  background: radial-gradient(circle at 35% 30%, #7a5a32, #2c1c0f 80%);
   cursor: pointer;
   padding: 0;
   transition: all 0.35s ease;
   outline: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Área de click maior */
@@ -67,11 +68,14 @@ const screenNames = [
   border-radius: 50%;
 }
 
-/* ===== DOT ATIVO ===== */
+/* ===== DOT ATIVO (gema de âmbar acesa) ===== */
 .dot--active {
-  background: var(--ice-blue);
-  border-color: var(--ice-blue);
-  box-shadow: 0 0 0 3px rgba(242, 230, 214, 0.2);
+  background: radial-gradient(circle at 38% 32%, #ffe6a8, #e3a94c 55%, #b85f35 100%);
+  border-color: rgba(255, 230, 168, 0.9);
+  box-shadow:
+    0 0 0 3px rgba(227, 169, 76, 0.18),
+    0 0 10px rgba(227, 169, 76, 0.85);
+  transform: scale(1.25);
 }
 
 /* ===== TOOLTIP ===== */
@@ -96,47 +100,22 @@ const screenNames = [
   transform: translateY(-50%) translateX(0);
 }
 
-/* ===== VARIANT DARK (fundos escuros / foto) ===== */
-.dots-nav--dark .dot {
-  border-color: rgba(255, 255, 255, 0.35);
+/* ===== HOVER (ambas variantes) ===== */
+.dot:hover:not(.dot--active) {
+  border-color: rgba(227, 169, 76, 0.8);
+  box-shadow: 0 0 8px rgba(227, 169, 76, 0.5);
 }
 
-.dots-nav--dark .dot--active {
-  background: var(--ice-blue);
-  border-color: var(--ice-blue);
-}
-
-.dots-nav--dark .dot:hover:not(.dot--active) {
-  border-color: rgba(255, 255, 255, 0.75);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.dots-nav--dark .dot-tooltip {
-  background: rgba(42, 24, 18, 0.75);
-  color: var(--white);
-  backdrop-filter: blur(6px);
-}
-
-/* ===== VARIANT LIGHT (Gifts — header navy, body pearl) ===== */
-.dots-nav--light .dot {
-  border-color: rgba(74, 42, 28, 0.25);
-}
-
-.dots-nav--light .dot--active {
-  background: var(--navy-dark);
-  border-color: var(--navy-dark);
-  box-shadow: 0 0 0 3px rgba(74, 42, 28, 0.12);
-}
-
-.dots-nav--light .dot:hover:not(.dot--active) {
-  border-color: var(--navy-mid);
-  background: rgba(74, 42, 28, 0.1);
-}
-
-.dots-nav--light .dot-tooltip {
-  background: var(--white);
-  color: var(--navy-dark);
-  box-shadow: var(--shadow-sm);
+/* Tooltip em pergaminho */
+.dot-tooltip {
+  background:
+    var(--tex-parchment) repeat,
+    #ede0c6;
+  background-size: 180px;
+  color: #3a2113;
+  font-family: var(--font-rune);
+  border: 1px solid rgba(74, 42, 28, 0.35);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* ===== MOBILE ===== */

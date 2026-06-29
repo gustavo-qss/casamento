@@ -73,13 +73,16 @@ const formatCurrency = (value) => {
 </script>
 
 <style scoped>
-/* Placa emoldurada em madeira */
+/* Placa emoldurada em madeira (textura real) */
 .gift-card {
   position: relative;
-  padding: 10px;
-  background-color: var(--wood);
-  background-image: var(--wood-grain),
-    linear-gradient(180deg, rgba(227, 169, 76, 0.1), rgba(0, 0, 0, 0.3));
+  padding: 11px;
+  background-color: #3a2412;
+  background-image:
+    linear-gradient(180deg, rgba(227, 169, 76, 0.12), rgba(0, 0, 0, 0.32)),
+    var(--tex-grain) repeat,
+    var(--tex-wood) repeat;
+  background-size: auto, 160px, 210px;
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow:

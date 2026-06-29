@@ -120,8 +120,8 @@ const handleBack = () => emit('back');
 .ornament-heart { flex-shrink: 0; }
 
 .confirmacao-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 7vw, 3.6rem);
+  font-family: var(--font-fantasy);
+  font-size: clamp(1.9rem, 5.5vw, 3rem);
   font-weight: 400;
   color: var(--navy-dark);
   margin: 0;

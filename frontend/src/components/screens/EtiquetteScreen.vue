@@ -128,8 +128,8 @@ const rules = [
 }
 
 .etiquette-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-family: var(--font-fantasy);
+  font-size: clamp(2rem, 5.6vw, 3.8rem);
   font-weight: 400;
   color: var(--navy-dark);
   line-height: 1.05;

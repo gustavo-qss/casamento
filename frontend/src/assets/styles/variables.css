@@ -52,6 +52,8 @@
       #5f3d23 13px, #5f3d23 16px
     );
   --parchment-bg:
+    /* fibras de papel reais (textura), definida em main.js */
+    var(--tex-paper) repeat,
     /* manchas de envelhecimento (claras e escuras) */
     radial-gradient(ellipse 38% 26% at 12% 18%, rgba(255, 250, 235, 0.55), transparent 60%),
     radial-gradient(ellipse 42% 30% at 88% 82%, rgba(150, 100, 55, 0.16), transparent 62%),
@@ -102,6 +104,9 @@
   --font-display: 'Playfair Display', serif;
   --font-body:    'Montserrat', sans-serif;
   --font-script:  'Great Vibes', cursive;
+  /* fantasy/medieval — usadas só no fluxo /instagram */
+  --font-fantasy: 'Uncial Antiqua', 'Playfair Display', serif;
+  --font-rune:    'MedievalSharp', 'Playfair Display', serif;
 
   /* ===== TAMANHOS DE TEXTO ===== */
   --text-hero:     clamp(2.5rem, 8vw, 5rem);
