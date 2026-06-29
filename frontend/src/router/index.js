@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import PolaroidsSite from '@/views/PolaroidsSite.vue';
 import InstagramSite from '@/views/InstagramSite.vue';
+import V2Site from '@/views/V2Site.vue';
 
 const routes = [
   // Site de scroll com galeria polaroid.
@@ -18,6 +19,12 @@ const routes = [
     path: '/instagram',
     name: 'instagram',
     component: InstagramSite,
+  },
+  // Versão 2 — site de scroll rústico-sofisticado (terroso, oliveiras, madeira).
+  {
+    path: '/instagram/2',
+    name: 'instagram-v2',
+    component: V2Site,
   },
   // Qualquer rota desconhecida cai no site polaroid.
   {
