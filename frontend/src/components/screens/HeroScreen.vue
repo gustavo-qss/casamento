@@ -63,7 +63,7 @@ const emit = defineEmits(['scrollNext']);
 
 const heroImage1 = getPublicPath('homepage.jpeg');
 const heroImage2 = getPublicPath('homepage1.jpeg');
-const logoImage = getPublicPath('logo.png');
+const logoImage = getPublicPath('logo_luquinha.png');
 
 const formattedDate = dayjs(weddingInfo.weddingDate).format('DD [de] MMMM [de] YYYY');
 const { days, hours, minutes, seconds } = useCountdown(weddingInfo.weddingDate);

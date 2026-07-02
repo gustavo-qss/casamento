@@ -36,7 +36,7 @@ const emit = defineEmits(['back']);
 const handleBack = () => emit('back');
 
 const closingImg = getPublicPath('homepage1.jpeg');
-const logoImg    = getPublicPath('logo.png');
+const logoImg    = getPublicPath('logo_luquinha.png');
 </script>
 
 <style scoped>

@@ -2,12 +2,13 @@
 import { ref } from 'vue';
 import { useScrollReveal } from '@/composables/useScrollReveal';
 import { getPublicPath } from '@/utils/assets';
+import FloralCorner from '@/components/ui/FloralCorner.vue';
 
 const section = ref(null);
 useScrollReveal(section);
 
 const closingImg = getPublicPath('homepage1.jpeg');
-const logoImg    = getPublicPath('logo.png');
+const logoImg    = getPublicPath('logo_luquinha.png');
 </script>
 
 <template>
@@ -16,6 +17,9 @@ const logoImg    = getPublicPath('logo.png');
       <img :src="closingImg" alt="Rawane e Gustavo" />
       <div class="closing-overlay"></div>
     </div>
+
+    <FloralCorner class="closing-floral closing-floral--tl" />
+    <FloralCorner class="closing-floral closing-floral--tr" />
 
     <div class="closing-content">
       <p class="closing-text reveal reveal-delay-1">
@@ -70,6 +74,17 @@ const logoImg    = getPublicPath('logo.png');
     rgba(42, 24, 18, 0.88) 100%
   );
 }
+
+.closing-floral {
+  position: absolute;
+  width: clamp(100px, 30vw, 210px);
+  height: clamp(100px, 30vw, 210px);
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.4));
+}
+.closing-floral--tl { top: -10px; left: -10px; }
+.closing-floral--tr { top: -10px; right: -10px; transform: scaleX(-1); }
 
 .closing-content {
   position: relative;

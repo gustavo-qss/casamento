@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useScrollReveal } from '@/composables/useScrollReveal';
+import FloralCorner from '@/components/ui/FloralCorner.vue';
 
 const section = ref(null);
 useScrollReveal(section);
@@ -8,6 +9,8 @@ useScrollReveal(section);
 
 <template>
   <section class="verse-section" id="verse" ref="section">
+    <FloralCorner class="verse-floral verse-floral--tr reveal reveal-fade" />
+    <FloralCorner class="verse-floral verse-floral--bl reveal reveal-fade" />
     <div class="verse-inner">
 
       <!-- Ornamento topo — dentro do flex, sem position absolute -->
@@ -62,10 +65,28 @@ useScrollReveal(section);
 
 <style scoped>
 .verse-section {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(255, 250, 235, 0.5), transparent 70%),
+    var(--parchment-bg);
   background-color: var(--cream);
   padding: clamp(3.5rem, 10vw, 6rem) var(--spacing-md);
   text-align: center;
+  overflow: hidden;
 }
+
+.verse-floral {
+  position: absolute;
+  width: clamp(90px, 22vw, 180px);
+  height: clamp(90px, 22vw, 180px);
+  z-index: 0;
+  opacity: 0.8;
+  pointer-events: none;
+}
+.verse-floral--tr { top: -14px; right: -14px; transform: scaleX(-1); }
+.verse-floral--bl { bottom: -14px; left: -14px; transform: scaleY(-1); }
+
+.verse-inner { position: relative; z-index: 1; }
 
 .verse-inner {
   max-width: 520px;

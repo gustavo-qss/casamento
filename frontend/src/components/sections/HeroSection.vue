@@ -1,9 +1,10 @@
 <script setup>
 import { onMounted } from 'vue';
 import { getPublicPath } from '@/utils/assets';
+import FloralCorner from '@/components/ui/FloralCorner.vue';
 
 const heroImg = getPublicPath('homepage.jpeg');
-const logoImg = getPublicPath('logo.png');
+const logoImg = getPublicPath('logo_luquinha.png');
 
 const scrollDown = () => {
   const next = document.getElementById('verse');
@@ -24,6 +25,11 @@ onMounted(() => {
       <img :src="heroImg" alt="Rawane e Gustavo" class="hero-img" />
       <div class="hero-overlay"></div>
     </div>
+
+    <FloralCorner class="hero-floral hero-floral--tl" />
+    <FloralCorner class="hero-floral hero-floral--tr" />
+    <FloralCorner class="hero-floral hero-floral--bl" />
+    <FloralCorner class="hero-floral hero-floral--br" />
 
     <div class="hero-content">
       <span class="hero-enter pre-text">com amor, convidamos você para</span>
@@ -84,6 +90,20 @@ onMounted(() => {
     rgba(42, 24, 18, 0.75) 100%
   );
 }
+
+/* Cantos florais secos (identidade visual) */
+.hero-floral {
+  position: absolute;
+  width: clamp(110px, 32vw, 240px);
+  height: clamp(110px, 32vw, 240px);
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
+}
+.hero-floral--tl { top: -10px; left: -10px; }
+.hero-floral--tr { top: -10px; right: -10px; transform: scaleX(-1); }
+.hero-floral--bl { bottom: -10px; left: -10px; transform: scaleY(-1); opacity: 0.85; }
+.hero-floral--br { bottom: -10px; right: -10px; transform: scale(-1, -1); opacity: 0.85; }
 
 .hero-content {
   position: relative;

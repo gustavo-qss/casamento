@@ -2,56 +2,96 @@
 import { ref } from "vue";
 import { useScrollReveal } from "@/composables/useScrollReveal";
 import { getPublicPath } from "@/utils/assets";
+import VineCorner from "@/components/ui/VineCorner.vue";
+import FloralCorner from "@/components/ui/FloralCorner.vue";
 
 const section = ref(null);
 useScrollReveal(section);
 
 const photos = [
   {
-    src: getPublicPath("storie1.jpeg"),
-    caption: "Nosso começo",
-    rotation: "-2.2deg",
+    src: getPublicPath("foto1.png"),
+    caption: "2016",
+    rotation: "-1.6deg",
     story:
-      "Foi em uma partida de truco com amigos em comum que tudo começou, horas trocadas nos intervalos do colégio e alguns finais de semana que foram transformando aquela amizade em amor. Vieram desafios, mas nunca desistimos um do outro.",
+      "Em 2016, nos conhecemos no colégio por causa do Grêmio Estudantil, sem imaginar que aquele seria o início da nossa história. Nasceu uma amizade que logo se transformou em amor. O tempo passou, mas a parceria que começou na escola continua firme até hoje. Nossa melhor conquista foi encontrar um no outro um companheiro para a vida.",
   },
   {
-    src: getPublicPath("transplante.jpeg"),
-    caption: "De corpo e alma",
-    rotation: "-1deg",
+    src: getPublicPath("foto2.png"),
+    caption: "2024",
+    rotation: "1deg",
     story:
-      "Com o tempo, a Rawane perdeu a função dos rins e precisou de um transplante. O Gustavo foi o único compatível, e doou um rim grande, gordo e muito saudável pra ela. Desde então a vida dos dois voltou ao normal, e finalmente puderam selar essa união como sempre sonharam.",
+      "Em 2024, começamos a conquistar nossos sonhos juntos, construindo nosso lar e alcançando objetivos que antes pareciam distantes. Cada passo foi fruto da nossa parceria e do nosso esforço.",
   },
   {
-    src: getPublicPath("stories3.jpeg"),
-    caption: "Momentos juntos",
-    rotation: "1.5deg",
+    src: getPublicPath("foto3.png"),
+    caption: "2025",
+    rotation: "-1.2deg",
     story:
-      "Com a vida de volta aos trilhos, a Rawane encerrando a faculdade de veterinária e o Gustavo o mestrado, chegou a hora de unir não só o corpo, dividindo o rim, mas a alma perante a Deus. É com enorme alegria que te convidamos a fazer parte dessa história.",
+      "Em 2025, em meio aos desafios, alegrias e momentos marcantes da vida, tomamos a decisão mais importante da nossa história: unir nossas vidas em sagrado matrimônio. Com amor, fé e a certeza de que queremos caminhar juntos para sempre, iniciamos um novo capítulo da nossa jornada.",
   },
   {
-    src: getPublicPath("storie2.jpeg"),
+    src: getPublicPath("foto4.png"),
     caption: "Te esperamos lá",
-    rotation: "-1deg",
+    rotation: "0.8deg",
     story:
       "Estamos ansiosos para te ver no nosso casamento. Esperamos que a próxima foto seja com você — e que você esteja ao nosso lado nesse dia tão especial.",
   },
 ];
 
-const flipped = ref([false, false, false, false]);
-const hasFlippedFirst = ref(false);
+const seloImg = getPublicPath("selo.png");
 
-const toggle = (i) => {
-  flipped.value = flipped.value.map((v, idx) => (idx === i ? !v : v));
-  if (i === 0) hasFlippedFirst.value = true;
+const opened = ref(photos.map(() => false));
+const flipped = ref(photos.map(() => false));
+const hasOpenedAny = ref(false);
+
+const handleActivate = (i) => {
+  if (!opened.value[i]) {
+    // 1º toque: desenrola o pergaminho revelando a foto
+    opened.value = opened.value.map((v, idx) => (idx === i ? true : v));
+    hasOpenedAny.value = true;
+  } else if (photos[i].story) {
+    // já aberto: vira o pergaminho (foto <-> história)
+    flipped.value = flipped.value.map((v, idx) => (idx === i ? !v : v));
+  }
+};
+
+const closeScroll = (i) => {
+  opened.value = opened.value.map((v, idx) => (idx === i ? false : v));
+  flipped.value = flipped.value.map((v, idx) => (idx === i ? false : v));
+};
+
+// Clique nos rolos de madeira: fecha se aberto (traz o selo de volta), abre se fechado
+const handleRoller = (i) => {
+  if (opened.value[i]) closeScroll(i);
+  else handleActivate(i);
 };
 </script>
 
 <template>
   <section class="gallery" id="gallery" ref="section">
+    <FloralCorner class="bg-floral bg-floral--tl" />
+    <FloralCorner class="bg-floral bg-floral--br" />
+
     <header class="gallery-header reveal">
       <span class="gallery-eyebrow">nossa história</span>
       <div class="gallery-rule">
-        <span></span><span class="rule-dot">✦</span><span></span>
+        <span class="rule-line"></span>
+        <svg class="rule-sprig" viewBox="0 0 40 24" fill="none" aria-hidden="true">
+          <path d="M20 22 C20 12 20 6 20 2" stroke="#8a6a3e" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M20 10 c -7 -2 -11 -6 -12 -12 c 7 1 11 5 12 12 z" fill="#8a9a5b"/>
+          <path d="M20 10 c 7 -2 11 -6 12 -12 c -7 1 -11 5 -12 12 z" fill="#6f7e44"/>
+          <g transform="translate(20,3)">
+            <g fill="#c66a3a">
+              <ellipse cx="0" cy="-3" rx="1.6" ry="2.6"/>
+              <ellipse cx="0" cy="3" rx="1.6" ry="2.6"/>
+              <ellipse cx="-3" cy="0" rx="2.6" ry="1.6"/>
+              <ellipse cx="3" cy="0" rx="2.6" ry="1.6"/>
+            </g>
+            <circle cx="0" cy="0" r="1.6" fill="#ffd98a"/>
+          </g>
+        </svg>
+        <span class="rule-line"></span>
       </div>
     </header>
 
@@ -59,70 +99,89 @@ const toggle = (i) => {
       <div
         v-for="(photo, i) in photos"
         :key="i"
-        class="polaroid-wrapper reveal"
+        class="scroll-wrapper reveal"
         :class="`reveal-delay-${i + 1}`"
       >
-        <!-- flip-scene: segura rotação + perspective; separado do reveal -->
         <div
-          class="flip-scene"
-          :class="{ 'is-flipped': flipped[i] }"
-          :style="{ '--rot': photo.rotation }"
-          @click="toggle(i)"
-          :aria-label="flipped[i] ? 'Ver foto' : 'Ler história'"
+          class="scroll"
+          :class="{ 'is-open': opened[i], 'is-flipped': flipped[i] }"
+          :style="{ '--tilt': photo.rotation }"
           role="button"
           tabindex="0"
-          @keyup.enter="toggle(i)"
+          :aria-label="!opened[i] ? 'Abrir pergaminho' : (photo.story ? (flipped[i] ? 'Ver foto' : 'Ler nossa história') : 'Nossa foto')"
+          @click="handleActivate(i)"
+          @keyup.enter="handleActivate(i)"
         >
-          <div class="flip-card">
-            <!-- Frente: foto -->
-            <div class="flip-face flip-front">
-              <div class="polaroid-pin"></div>
-              <span class="flip-hint">toque para ver nossa história ✦</span>
-              <div class="polaroid-photo">
-                <img
-                  :src="photo.src"
-                  :alt="photo.caption"
-                  loading="lazy"
-                  draggable="false"
-                />
-              </div>
-              <!-- Cursor de clique — só na primeira foto, some após o primeiro flip -->
-              <div
-                v-if="!hasFlippedFirst"
-                class="cursor-hint"
-                aria-hidden="true"
-              >
-                <div class="cursor-ripple"></div>
-                <svg
-                  class="cursor-svg"
-                  viewBox="0 0 13 17"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.5 1.5 L1.5 13 L4.5 10.5 L6.5 15.5 L9 14.5 L7 9.5 L10.5 9.5 Z"
-                    fill="white"
-                    stroke="#222"
-                    stroke-width="1"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-              <p class="polaroid-caption">{{ photo.caption }}</p>
-            </div>
+          <!-- Rolo de madeira superior (clique fecha o pergaminho) -->
+          <div
+            class="roller roller-top"
+            :title="opened[i] ? 'Enrolar de volta' : 'Abrir'"
+            @click.stop="handleRoller(i)"
+          >
+            <span class="cap cap-l"></span>
+            <span class="cap cap-r"></span>
+          </div>
 
-            <!-- Verso: texto da história -->
-            <div class="flip-face flip-back">
-              <div class="polaroid-pin"></div>
-              <div class="back-content">
-                <p class="back-chapter">{{ photo.caption }}</p>
-                <div class="back-rule"></div>
-                <p class="back-text">{{ photo.story }}</p>
+          <!-- Corpo do pergaminho (desenrola) -->
+          <div class="sheet">
+            <div class="flip3d">
+              <!-- FRENTE: foto emoldurada -->
+              <div class="face face-front">
+                <VineCorner class="v-corner v-tl" />
+                <VineCorner class="v-corner v-br" />
+                <div class="photo">
+                  <img :src="photo.src" :alt="photo.caption" loading="lazy" draggable="false" />
+                </div>
+                <p class="caption">{{ photo.caption }}</p>
+                <span v-if="photo.story" class="flip-hint">toque para ler a história ✦</span>
               </div>
-              <span class="flip-hint">toque para voltar ✦</span>
+
+              <!-- VERSO: história escrita no pergaminho -->
+              <div v-if="photo.story" class="face face-back">
+                <VineCorner class="v-corner v-tr" />
+                <VineCorner class="v-corner v-bl" />
+                <div class="back-inner">
+                  <svg class="sprig" viewBox="0 0 44 22" fill="none" aria-hidden="true">
+                    <path d="M4 11 H40" stroke="#8a6a3e" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M22 11 c -5 -3 -8 -8 -8 -14 c 5 2 8 7 8 14 z" fill="#8a9a5b"/>
+                    <path d="M22 11 c 5 -3 8 -8 8 -14 c -5 2 -8 7 -8 14 z" fill="#6f7e44"/>
+                    <g transform="translate(22,3)">
+                      <g fill="#c66a3a">
+                        <ellipse cx="0" cy="-3.2" rx="1.8" ry="2.9"/>
+                        <ellipse cx="0" cy="3.2" rx="1.8" ry="2.9"/>
+                        <ellipse cx="-3.2" cy="0" rx="2.9" ry="1.8"/>
+                        <ellipse cx="3.2" cy="0" rx="2.9" ry="1.8"/>
+                      </g>
+                      <circle cx="0" cy="0" r="1.8" fill="#ffd98a"/>
+                    </g>
+                  </svg>
+                  <p class="chapter">{{ photo.caption }}</p>
+                  <div class="rule"></div>
+                  <p class="story">{{ photo.story }}</p>
+                  <span class="flip-hint flip-hint--back">toque para voltar ✦</span>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- Rolo de madeira inferior (clique fecha o pergaminho) -->
+          <div
+            class="roller roller-bottom"
+            :title="opened[i] ? 'Enrolar de volta' : 'Abrir'"
+            @click.stop="handleRoller(i)"
+          >
+            <span class="cap cap-l"></span>
+            <span class="cap cap-r"></span>
+          </div>
+
+          <!-- Selo de cera (visível quando fechado) -->
+          <div class="seal" aria-hidden="true">
+            <img :src="seloImg" alt="" draggable="false" />
+          </div>
         </div>
+
+        <!-- Dica de toque — só na primeira, some após abrir qualquer um -->
+        <span v-if="!hasOpenedAny && i === 0" class="open-hint">toque para abrir ✦</span>
       </div>
     </div>
   </section>
@@ -130,190 +189,229 @@ const toggle = (i) => {
 
 <style scoped>
 .gallery {
-  background: #f9f6f0;
-  padding: clamp(3rem, 8vw, 5rem) var(--spacing-md);
+  position: relative;
+  padding: clamp(3.5rem, 9vw, 6rem) var(--spacing-md);
   overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(184, 95, 53, 0.06), transparent 60%),
+    var(--parchment-bg);
 }
 
-/* Header */
+/* Flores de canto (fundo da seção) */
+.bg-floral {
+  position: absolute;
+  width: clamp(120px, 26vw, 230px);
+  height: clamp(120px, 26vw, 230px);
+  opacity: 0.85;
+  z-index: 0;
+  pointer-events: none;
+}
+.bg-floral--tl { top: -14px; left: -14px; }
+.bg-floral--br { bottom: -14px; right: -14px; transform: scale(-1, -1); }
+
+/* ===== HEADER ===== */
 .gallery-header {
+  position: relative;
+  z-index: 1;
   text-align: center;
-  margin-bottom: clamp(2rem, 6vw, 3rem);
+  margin-bottom: clamp(2.5rem, 7vw, 3.5rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
 }
 
 .gallery-eyebrow {
-  font-family: var(--font-body);
-  font-size: clamp(0.62rem, 2vw, 0.78rem);
-  font-weight: 400;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--lavender-dark);
+  font-family: var(--font-script);
+  font-size: clamp(1.9rem, 6vw, 2.8rem);
+  color: var(--brown-mid);
+  line-height: 1;
 }
 
 .gallery-rule {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  width: 90px;
+  gap: 0.6rem;
+  width: clamp(150px, 44vw, 220px);
 }
-
-.gallery-rule span:not(.rule-dot) {
+.rule-line {
   flex: 1;
   height: 1px;
-  background: var(--lavender-dark);
-  opacity: 0.3;
-}
-
-.rule-dot {
-  font-size: 0.55rem;
-  color: var(--lavender-dark);
+  background: linear-gradient(90deg, transparent, var(--leaf-brown));
   opacity: 0.5;
 }
+.gallery-rule .rule-line:last-child {
+  background: linear-gradient(90deg, var(--leaf-brown), transparent);
+}
+.rule-sprig { width: 40px; height: 24px; flex: none; }
 
-/* Stack — mobile: coluna */
+/* ===== STACK ===== */
 .gallery-stack {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(2rem, 6vw, 3.5rem);
-  max-width: 500px;
+  gap: clamp(3rem, 9vw, 4.5rem);
+  max-width: 480px;
   margin: 0 auto;
 }
 
-/* Wrapper de reveal — sem transform própria */
-.polaroid-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-/* ============================================
-   DESKTOP — 3 colunas lado a lado (≥ 768px)
-   ============================================ */
 @media (min-width: 768px) {
   .gallery {
-    padding: clamp(4rem, 8vw, 7rem) clamp(2.5rem, 5vw, 6rem);
+    padding: clamp(4.5rem, 8vw, 7rem) clamp(2rem, 5vw, 5rem);
   }
-
   .gallery-stack {
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
-    max-width: 1180px;
-    gap: 2.5rem;
+    max-width: 760px;
+    gap: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 3vw, 2.5rem);
   }
-
-  .polaroid-wrapper {
-    flex: 1;
-    max-width: 340px;
-  }
-
-  .flip-scene {
-    width: 100%;
-  }
-
-  /* Deslocamento vertical — efeito "espalhado na mesa" */
-  .polaroid-wrapper:nth-child(2) {
-    margin-top: 3rem;
-  }
-  .polaroid-wrapper:nth-child(3) {
-    margin-top: 1.2rem;
-  }
+  .scroll-wrapper { flex: 0 0 auto; width: 320px; }
+  .scroll-wrapper:nth-child(even) { margin-top: 2.5rem; }
 }
 
-/* ===== FLIP SCENE ===== */
-/* Segura a rotação de polaroid + perspective para o 3D */
-.flip-scene {
-  --rot: 0deg;
-  width: clamp(240px, 72vw, 380px);
-  perspective: 1400px;
+.scroll-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== PERGAMINHO ===== */
+.scroll {
+  --tilt: 0deg;
+  --sheet-w: min(88vw, 360px);
+  position: relative;
+  width: var(--sheet-w);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
-  transform: rotate(var(--rot));
+  transform: rotate(var(--tilt));
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -webkit-tap-highlight-color: transparent;
   user-select: none;
   -webkit-user-select: none;
 }
+@media (min-width: 768px) {
+  .scroll { --sheet-w: 320px; }
+}
+.scroll:hover:not(.is-open) { transform: rotate(0deg) scale(1.02); }
 
-.flip-scene:hover:not(.is-flipped) {
-  transform: rotate(0deg) scale(1.025);
+/* Rolos de madeira */
+.roller {
+  position: relative;
+  width: calc(var(--sheet-w) + 12px);
+  height: 20px;
+  border-radius: 11px;
+  background:
+    linear-gradient(180deg, rgba(227, 169, 76, 0.35), transparent 40%, rgba(0, 0, 0, 0.45)),
+    var(--tex-wood) repeat,
+    linear-gradient(180deg, #7a4c29, #3a2412);
+  background-size: auto, 120px, auto;
+  box-shadow:
+    inset 0 1px 0 rgba(227, 169, 76, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+    0 3px 7px rgba(0, 0, 0, 0.4);
+  z-index: 4;
+}
+.roller-top { margin-bottom: -3px; }
+.roller-bottom { margin-top: -3px; }
+
+/* Tampas de ferro nas pontas dos rolos */
+.cap {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 26px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: radial-gradient(circle at 40% 35%, #7b7166, #2c2620 75%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+.cap-l { left: -8px; }
+.cap-r { right: -8px; }
+
+/* Folha de pergaminho que desenrola */
+.sheet {
+  width: var(--sheet-w);
+  max-height: 34px;                 /* fechado: só um vinco de pergaminho */
+  overflow: hidden;
+  perspective: 1500px;
+  background:
+    var(--tex-parchment) repeat,
+    linear-gradient(180deg, #f3e6ca, #e3cda4);
+  background-size: 200px, auto;
+  box-shadow: inset 0 6px 14px rgba(120, 80, 40, 0.4);
+  transition: max-height 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.scroll.is-open .sheet {
+  max-height: 680px;
+  box-shadow:
+    inset 0 0 26px rgba(120, 80, 40, 0.22),
+    0 6px 22px rgba(0, 0, 0, 0.25);
 }
 
-/* ===== FLIP CARD ===== */
-.flip-card {
+.flip3d {
   position: relative;
   width: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+  opacity: 0;
+  transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1), opacity 0.4s ease 0.2s;
 }
+.scroll.is-open .flip3d { opacity: 1; }
+.scroll.is-flipped .flip3d { transform: rotateY(180deg); }
 
-.is-flipped .flip-card {
-  transform: rotateY(180deg);
-}
-
-/* ===== FACES ===== */
-.flip-face {
+/* Faces */
+.face {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  background: #ffffff;
-  border-radius: 2px;
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.08),
-    0 8px 32px rgba(0, 0, 0, 0.13),
-    0 1px 2px rgba(0, 0, 0, 0.05);
-  padding: 14px 14px 52px;
-  position: relative;
-  overflow: hidden;
+  padding: 16px 16px 14px;
 }
-
-.flip-front {
-  /* face frontal: fluxo normal — define a altura total */
-}
-
-.flip-back {
-  /* face traseira: absoluta sobre a frente, rotacionada 180° */
+.face-front { position: relative; }
+.face-back {
   position: absolute;
   inset: 0;
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 24px 20px 52px;
-  /* Textura sutil de papel */
+  /* Pergaminho opaco: o texto parece escrito na folha (sem a foto atrás) */
   background:
-    radial-gradient(
-      ellipse at 80% 20%,
-      rgba(177, 185, 231, 0.08) 0%,
-      transparent 55%
-    ),
-    #ffffff;
+    var(--tex-parchment) repeat,
+    radial-gradient(ellipse 70% 55% at 50% 45%, #f6ead0, #e6d1a9 100%);
+  background-size: 200px, auto;
+  box-shadow: inset 0 0 40px rgba(120, 80, 40, 0.28);
 }
 
-/* Pino decorativo no topo */
-.polaroid-pin {
+/* Vinhas nos cantos das faces */
+.v-corner {
   position: absolute;
-  top: -1px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 2px;
-  background: rgba(144, 152, 199, 0.35);
-  border-radius: 999px;
+  width: clamp(38px, 12vw, 56px);
+  height: clamp(38px, 12vw, 56px);
+  z-index: 3;
+  pointer-events: none;
 }
+.v-tl { top: 2px;    left: 2px; }
+.v-br { bottom: 2px; right: 2px;  transform: scale(-1, -1); }
+.v-tr { top: 2px;    right: 2px;  transform: scaleX(-1); }
+.v-bl { bottom: 2px; left: 2px;   transform: scaleY(-1); }
 
-/* ===== FRENTE ===== */
-.polaroid-photo {
+/* Foto */
+.photo {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
-  background: #e8e4dc;
+  border-radius: 2px;
+  background: #e8e0cf;
+  box-shadow:
+    inset 0 0 0 1px rgba(74, 42, 28, 0.25),
+    0 3px 10px rgba(74, 42, 28, 0.25);
 }
-
-.polaroid-photo img {
+.photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -321,153 +419,107 @@ const toggle = (i) => {
   display: block;
   transition: transform 0.6s ease;
 }
+.scroll:hover.is-open:not(.is-flipped) .photo img { transform: scale(1.03); }
 
-.flip-scene:hover:not(.is-flipped) .polaroid-photo img {
-  transform: scale(1.04);
-}
-
-.polaroid-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.caption {
   font-family: var(--font-script);
-  font-size: clamp(1rem, 3.5vw, 1.25rem);
-  color: var(--navy-dark);
-  opacity: 0.75;
-  margin: 0;
-}
-
-/* ===== VERSO ===== */
-.back-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  flex: 1;
-}
-
-.back-chapter {
-  font-family: var(--font-script);
-  font-size: clamp(1.4rem, 4.5vw, 1.8rem);
-  color: var(--navy-dark);
-  opacity: 0.85;
+  font-size: clamp(1.35rem, 4.5vw, 1.7rem);
+  color: var(--brown-mid);
   text-align: center;
-  margin: 0;
-  line-height: 1.2;
+  margin: 0.5rem 0 0.1rem;
+  line-height: 1.1;
 }
 
-.back-rule {
-  width: 48px;
-  height: 1px;
-  background: var(--lavender-dark);
-  opacity: 0.3;
-  margin: 0 auto;
-}
-
-.back-text {
-  font-family: var(--font-body);
-  font-size: clamp(0.8rem, 2.2vw, 0.92rem);
-  color: #555;
-  line-height: 1.75;
-  font-weight: 300;
-  text-align: center;
-  margin: 0;
-}
-
-/* ===== HINT ===== */
 .flip-hint {
   display: block;
   text-align: center;
   font-family: var(--font-body);
-  font-size: clamp(0.6rem, 1.8vw, 0.68rem);
+  font-size: clamp(0.58rem, 1.7vw, 0.66rem);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--lavender-dark);
+  color: var(--clay);
   opacity: 0.7;
-  padding: 6px 0 8px;
-  line-height: 1;
+  margin-top: 2px;
 }
 
-/* Hint do verso: dentro do back, posição absoluta na base */
-.flip-back .flip-hint {
-  position: absolute;
-  bottom: 14px;
-  left: 0;
-  right: 0;
-  padding: 0;
-  opacity: 0.45;
+/* Verso — história */
+.face-back .back-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: clamp(0.8rem, 3vw, 1.4rem) clamp(0.3rem, 1.4vw, 0.6rem);
+}
+.sprig { width: 44px; height: 22px; opacity: 0.9; }
+.chapter {
+  font-family: var(--font-script);
+  font-size: clamp(1.5rem, 5vw, 1.9rem);
+  color: var(--brown-mid);
+  text-align: center;
+  margin: 0;
+  line-height: 1.1;
+}
+.rule {
+  width: 46px;
+  height: 1px;
+  background: var(--leaf-brown);
+  opacity: 0.4;
+}
+.story {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(0.82rem, 2.4vw, 0.95rem);
+  color: var(--brown-deep);
+  line-height: 1.62;
+  text-align: center;
+  margin: 0;
+}
+.flip-hint--back {
+  margin-top: 0.4rem;
+  opacity: 0.55;
 }
 
-/* ===== CURSOR HINT ===== */
-.cursor-hint {
+/* Selo de cera (imagem selo.png) lacrando o pergaminho fechado */
+.seal {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 28px;
-  height: 28px;
+  top: 50%;
+  left: 50%;
+  width: clamp(90px, 27vw, 120px);
+  height: clamp(90px, 27vw, 120px);
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.seal img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  /* some o fundo branco do PNG sobre o pergaminho, mantendo a cera terracota */
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 4px 8px rgba(74, 42, 28, 0.45));
+}
+.scroll.is-open .seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.35) rotate(-8deg);
   pointer-events: none;
-  z-index: 3;
 }
 
-.cursor-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 22px;
-  height: 26px;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
-  animation: cursorPress 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  z-index: 2;
+/* Dica "toque para abrir" */
+.open-hint {
+  margin-top: 1.8rem;
+  font-family: var(--font-body);
+  font-size: clamp(0.62rem, 1.9vw, 0.72rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--clay);
+  opacity: 0.75;
+  animation: hintPulse 2.4s ease-in-out infinite;
 }
-
-.cursor-ripple {
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  width: 20px;
-  height: 20px;
-  border: 1.5px solid rgba(255, 255, 255, 0.75);
-  border-radius: 50%;
-  animation: cursorRipple 2.6s ease-out infinite;
-}
-
-@keyframes cursorPress {
-  0%,
-  30% {
-    transform: scale(1) translate(0, 0);
-  }
-  48% {
-    transform: scale(0.8) translate(1px, 2px);
-  }
-  62% {
-    transform: scale(1) translate(0, 0);
-  }
-  100% {
-    transform: scale(1) translate(0, 0);
-  }
-}
-
-@keyframes cursorRipple {
-  0%,
-  35% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  42% {
-    transform: scale(0.4);
-    opacity: 0.7;
-  }
-  80% {
-    transform: scale(2.4);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(2.4);
-    opacity: 0;
-  }
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.85; }
 }
 </style>

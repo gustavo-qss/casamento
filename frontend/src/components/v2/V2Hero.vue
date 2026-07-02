@@ -27,7 +27,7 @@ dayjs.locale('pt-br');
 defineEmits(['next']);
 
 const bgImage = getPublicPath('homepage.jpeg');
-const logo = getPublicPath('logo.png');
+const logo = getPublicPath('logo_luquinha.png');
 const bride = weddingInfo.couple.bride;
 const groom = weddingInfo.couple.groom;
 const formattedDate = dayjs(weddingInfo.weddingDate).format('DD [de] MMMM [de] YYYY');
