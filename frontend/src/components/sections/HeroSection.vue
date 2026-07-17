@@ -3,7 +3,7 @@ import { onMounted } from 'vue';
 import { getPublicPath } from '@/utils/assets';
 import FloralCorner from '@/components/ui/FloralCorner.vue';
 
-const heroImg = getPublicPath('homepage.jpeg');
+const heroImg = getPublicPath('new-intro.jpg');
 const logoImg = getPublicPath('logo_luquinha.png');
 
 const scrollDown = () => {
@@ -22,7 +22,7 @@ onMounted(() => {
 <template>
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <img :src="heroImg" alt="Rawane e Gustavo" class="hero-img" />
+      <img :src="heroImg" alt="Lucas e Jéssica" class="hero-img" />
       <div class="hero-overlay"></div>
     </div>
 
@@ -33,13 +33,13 @@ onMounted(() => {
 
     <div class="hero-content">
       <span class="hero-enter pre-text">com amor, convidamos você para</span>
-      <img :src="logoImg" alt="Rawane e Gustavo" class="hero-enter hero-logo" />
+      <img :src="logoImg" alt="Lucas e Jéssica" class="hero-enter hero-logo" />
       <div class="hero-enter divider">
         <span class="divider-line"></span>
         <span class="divider-ornament">✦</span>
         <span class="divider-line"></span>
       </div>
-      <p class="hero-enter date-text">16 &bull; Maio &bull; 2026</p>
+      <p class="hero-enter date-text">21 &bull; Novembro &bull; 2026</p>
     </div>
 
     <button class="scroll-hint" @click="scrollDown" aria-label="Rolar para baixo">
@@ -71,7 +71,7 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   animation: kenBurnsHero 14s ease-in-out alternate infinite;
 }
 

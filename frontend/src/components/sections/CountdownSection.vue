@@ -7,9 +7,9 @@ import weddingInfo from '@/data/wedding-info.json';
 const section = ref(null);
 useScrollReveal(section);
 
-const bgImg2  = getPublicPath('countdown.jpeg');
-const bgImg = getPublicPath('countdown2.jpeg');
-const bgImg3 = getPublicPath('countdown3.jpeg');
+const bgImg  = getPublicPath('frame1.png');
+const bgImg2 = getPublicPath('frame2.png');
+const bgImg3 = getPublicPath('frame3.png');
 const TARGET = new Date(weddingInfo.weddingDate);
 
 const days    = ref(0);
@@ -45,7 +45,7 @@ const pad = (n) => String(n).padStart(2, '0');
   <section class="countdown" id="countdown" ref="section">
     <!-- Mobile: single image -->
     <div class="countdown-bg countdown-bg--mobile">
-      <img :src="bgImg2" alt="" class="countdown-photo" />
+      <img :src="bgImg" alt="" class="countdown-photo" />
       <div class="countdown-overlay"></div>
     </div>
 

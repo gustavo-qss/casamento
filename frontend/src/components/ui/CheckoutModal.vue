@@ -97,7 +97,7 @@
           <!-- Preview da carta -->
           <Transition name="preview-in">
             <div v-if="guestName" class="card-preview">
-              <div class="card-ribbon">Para Rawane &amp; Gustavo</div>
+              <div class="card-ribbon">Para Lucas &amp; Jéssica</div>
               <div class="card-body">
                 <p class="card-message">{{ guestMessage || '...' }}</p>
                 <p class="card-from">

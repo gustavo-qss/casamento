@@ -39,32 +39,11 @@ const photos = [
   },
 ];
 
-const seloImg = getPublicPath("selo.png");
-
-const opened = ref(photos.map(() => false));
+// Pergaminhos já vêm abertos; o clique apenas vira (foto <-> história)
 const flipped = ref(photos.map(() => false));
-const hasOpenedAny = ref(false);
 
-const handleActivate = (i) => {
-  if (!opened.value[i]) {
-    // 1º toque: desenrola o pergaminho revelando a foto
-    opened.value = opened.value.map((v, idx) => (idx === i ? true : v));
-    hasOpenedAny.value = true;
-  } else if (photos[i].story) {
-    // já aberto: vira o pergaminho (foto <-> história)
-    flipped.value = flipped.value.map((v, idx) => (idx === i ? !v : v));
-  }
-};
-
-const closeScroll = (i) => {
-  opened.value = opened.value.map((v, idx) => (idx === i ? false : v));
-  flipped.value = flipped.value.map((v, idx) => (idx === i ? false : v));
-};
-
-// Clique nos rolos de madeira: fecha se aberto (traz o selo de volta), abre se fechado
-const handleRoller = (i) => {
-  if (opened.value[i]) closeScroll(i);
-  else handleActivate(i);
+const toggleFlip = (i) => {
+  flipped.value = flipped.value.map((v, idx) => (idx === i ? !v : v));
 };
 </script>
 
@@ -104,25 +83,21 @@ const handleRoller = (i) => {
       >
         <div
           class="scroll"
-          :class="{ 'is-open': opened[i], 'is-flipped': flipped[i] }"
+          :class="{ 'is-flipped': flipped[i] }"
           :style="{ '--tilt': photo.rotation }"
           role="button"
           tabindex="0"
-          :aria-label="!opened[i] ? 'Abrir pergaminho' : (photo.story ? (flipped[i] ? 'Ver foto' : 'Ler nossa história') : 'Nossa foto')"
-          @click="handleActivate(i)"
-          @keyup.enter="handleActivate(i)"
+          :aria-label="flipped[i] ? 'Ver a foto' : 'Ler nossa história'"
+          @click="toggleFlip(i)"
+          @keyup.enter="toggleFlip(i)"
         >
-          <!-- Rolo de madeira superior (clique fecha o pergaminho) -->
-          <div
-            class="roller roller-top"
-            :title="opened[i] ? 'Enrolar de volta' : 'Abrir'"
-            @click.stop="handleRoller(i)"
-          >
+          <!-- Rolo de madeira superior (decorativo) -->
+          <div class="roller roller-top" aria-hidden="true">
             <span class="cap cap-l"></span>
             <span class="cap cap-r"></span>
           </div>
 
-          <!-- Corpo do pergaminho (desenrola) -->
+          <!-- Corpo do pergaminho (já aberto) -->
           <div class="sheet">
             <div class="flip3d">
               <!-- FRENTE: foto emoldurada -->
@@ -133,11 +108,11 @@ const handleRoller = (i) => {
                   <img :src="photo.src" :alt="photo.caption" loading="lazy" draggable="false" />
                 </div>
                 <p class="caption">{{ photo.caption }}</p>
-                <span v-if="photo.story" class="flip-hint">toque para ler a história ✦</span>
+                <span class="flip-hint">toque para revelar a história ✦</span>
               </div>
 
               <!-- VERSO: história escrita no pergaminho -->
-              <div v-if="photo.story" class="face face-back">
+              <div class="face face-back">
                 <VineCorner class="v-corner v-tr" />
                 <VineCorner class="v-corner v-bl" />
                 <div class="back-inner">
@@ -164,24 +139,12 @@ const handleRoller = (i) => {
             </div>
           </div>
 
-          <!-- Rolo de madeira inferior (clique fecha o pergaminho) -->
-          <div
-            class="roller roller-bottom"
-            :title="opened[i] ? 'Enrolar de volta' : 'Abrir'"
-            @click.stop="handleRoller(i)"
-          >
+          <!-- Rolo de madeira inferior (decorativo) -->
+          <div class="roller roller-bottom" aria-hidden="true">
             <span class="cap cap-l"></span>
             <span class="cap cap-r"></span>
           </div>
-
-          <!-- Selo de cera (visível quando fechado) -->
-          <div class="seal" aria-hidden="true">
-            <img :src="seloImg" alt="" draggable="false" />
-          </div>
         </div>
-
-        <!-- Dica de toque — só na primeira, some após abrir qualquer um -->
-        <span v-if="!hasOpenedAny && i === 0" class="open-hint">toque para abrir ✦</span>
       </div>
     </div>
   </section>
@@ -300,7 +263,7 @@ const handleRoller = (i) => {
 @media (min-width: 768px) {
   .scroll { --sheet-w: 320px; }
 }
-.scroll:hover:not(.is-open) { transform: rotate(0deg) scale(1.02); }
+.scroll:hover { transform: rotate(0deg) scale(1.02); }
 
 /* Rolos de madeira */
 .roller {
@@ -336,21 +299,16 @@ const handleRoller = (i) => {
 .cap-l { left: -8px; }
 .cap-r { right: -8px; }
 
-/* Folha de pergaminho que desenrola */
+/* Folha de pergaminho (já aberta) */
 .sheet {
   width: var(--sheet-w);
-  max-height: 34px;                 /* fechado: só um vinco de pergaminho */
+  max-height: 760px;
   overflow: hidden;
   perspective: 1500px;
   background:
     var(--tex-parchment) repeat,
     linear-gradient(180deg, #f3e6ca, #e3cda4);
   background-size: 200px, auto;
-  box-shadow: inset 0 6px 14px rgba(120, 80, 40, 0.4);
-  transition: max-height 0.85s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.scroll.is-open .sheet {
-  max-height: 680px;
   box-shadow:
     inset 0 0 26px rgba(120, 80, 40, 0.22),
     0 6px 22px rgba(0, 0, 0, 0.25);
@@ -360,10 +318,8 @@ const handleRoller = (i) => {
   position: relative;
   width: 100%;
   transform-style: preserve-3d;
-  opacity: 0;
-  transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1), opacity 0.4s ease 0.2s;
+  transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
-.scroll.is-open .flip3d { opacity: 1; }
 .scroll.is-flipped .flip3d { transform: rotateY(180deg); }
 
 /* Faces */
@@ -419,7 +375,7 @@ const handleRoller = (i) => {
   display: block;
   transition: transform 0.6s ease;
 }
-.scroll:hover.is-open:not(.is-flipped) .photo img { transform: scale(1.03); }
+.scroll:hover:not(.is-flipped) .photo img { transform: scale(1.03); }
 
 .caption {
   font-family: var(--font-script);
@@ -479,47 +435,5 @@ const handleRoller = (i) => {
 .flip-hint--back {
   margin-top: 0.4rem;
   opacity: 0.55;
-}
-
-/* Selo de cera (imagem selo.png) lacrando o pergaminho fechado */
-.seal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: clamp(90px, 27vw, 120px);
-  height: clamp(90px, 27vw, 120px);
-  transform: translate(-50%, -50%);
-  z-index: 6;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-.seal img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  /* some o fundo branco do PNG sobre o pergaminho, mantendo a cera terracota */
-  mix-blend-mode: multiply;
-  filter: drop-shadow(0 4px 8px rgba(74, 42, 28, 0.45));
-}
-.scroll.is-open .seal {
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.35) rotate(-8deg);
-  pointer-events: none;
-}
-
-/* Dica "toque para abrir" */
-.open-hint {
-  margin-top: 1.8rem;
-  font-family: var(--font-body);
-  font-size: clamp(0.62rem, 1.9vw, 0.72rem);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--clay);
-  opacity: 0.75;
-  animation: hintPulse 2.4s ease-in-out infinite;
-}
-@keyframes hintPulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.85; }
 }
 </style>

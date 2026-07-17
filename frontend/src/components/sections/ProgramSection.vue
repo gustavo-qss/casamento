@@ -6,12 +6,11 @@ const section = ref(null);
 useScrollReveal(section);
 
 const items = [
-  { time: '16:30', label: 'Cerimônia',               icon: '💍' },
-  { time: '18:30', label: 'Recepção',                  icon: '🌹' },
-  { time: '19:00', label: 'Brinde',                  icon: '🥂' },
-  { time: '19:30', label: 'Jantar',                   icon: '🍴' },
-  { time: '21:00', label: 'Sobremesa',             icon: '🧁' },
-  { time: '22:00', label: 'Encerramento',             icon: '🌙' }
+  { time: '16:30', label: 'Cerimônia',                   icon: '💍' },
+  { time: '18:30', label: 'Recepção',                    icon: '🌹' },
+  { time: '19:00', label: 'Brinde',                      icon: '🥂' },
+  { time: '19:30', label: 'Jantar',                      icon: '🍴' },
+  { time: '21:00', label: 'Abertura da pista de dança',  icon: '💃' }
 ];
 </script>
 

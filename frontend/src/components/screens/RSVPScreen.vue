@@ -87,7 +87,7 @@ const priceChild0to4  = Number(import.meta.env.VITE_PIX_PRICE_CHILD_0_4)  || 0;
 const priceChild5to10 = Number(import.meta.env.VITE_PIX_PRICE_CHILD_5_10) || 0;
 const priceChild11    = Number(import.meta.env.VITE_PIX_PRICE_CHILD_11)   || 0;
 const pixKey = import.meta.env.VITE_PIX_KEY || "";
-const pixName = import.meta.env.VITE_PIX_NAME || "Rawane e Gustavo";
+const pixName = import.meta.env.VITE_PIX_NAME || "Lucas e Jéssica";
 
 const totalAmount = computed(
   () =>
@@ -217,7 +217,7 @@ const calendarUrl = computed(() => {
     .replace("T", "T")
     .slice(0, 15);
   const end = dt.slice(0, 9) + "220000";
-  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamento+Rawane+%26+Gustavo&dates=${dt}/${end}&location=${encodeURIComponent(weddingInfo.church.address)}`;
+  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamento+Lucas+%26+J%C3%A9ssica&dates=${dt}/${end}&location=${encodeURIComponent(weddingInfo.church.address)}`;
 });
 
 const fmt = (v) =>
@@ -297,7 +297,7 @@ const fmt = (v) =>
             <span class="deco-line"></span>
           </div>
 
-          <p class="welcome-script">Rawane &amp; Gustavo</p>
+          <p class="welcome-script">Lucas &amp; Jéssica</p>
 
           <h1 class="welcome-title">Esperamos por<br /><em>você</em></h1>
 
@@ -719,7 +719,7 @@ const fmt = (v) =>
 
           <p class="confirmed-msg">
             {{ name }}, mal podemos esperar para te ver.<br />
-            Até 16 de maio de 2026!
+            Até 21 de novembro de 2026!
           </p>
 
           <div class="confirmed-divider">

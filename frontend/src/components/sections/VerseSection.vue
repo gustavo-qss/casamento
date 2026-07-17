@@ -31,10 +31,12 @@ useScrollReveal(section);
       <p class="verse-quote reveal reveal-fade">&ldquo;</p>
 
       <blockquote class="verse-text reveal reveal-delay-1">
-        Assim, eles já não são dois,<br>mas sim uma só carne. <br> Portanto, o que Deus uniu, ninguém o separe
+        Vendei o que possuís e dai esmolas; <br>
+        fazei para vós bolsas que não se gastam, um tesouro inesgotável nos céus, aonde não chega o ladrão e a traça não o destrói. <br>
+        Pois onde estiver o vosso tesouro, ali estará também o vosso coração
       </blockquote>
 
-      <p class="verse-ref reveal reveal-delay-2">Mateus 19, 6</p>
+      <p class="verse-ref reveal reveal-delay-2">Lucas 12:33,34</p>
 
       <div class="initials-row reveal reveal-delay-3">
         <span class="initials-line"></span>

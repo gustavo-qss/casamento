@@ -30,7 +30,7 @@ useScrollReveal(section);
         Será uma alegria celebrar esse momento tão especial com você.
       </p>
 
-      <p class="message-signature reveal reveal-delay-4">Rawane &amp; Gustavo</p>
+      <p class="message-signature reveal reveal-delay-4">Lucas &amp; Jéssica</p>
     </div>
   </section>
 </template>

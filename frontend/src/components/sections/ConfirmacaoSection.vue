@@ -12,7 +12,7 @@ const emit = defineEmits(["open-rsvp"]);
   <section class="confirmacao" id="confirmacao" ref="section">
     <div class="confirmacao-inner">
       <span class="confirmacao-eyebrow reveal reveal-fade"
-        >16 de maio de 2026</span
+        >21 de novembro de 2026</span
       >
 
       <div class="confirmacao-ornament reveal reveal-delay-1">
@@ -57,7 +57,7 @@ const emit = defineEmits(["open-rsvp"]);
           <line x1="8" y1="2" x2="8" y2="6"></line>
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
-        <span>Confirme até <strong>08 de maio</strong></span>
+        <span>Confirme até <strong>05 de novembro</strong></span>
       </div>
 
       <div class="confirmacao-divider reveal reveal-delay-5">

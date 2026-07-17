@@ -7,14 +7,14 @@ import FloralCorner from '@/components/ui/FloralCorner.vue';
 const section = ref(null);
 useScrollReveal(section);
 
-const closingImg = getPublicPath('homepage1.jpeg');
+const closingImg = getPublicPath('new-intro.jpg');
 const logoImg    = getPublicPath('logo_luquinha.png');
 </script>
 
 <template>
   <section class="closing" id="closing" ref="section">
     <div class="closing-photo">
-      <img :src="closingImg" alt="Rawane e Gustavo" />
+      <img :src="closingImg" alt="Lucas e Jéssica" />
       <div class="closing-overlay"></div>
     </div>
 
@@ -36,8 +36,8 @@ const logoImg    = getPublicPath('logo_luquinha.png');
       </p>
 
       <p class="closing-love reveal reveal-delay-4">Com amor,</p>
-      <img :src="logoImg" alt="Rawane e Gustavo" class="closing-logo reveal reveal-delay-5" />
-      <p class="closing-date reveal reveal-delay-6">16 &bull; 05 &bull; 2026</p>
+      <img :src="logoImg" alt="Lucas e Jéssica" class="closing-logo reveal reveal-delay-5" />
+      <p class="closing-date reveal reveal-delay-6">21 &bull; 11 &bull; 2026</p>
     </div>
   </section>
 </template>
@@ -60,7 +60,7 @@ const logoImg    = getPublicPath('logo_luquinha.png');
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   display: block;
 }
 

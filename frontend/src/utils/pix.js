@@ -26,7 +26,7 @@ function buildEMVField(id, value) {
   return `${id}${length}${value}`;
 }
 
-export function generatePixPayload(pixKey, amount, recipientName = 'Rawane e Gustavo', city = 'SAO PAULO') {
+export function generatePixPayload(pixKey, amount, recipientName = 'Lucas e Jéssica', city = 'SAO PAULO') {
   // Normalizar dados
   const normalizedName = recipientName
     .substring(0, 25)
