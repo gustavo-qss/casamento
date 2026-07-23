@@ -40,7 +40,7 @@ useScrollReveal(section);
 
       <div class="initials-row reveal reveal-delay-3">
         <span class="initials-line"></span>
-        <span class="initials">G &nbsp;|&nbsp; R</span>
+        <span class="initials">L &nbsp;|&nbsp; J</span>
         <span class="initials-line"></span>
       </div>
 

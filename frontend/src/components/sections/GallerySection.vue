@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useScrollReveal } from "@/composables/useScrollReveal";
 import { getPublicPath } from "@/utils/assets";
 import VineCorner from "@/components/ui/VineCorner.vue";
@@ -10,9 +10,9 @@ useScrollReveal(section);
 
 const photos = [
   {
-    src: getPublicPath("foto1.png"),
+    src: getPublicPath("frame1-new.png"),
     caption: "2016",
-    rotation: "-1.6deg",
+    rotation: "-1.4deg",
     story:
       "Em 2016, nos conhecemos no colégio por causa do Grêmio Estudantil, sem imaginar que aquele seria o início da nossa história. Nasceu uma amizade que logo se transformou em amor. O tempo passou, mas a parceria que começou na escola continua firme até hoje. Nossa melhor conquista foi encontrar um no outro um companheiro para a vida.",
   },
@@ -26,7 +26,7 @@ const photos = [
   {
     src: getPublicPath("foto3.png"),
     caption: "2025",
-    rotation: "-1.2deg",
+    rotation: "-1.1deg",
     story:
       "Em 2025, em meio aos desafios, alegrias e momentos marcantes da vida, tomamos a decisão mais importante da nossa história: unir nossas vidas em sagrado matrimônio. Com amor, fé e a certeza de que queremos caminhar juntos para sempre, iniciamos um novo capítulo da nossa jornada.",
   },
@@ -39,12 +39,50 @@ const photos = [
   },
 ];
 
-// Pergaminhos já vêm abertos; o clique apenas vira (foto <-> história)
-const flipped = ref(photos.map(() => false));
+// Sequência linear de páginas: foto -> história -> foto -> história ...
+const pages = [];
+photos.forEach((p) => {
+  pages.push({ type: "photo", ...p });
+  pages.push({ type: "story", ...p });
+});
 
-const toggleFlip = (i) => {
-  flipped.value = flipped.value.map((v, idx) => (idx === i ? !v : v));
-};
+const current = ref(0);
+const dir = ref("fwd");
+
+const page = computed(() => pages[current.value]);
+const memoryIndex = computed(() => Math.floor(current.value / 2));
+const canPrev = computed(() => current.value > 0);
+const canNext = computed(() => current.value < pages.length - 1);
+const transitionName = computed(() => (dir.value === "fwd" ? "page-fwd" : "page-back"));
+
+const hint = computed(() => {
+  if (page.value.type === "photo") return "avance para ler a história ✦";
+  if (canNext.value) return "avance para a próxima lembrança ✦";
+  return "até 21 de novembro ✦";
+});
+
+function next() {
+  if (!canNext.value) return;
+  dir.value = "fwd";
+  current.value++;
+}
+function prev() {
+  if (!canPrev.value) return;
+  dir.value = "back";
+  current.value--;
+}
+
+// Deslizar no celular
+let touchX = 0;
+function onTouchStart(e) {
+  touchX = e.changedTouches[0].clientX;
+}
+function onTouchEnd(e) {
+  const dx = e.changedTouches[0].clientX - touchX;
+  if (Math.abs(dx) < 40) return;
+  if (dx < 0) next();
+  else prev();
+}
 </script>
 
 <template>
@@ -74,45 +112,47 @@ const toggleFlip = (i) => {
       </div>
     </header>
 
-    <div class="gallery-stack">
-      <div
-        v-for="(photo, i) in photos"
-        :key="i"
-        class="scroll-wrapper reveal"
-        :class="`reveal-delay-${i + 1}`"
-      >
+    <!-- Carrossel: um pergaminho por vez -->
+    <div
+      class="carousel-stage"
+      @touchstart.passive="onTouchStart"
+      @touchend.passive="onTouchEnd"
+    >
+      <Transition :name="transitionName" mode="out-in">
         <div
-          class="scroll"
-          :class="{ 'is-flipped': flipped[i] }"
-          :style="{ '--tilt': photo.rotation }"
-          role="button"
-          tabindex="0"
-          :aria-label="flipped[i] ? 'Ver a foto' : 'Ler nossa história'"
-          @click="toggleFlip(i)"
-          @keyup.enter="toggleFlip(i)"
+          class="page"
+          :key="current"
+          :style="{ '--tilt': page.rotation }"
         >
-          <!-- Rolo de madeira superior (decorativo) -->
-          <div class="roller roller-top" aria-hidden="true">
-            <span class="cap cap-l"></span>
-            <span class="cap cap-r"></span>
-          </div>
+          <div
+            class="scroll"
+            role="button"
+            tabindex="0"
+            :aria-label="page.type === 'photo' ? 'Ver a história desta lembrança' : 'Próxima lembrança'"
+            @click="next"
+            @keyup.enter="next"
+            @keyup.right="next"
+            @keyup.left="prev"
+          >
+            <!-- Rolo de madeira superior -->
+            <div class="roller roller-top" aria-hidden="true">
+              <span class="cap cap-l"></span>
+              <span class="cap cap-r"></span>
+            </div>
 
-          <!-- Corpo do pergaminho (já aberto) -->
-          <div class="sheet">
-            <div class="flip3d">
-              <!-- FRENTE: foto emoldurada -->
-              <div class="face face-front">
+            <div class="sheet">
+              <!-- FOTO -->
+              <div v-if="page.type === 'photo'" class="face face-photo">
                 <VineCorner class="v-corner v-tl" />
                 <VineCorner class="v-corner v-br" />
                 <div class="photo">
-                  <img :src="photo.src" :alt="photo.caption" loading="lazy" draggable="false" />
+                  <img :src="page.src" :alt="page.caption" draggable="false" />
                 </div>
-                <p class="caption">{{ photo.caption }}</p>
-                <span class="flip-hint">toque para revelar a história ✦</span>
+                <p class="caption">{{ page.caption }}</p>
               </div>
 
-              <!-- VERSO: história escrita no pergaminho -->
-              <div class="face face-back">
+              <!-- HISTÓRIA -->
+              <div v-else class="face face-story">
                 <VineCorner class="v-corner v-tr" />
                 <VineCorner class="v-corner v-bl" />
                 <div class="back-inner">
@@ -130,23 +170,60 @@ const toggleFlip = (i) => {
                       <circle cx="0" cy="0" r="1.8" fill="#ffd98a"/>
                     </g>
                   </svg>
-                  <p class="chapter">{{ photo.caption }}</p>
+                  <p class="chapter">{{ page.caption }}</p>
                   <div class="rule"></div>
-                  <p class="story">{{ photo.story }}</p>
-                  <span class="flip-hint flip-hint--back">toque para voltar ✦</span>
+                  <p class="story">{{ page.story }}</p>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Rolo de madeira inferior (decorativo) -->
-          <div class="roller roller-bottom" aria-hidden="true">
-            <span class="cap cap-l"></span>
-            <span class="cap cap-r"></span>
+            <!-- Rolo de madeira inferior -->
+            <div class="roller roller-bottom" aria-hidden="true">
+              <span class="cap cap-l"></span>
+              <span class="cap cap-r"></span>
+            </div>
           </div>
         </div>
-      </div>
+      </Transition>
     </div>
+
+    <!-- Controles -->
+    <div class="carousel-controls reveal">
+      <button
+        class="nav-btn"
+        :class="{ 'is-hidden': !canPrev }"
+        :disabled="!canPrev"
+        @click="prev"
+        aria-label="Anterior"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <div class="dots" aria-hidden="true">
+        <span
+          v-for="(p, i) in photos"
+          :key="i"
+          class="dot"
+          :class="{ active: i === memoryIndex }"
+        ></span>
+      </div>
+
+      <button
+        class="nav-btn"
+        :class="{ 'is-hidden': !canNext }"
+        :disabled="!canNext"
+        @click="next"
+        aria-label="Próximo"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+
+    <p class="carousel-hint reveal">{{ hint }}</p>
   </section>
 </template>
 
@@ -177,7 +254,7 @@ const toggleFlip = (i) => {
   position: relative;
   z-index: 1;
   text-align: center;
-  margin-bottom: clamp(2.5rem, 7vw, 3.5rem);
+  margin-bottom: clamp(2rem, 6vw, 3rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -208,62 +285,76 @@ const toggleFlip = (i) => {
 }
 .rule-sprig { width: 40px; height: 24px; flex: none; }
 
-/* ===== STACK ===== */
-.gallery-stack {
+/* ===== PALCO DO CARROSSEL ===== */
+.carousel-stage {
   position: relative;
   z-index: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: clamp(3rem, 9vw, 4.5rem);
-  max-width: 480px;
-  margin: 0 auto;
+  justify-content: center;
+  min-height: clamp(540px, 132vw, 620px);
+  touch-action: pan-y;
 }
 
-@media (min-width: 768px) {
-  .gallery {
-    padding: clamp(4.5rem, 8vw, 7rem) clamp(2rem, 5vw, 5rem);
-  }
-  .gallery-stack {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    max-width: 760px;
-    gap: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 3vw, 2.5rem);
-  }
-  .scroll-wrapper { flex: 0 0 auto; width: 320px; }
-  .scroll-wrapper:nth-child(even) { margin-top: 2.5rem; }
+.page {
+  --tilt: 0deg;
+  transform: rotate(var(--tilt));
+  will-change: transform, opacity;
 }
 
-.scroll-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* ===== ANIMAÇÃO: pergaminho "assenta" deslizando ===== */
+/* Avançar: novo entra pela direita, antigo sai pela esquerda */
+.page-fwd-enter-from {
+  opacity: 0;
+  transform: translateX(42px) rotate(2deg) scale(0.92);
+}
+.page-fwd-leave-to {
+  opacity: 0;
+  transform: translateX(-38px) rotate(-1.6deg) scale(0.93);
+}
+/* Voltar: novo entra pela esquerda, antigo sai pela direita */
+.page-back-enter-from {
+  opacity: 0;
+  transform: translateX(-42px) rotate(-2deg) scale(0.92);
+}
+.page-back-leave-to {
+  opacity: 0;
+  transform: translateX(38px) rotate(1.6deg) scale(0.93);
+}
+.page-fwd-enter-active,
+.page-back-enter-active {
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.2, 1.1, 0.35, 1);
+}
+.page-fwd-leave-active,
+.page-back-leave-active {
+  transition: opacity 0.28s ease, transform 0.34s cubic-bezier(0.55, 0, 0.7, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-fwd-enter-from,
+  .page-fwd-leave-to,
+  .page-back-enter-from,
+  .page-back-leave-to {
+    transform: rotate(var(--tilt));
+  }
 }
 
 /* ===== PERGAMINHO ===== */
 .scroll {
-  --tilt: 0deg;
-  --sheet-w: min(88vw, 360px);
+  --sheet-w: min(86vw, 360px);
   position: relative;
   width: var(--sheet-w);
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  transform: rotate(var(--tilt));
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -webkit-tap-highlight-color: transparent;
   user-select: none;
   -webkit-user-select: none;
 }
 @media (min-width: 768px) {
-  .scroll { --sheet-w: 320px; }
+  .scroll { --sheet-w: 340px; }
 }
-.scroll:hover { transform: rotate(0deg) scale(1.02); }
 
 /* Rolos de madeira */
 .roller {
@@ -299,12 +390,13 @@ const toggleFlip = (i) => {
 .cap-l { left: -8px; }
 .cap-r { right: -8px; }
 
-/* Folha de pergaminho (já aberta) */
+/* Folha de pergaminho */
 .sheet {
   width: var(--sheet-w);
-  max-height: 760px;
+  min-height: calc(var(--sheet-w) * 1.42);
   overflow: hidden;
-  perspective: 1500px;
+  display: flex;
+  flex-direction: column;
   background:
     var(--tex-parchment) repeat,
     linear-gradient(180deg, #f3e6ca, #e3cda4);
@@ -314,28 +406,17 @@ const toggleFlip = (i) => {
     0 6px 22px rgba(0, 0, 0, 0.25);
 }
 
-.flip3d {
-  position: relative;
-  width: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
-}
-.scroll.is-flipped .flip3d { transform: rotateY(180deg); }
-
 /* Faces */
 .face {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  position: relative;
+  flex: 1;
   padding: 16px 16px 14px;
-}
-.face-front { position: relative; }
-.face-back {
-  position: absolute;
-  inset: 0;
-  transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  /* Pergaminho opaco: o texto parece escrito na folha (sem a foto atrás) */
+}
+.face-photo { justify-content: flex-start; }
+.face-story {
+  justify-content: center;
   background:
     var(--tex-parchment) repeat,
     radial-gradient(ellipse 70% 55% at 50% 45%, #f6ead0, #e6d1a9 100%);
@@ -375,7 +456,7 @@ const toggleFlip = (i) => {
   display: block;
   transition: transform 0.6s ease;
 }
-.scroll:hover:not(.is-flipped) .photo img { transform: scale(1.03); }
+.scroll:hover .photo img { transform: scale(1.03); }
 
 .caption {
   font-family: var(--font-script);
@@ -386,26 +467,14 @@ const toggleFlip = (i) => {
   line-height: 1.1;
 }
 
-.flip-hint {
-  display: block;
-  text-align: center;
-  font-family: var(--font-body);
-  font-size: clamp(0.58rem, 1.7vw, 0.66rem);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--clay);
-  opacity: 0.7;
-  margin-top: 2px;
-}
-
 /* Verso — história */
-.face-back .back-inner {
+.back-inner {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.55rem;
+  gap: 0.6rem;
   padding: clamp(0.8rem, 3vw, 1.4rem) clamp(0.3rem, 1.4vw, 0.6rem);
 }
 .sprig { width: 44px; height: 22px; opacity: 0.9; }
@@ -432,8 +501,73 @@ const toggleFlip = (i) => {
   text-align: center;
   margin: 0;
 }
-.flip-hint--back {
-  margin-top: 0.4rem;
-  opacity: 0.55;
+
+/* ===== CONTROLES ===== */
+.carousel-controls {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.4rem, 7vw, 2.6rem);
+  margin-top: clamp(1.4rem, 5vw, 2rem);
+}
+
+.nav-btn {
+  width: clamp(46px, 12vw, 54px);
+  height: clamp(46px, 12vw, 54px);
+  border-radius: 50%;
+  border: 1.5px solid rgba(138, 106, 62, 0.4);
+  background:
+    var(--tex-parchment) repeat,
+    linear-gradient(180deg, #f3e6ca, #e6d1a9);
+  background-size: 120px, auto;
+  color: var(--brown-mid);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow:
+    0 3px 10px rgba(74, 42, 28, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease;
+}
+.nav-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 5px 14px rgba(74, 42, 28, 0.28);
+}
+.nav-btn:active { transform: scale(0.96); }
+.nav-btn.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.nav-btn svg { width: 42%; height: 42%; }
+
+.dots {
+  display: flex;
+  gap: 0.5rem;
+}
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--leaf-brown);
+  opacity: 0.3;
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+}
+.dot.active {
+  opacity: 0.9;
+  transform: scale(1.35);
+  background: var(--clay);
+}
+
+.carousel-hint {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: clamp(0.58rem, 1.7vw, 0.68rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--clay);
+  opacity: 0.7;
+  margin: clamp(0.9rem, 3vw, 1.2rem) 0 0;
 }
 </style>

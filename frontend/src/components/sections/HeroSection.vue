@@ -198,4 +198,18 @@ onMounted(() => {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50%       { transform: translateX(-50%) translateY(8px); }
 }
+
+/* Mobile: a foto é um retrato vertical do casal — ancora o conteúdo no
+   topo para a logo não cobrir o rosto dos dois no centro */
+@media (max-width: 767px) {
+  .hero {
+    align-items: flex-start;
+  }
+  .hero-content {
+    padding-top: clamp(3rem, 12vh, 6rem);
+  }
+  .hero-logo {
+    width: clamp(160px, 46vw, 260px);
+  }
+}
 </style>

@@ -15,8 +15,8 @@
     <div class="gifts-body">
       <div class="gifts-grid">
         <GiftCard
-          v-for="gift in gifts"
-          :key="gift.id"
+          v-for="(gift, index) in gifts"
+          :key="index"
           :gift="gift"
           :quantity="getQuantity(gift.id)"
           @add="handleAddGift"
@@ -53,7 +53,7 @@ import CheckoutModal from '../ui/CheckoutModal.vue';
 import BackButton from '../ui/BackButton.vue';
 import ScrollArrow from '../ui/ScrollArrow.vue';
 import { useCart } from '@/composables/useCart';
-import giftsData from '@/data/gifts.json';
+import giftsData from '@/data/gifts-new.json';
 
 defineProps({
   // Quando true, exibe seta para avançar (usado no fluxo stories do /instagram).

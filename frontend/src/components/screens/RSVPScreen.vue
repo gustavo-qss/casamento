@@ -28,10 +28,8 @@ function goBack() {
 // ── Formulário (step 2) ────────────────────────────────────
 const name = ref("");
 const phone = ref("");
-const guestsCount = ref(1);
-const childrenUnder4 = ref(0);
-const childrenUnder10 = ref(0);
-const childrenAge11 = ref(0);
+const guestsCount = ref(1); // pessoas com 10 anos ou mais (pagam a adesão)
+const childrenUnder10 = ref(0); // crianças abaixo de 10 anos (gratuito)
 const dietary = ref("");
 const nameHint = ref(false);
 const phoneHint = ref(false);
@@ -45,23 +43,11 @@ function incrementGuests() {
 function decrementGuests() {
   if (guestsCount.value > 1) guestsCount.value--;
 }
-function incrementChildren4() {
-  if (childrenUnder4.value < MAX_CHILDREN) childrenUnder4.value++;
-}
-function decrementChildren4() {
-  if (childrenUnder4.value > 0) childrenUnder4.value--;
-}
 function incrementChildren10() {
   if (childrenUnder10.value < MAX_CHILDREN) childrenUnder10.value++;
 }
 function decrementChildren10() {
   if (childrenUnder10.value > 0) childrenUnder10.value--;
-}
-function incrementChildren11() {
-  if (childrenAge11.value < MAX_CHILDREN) childrenAge11.value++;
-}
-function decrementChildren11() {
-  if (childrenAge11.value > 0) childrenAge11.value--;
 }
 
 function handlePhoneInput(e) {
@@ -82,24 +68,14 @@ function submitForm() {
 }
 
 // ── PIX (step 3) ───────────────────────────────────────────
-const pricePerPerson = Number(import.meta.env.VITE_PIX_PRICE_PER_PERSON) || 0;
-const priceChild0to4  = Number(import.meta.env.VITE_PIX_PRICE_CHILD_0_4)  || 0;
-const priceChild5to10 = Number(import.meta.env.VITE_PIX_PRICE_CHILD_5_10) || 0;
-const priceChild11    = Number(import.meta.env.VITE_PIX_PRICE_CHILD_11)   || 0;
+const pricePerPerson = Number(import.meta.env.VITE_PIX_PRICE_PER_PERSON) || 70;
 const pixKey = import.meta.env.VITE_PIX_KEY || "";
 const pixName = import.meta.env.VITE_PIX_NAME || "Lucas e Jéssica";
 
-const totalAmount = computed(
-  () =>
-    pricePerPerson  * guestsCount.value    +
-    priceChild0to4  * childrenUnder4.value +
-    priceChild5to10 * childrenUnder10.value +
-    priceChild11    * childrenAge11.value,
-);
+// Apenas pessoas com 10 anos ou mais pagam; crianças abaixo de 10 são gratuitas
+const totalAmount = computed(() => pricePerPerson * guestsCount.value);
 
-const hasAnyPrice = computed(
-  () => pricePerPerson > 0 || priceChild0to4 > 0 || priceChild5to10 > 0 || priceChild11 > 0,
-);
+const hasAnyPrice = computed(() => pricePerPerson > 0);
 
 const pixPayload = computed(() =>
   hasAnyPrice.value && pixKey && totalAmount.value > 0
@@ -169,9 +145,7 @@ async function handleConfirm() {
         name: name.value.trim(),
         phone: phone.value,
         guestsCount: guestsCount.value,
-        childrenUnder4: childrenUnder4.value,
         childrenUnder10: childrenUnder10.value,
-        childrenAge11: childrenAge11.value,
         dietary: dietary.value.trim(),
       },
       comprovanteFile.value,
@@ -195,9 +169,7 @@ async function retry() {
         name: name.value.trim(),
         phone: phone.value,
         guestsCount: guestsCount.value,
-        childrenUnder4: childrenUnder4.value,
         childrenUnder10: childrenUnder10.value,
-        childrenAge11: childrenAge11.value,
         dietary: dietary.value.trim(),
       },
       comprovanteFile.value,
@@ -321,7 +293,7 @@ const fmt = (v) =>
             </svg>
           </button>
 
-          <p class="welcome-date">16 · 05 · 2026</p>
+          <p class="welcome-date">21 · 11 · 2026</p>
         </div>
 
         <!-- ── STEP 2: Formulário ── -->
@@ -374,7 +346,7 @@ const fmt = (v) =>
             </div>
 
             <div class="field">
-              <label class="field-label">Adultos <span class="optional">(12+ anos)</span> <span class="price-hint">R$ 107,00</span></label>
+              <label class="field-label">Pessoas <span class="optional">(10 anos ou mais)</span> <span class="price-hint">{{ fmt(pricePerPerson) }} cada</span></label>
               <div class="guests-counter">
                 <button
                   class="counter-btn"
@@ -398,46 +370,26 @@ const fmt = (v) =>
             </div>
 
             <div class="field children-group">
-              <label class="field-label">
-                Crianças <span class="optional">(se houver)</span>
-              </label>
-              <div class="children-rows">
-                <div class="children-row">
-                  <span class="children-range">0 – 4 anos <span class="price-hint">{{ priceChild0to4 === 0 ? 'gratuito' : fmt(priceChild0to4) }}</span></span>
-                  <div class="guests-counter guests-counter--sm">
-                    <button
-                      class="counter-btn"
-                      @click="decrementChildren4"
-                      :disabled="childrenUnder4 <= 0"
-                    >
-                      −
-                    </button>
-                    <span class="counter-value">{{ childrenUnder4 }}</span>
-                    <button
-                      class="counter-btn"
-                      @click="incrementChildren4"
-                      :disabled="childrenUnder4 >= MAX_CHILDREN"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-                <div class="children-row">
-                  <span class="children-range">5 – 10 anos <span class="price-hint">{{ priceChild5to10 === 0 ? 'gratuito' : fmt(priceChild5to10) }}</span></span>
-                  <div class="guests-counter guests-counter--sm">
-                    <button class="counter-btn" @click="decrementChildren10" :disabled="childrenUnder10 <= 0">−</button>
-                    <span class="counter-value">{{ childrenUnder10 }}</span>
-                    <button class="counter-btn" @click="incrementChildren10" :disabled="childrenUnder10 >= MAX_CHILDREN">+</button>
-                  </div>
-                </div>
-                <div class="children-row">
-                  <span class="children-range">11 anos <span class="price-hint">{{ priceChild11 === 0 ? 'gratuito' : fmt(priceChild11) }}</span></span>
-                  <div class="guests-counter guests-counter--sm">
-                    <button class="counter-btn" @click="decrementChildren11" :disabled="childrenAge11 <= 0">−</button>
-                    <span class="counter-value">{{ childrenAge11 }}</span>
-                    <button class="counter-btn" @click="incrementChildren11" :disabled="childrenAge11 >= MAX_CHILDREN">+</button>
-                  </div>
-                </div>
+              <label class="field-label">Crianças <span class="optional">(abaixo de 10 anos)</span> <span class="price-hint">gratuito</span></label>
+              <div class="guests-counter">
+                <button
+                  class="counter-btn"
+                  @click="decrementChildren10"
+                  :disabled="childrenUnder10 <= 0"
+                >
+                  −
+                </button>
+                <span class="counter-value">{{ childrenUnder10 }}</span>
+                <button
+                  class="counter-btn"
+                  @click="incrementChildren10"
+                  :disabled="childrenUnder10 >= MAX_CHILDREN"
+                >
+                  +
+                </button>
+                <span class="counter-label">{{
+                  childrenUnder10 === 1 ? "criança" : "crianças"
+                }}</span>
               </div>
             </div>
 
@@ -486,35 +438,22 @@ const fmt = (v) =>
           <!-- Breakdown de valor -->
           <div class="pix-amount-block" v-if="hasAnyPrice && totalAmount > 0">
             <div class="pix-breakdown">
-              <div v-if="pricePerPerson > 0" class="breakdown-row">
+              <div class="breakdown-row">
                 <span class="breakdown-label"
                   >{{ guestsCount }}
-                  {{ guestsCount === 1 ? "adulto" : "adultos" }}</span
+                  {{ guestsCount === 1 ? "pessoa" : "pessoas" }} (10+)</span
                 >
                 <span class="breakdown-value">{{
                   fmt(pricePerPerson * guestsCount)
                 }}</span>
               </div>
-              <div
-                v-if="priceChild0to4 > 0 && childrenUnder4 > 0"
-                class="breakdown-row"
-              >
+              <div v-if="childrenUnder10 > 0" class="breakdown-row">
                 <span class="breakdown-label"
-                  >{{ childrenUnder4 }}
-                  {{ childrenUnder4 === 1 ? "criança" : "crianças" }}
-                  (0–4)</span
+                  >{{ childrenUnder10 }}
+                  {{ childrenUnder10 === 1 ? "criança" : "crianças" }}
+                  (abaixo de 10)</span
                 >
-                <span class="breakdown-value">{{
-                  fmt(priceChild0to4 * childrenUnder4)
-                }}</span>
-              </div>
-              <div v-if="priceChild5to10 > 0 && childrenUnder10 > 0" class="breakdown-row">
-                <span class="breakdown-label">{{ childrenUnder10 }} {{ childrenUnder10 === 1 ? "criança" : "crianças" }} (5–10)</span>
-                <span class="breakdown-value">{{ fmt(priceChild5to10 * childrenUnder10) }}</span>
-              </div>
-              <div v-if="priceChild11 > 0 && childrenAge11 > 0" class="breakdown-row">
-                <span class="breakdown-label">{{ childrenAge11 }} {{ childrenAge11 === 1 ? "criança" : "crianças" }} (11)</span>
-                <span class="breakdown-value">{{ fmt(priceChild11 * childrenAge11) }}</span>
+                <span class="breakdown-value">grátis</span>
               </div>
               <div class="breakdown-total">
                 <span class="pix-amount-label">Total</span>

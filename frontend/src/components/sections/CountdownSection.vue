@@ -7,7 +7,7 @@ import weddingInfo from '@/data/wedding-info.json';
 const section = ref(null);
 useScrollReveal(section);
 
-const bgImg  = getPublicPath('frame1.png');
+const bgImg  = getPublicPath('frame1-new.png');
 const bgImg2 = getPublicPath('frame2.png');
 const bgImg3 = getPublicPath('frame3.png');
 const TARGET = new Date(weddingInfo.weddingDate);
