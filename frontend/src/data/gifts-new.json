@@ -2,613 +2,619 @@
  {
    "id": 1,
    "name": "Primeira parcela do PS5",
-   "price": "R$ 300,00",
+   "price": "300,00",
    "image": "https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$"
  },
  {
    "id": 2,
    "name": "Ajude a noiva ver o show de algum integrante do One Direction",
-   "price": "R$ 500,00",
-   "image": "https://lh3.googleusercontent.com/gg-dl/AOI_d_-PdigvbC_1b6qGfYM1GSYYFoRibYIkaV4A2EwQOUgjbiRqEJU0yuDOBgqiHXO0UWAbTcp-QZn1xtmlPZwBXQrYP01oXZsy2KHQ7q_AsB0iJ9DJF6ShQoQnjoeAyKX4vsF9CtIBarcI8xnIQHaE8Yk8qazZgMvIHwHrSVaLamUBz2K4yA=s1600-rj"
+   "price": "500,00",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/One_Direction_%286927584172%29.jpg/960px-One_Direction_%286927584172%29.jpg"
  },
  {
    "id": 3,
    "name": "Ajude com a despesa do casamento",
-   "price": "R$ 2.000,00",
+   "price": "2.000,00",
    "image": "https://thumbs.dreamstime.com/b/chovendo-o-dinheiro-24560602.jpg"
  },
  {
    "id": 4,
    "name": "Um mês de ração pra Mel",
-   "price": "R$ 150,00",
-   "image": "https://www.fortdog.com.br/gatos/racao/10kg/racao-special-cat-premium-para-gatos-castrados-10kg"
+   "price": "150,00",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Catfood.jpg"
  },
  {
    "id": 5,
    "name": "Uma ida no mecânico pro Santana",
-   "price": "R$ 2.000,00",
-   "image": "https://www.mesquitaleiloes.com.br/lote/leilao-de-veiculos-repasse-programe-seu-lance/14062/"
+   "price": "2.000,00",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Volkswagen_Santana_GX-5.jpg/960px-Volkswagen_Santana_GX-5.jpg"
  },
  {
    "id": 6,
    "name": "Um jantar a dois no Koala",
-   "price": "R$ 350,00",
+   "price": "350,00",
    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF9nWfAQjWoR7SUsNUc_XKOWji98lcmau6iw&s"
  },
  {
    "id": 7,
    "name": "Ajuda na placa de vídeo pro Lucas fazer mais live ",
-   "price": "R$ 1.500,00",
+   "price": "1.500,00",
    "image": "https://images9.kabum.com.br/produtos/fotos/387449/placa-de-video-asus-nvidia-rog-strix-rtx-4090-edition-24-gb-gddr6x-argb-dlss-ray-tracing-90yv0iw0-m0nan00_1665170163_gg.jpg"
  },
  {
    "id": 8,
    "name": "Um kit da rare beauty pra Jessica trabalhar melhor",
-   "price": "R$ 200,00",
+   "price": "200,00",
    "image": "https://www.sephora.com.br/on/demandware.static/-/Sites-masterCatalog_Sephora/pt_BR/dweb24a2d8/images/Color%20BR/RARE%20BEAUTY/2025/kit_trio/840122907586_1.jpg"
  },
  {
    "id": 9,
    "name": "Air Fryer Oven Philco 11L 8 Funções Visor 1800W PAF11B 110V",
-   "price": "R$ 359,91",
+   "price": "359,91",
    "image": "https://imgs.casasbahia.com.br/55071534/1g.png?imwidth=500"
  },
  {
    "id": 10,
    "name": "Panasonic Micro-ondas 34L Inox Antibactéria 220v NN-ST67LSRU",
-   "price": "R$ 644,94",
+   "price": "644,94",
    "image": "https://m.media-amazon.com/images/I/51C3VacjbGL._AC_SX679_.jpg"
  },
  {
    "id": 11,
    "name": "Kit 12 Utensílios De Cozinha Qualidade Premium Resistente",
-   "price": "R$ 67,16",
-   "image": "https://m.magazineluiza.com.br/a-static/420x420/kit-12-utensilios-de-cozinha-qualidade-premium-resistente-entrega-rapida/facilitalojavirtual/al0093-09/cb61749c3a99508eed34637b00095a59.jpeg"
+   "price": "67,16",
+   "image": "https://a-static.mlcdn.com.br/420x420/kit-12-utensilios-de-cozinha-qualidade-premium-resistente-entrega-rapida/facilitalojavirtual/al0093-09/cb61749c3a99508eed34637b00095a59.jpeg"
  },
  {
    "id": 12,
    "name": "JOGO 6 TAÇAS VINHO TINTO",
-   "price": "R$ 180,48",
+   "price": "180,48",
    "image": "https://m.media-amazon.com/images/I/718+3+IEbPL._AC_SX679_.jpg"
  },
  {
    "id": 13,
    "name": "Cafeteira Elétrica Britânia BCF19 18 xícaras",
-   "price": "R$ 119,00",
+   "price": "119,00",
    "image": "https://imgs.casasbahia.com.br/55066142/1g.jpg?imwidth=500"
  },
  {
    "id": 14,
    "name": "Cafeteira dolce gusto",
-   "price": "R$ 419,00",
-   "image": "https://www.nescafe-dolcegusto.com.br/media/catalog/product/cache/d22af66f75f51f60e100631e2c10a99a/p/l/plus_preta_tag_x_cara_220v_v2.png"
+   "price": "419,00",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Dolce_Gusto.JPG/960px-Dolce_Gusto.JPG"
  },
  {
    "id": 15,
    "name": "Sanduicheira Inox Multiuso Oster",
-   "price": "R$ 199,90",
+   "price": "199,90",
    "image": "https://jcsbrasil.vteximg.com.br/arquivos/ids/238601-1000-1000/Prancheta-1.png?v=639047091968400000"
  },
  {
    "id": 16,
    "name": "Liquidificador Mondial Turbo L-1000BI 1000W",
-   "price": "R$ 200,00",
-   "image": "\nhttps://imgs.casasbahia.com.br/11823521/1g.jpg"
+   "price": "200,00",
+   "image": "https://imgs.casasbahia.com.br/11823521/1g.jpg"
  },
  {
    "id": 17,
    "name": "Fogão 4 Bocas Electrolux Efficient Mesa Vidro FE4IG",
-   "price": "R$ 1.499,45",
+   "price": "1.499,45",
    "image": "https://http2.mlstatic.com/D_Q_NP_648991-MLA99547848370_122025-O.webp"
  },
  {
    "id": 18,
    "name": "Geladeira Panasonic Bt41x Frost Free 387l",
-   "price": "R$ 2.706,03",
+   "price": "2.706,03",
    "image": "https://static1.efacil.com.br/wcsstore/ExtendedSitesCatalogAssetStore/Imagens/1000/2221618_01.jpg"
  },
  {
    "id": 19,
    "name": "Lavadora Brastemp 10kg BNF10AB",
-   "price": "R$ 3.428,10",
+   "price": "3.428,10",
    "image": "https://brastemp.vtexassets.com/arquivos/ids/271311-1200-auto?v=638997803447670000&width=1200&height=auto&aspect=true"
  },
  {
    "id": 20,
    "name": "Ar Condicionado Split 9000 BTUs LG +IA Dual Inverter Voice Frio S3NQ09",
-   "price": "R$ 2.100,00",
+   "price": "2.100,00",
    "image": "https://www.leveros.com.br/upload/produto/imagem/m_ar-condicionado-split-hw-lg-dual-inverter-voice-24-000-btus-r-32-quente-frio-220v.jpg"
  },
  {
    "id": 21,
    "name": "Batedeira Planetária Oster Preta 850W 12 Velocidades Tigela Inox 4L OBAT641",
-   "price": "R$ 455,05\n",
+   "price": "455,05",
    "image": "https://static1.efacil.com.br/wcsstore/ExtendedSitesCatalogAssetStore/Imagens/1000/280212501030210011-00023_02.jpg"
  },
  {
    "id": 22,
    "name": "Samsung Smart TV Crystal UHD 4K 2024",
-   "price": "R$ 2.899,00",
+   "price": "2.899,00",
    "image": "https://http2.mlstatic.com/D_NQ_NP_795202-MLU77447438231_072024-O.webp"
  },
  {
    "id": 23,
    "name": "Soundbar JBL Bar 2.1 Deep Bass (300W)",
-   "price": "R$ 1.600,00",
+   "price": "1.600,00",
    "image": "https://m.media-amazon.com/images/I/61-eZDbwf5L._AC_UF1000,1000_QL80_.jpg"
  },
  {
    "id": 24,
    "name": "Conjunto de Mesa de Jantar Donna com 4 Cadeiras - Madeira Maciça",
-   "price": "R$1.140,46",
+   "price": "1.140,46",
    "image": "https://m.media-amazon.com/images/I/71L6n1a2LHL._AC_UF894,1000_QL80_.jpg"
  },
  {
    "id": 25,
    "name": "Jogo de Panelas Tramontina em Aço Inox 5 Peças",
-   "price": "R$ 499,00",
+   "price": "499,00",
    "image": "https://73035.cdn.simplo7.net/static/73035/sku/10000004525710.jpg"
  },
  {
    "id": 26,
    "name": "Aspirador de Pó Mondial Turbo Cycle AP-35 1100W",
-   "price": "R$ 222,21",
+   "price": "222,21",
    "image": "https://i.zst.com.br/thumbs/12/1e/13/-1032672665.jpg"
  },
  {
    "id": 27,
    "name": "Jogo de Toalhas de Banho 5 Peças 100% Algodão",
-   "price": "R$278,30 ",
+   "price": "278,30",
    "image": "https://m.media-amazon.com/images/I/71HyHh8grZL._AC_SY300_SX300_QL70_ML2_.jpg"
  },
  {
    "id": 28,
    "name": "Jogo de Pratos porcelana 12 Peças Roma - Branco",
-   "price": "R$ 311,02",
+   "price": "311,02",
    "image": "https://portobrasil.vtexassets.com/arquivos/ids/157576/61089R.jpg?v=637242844705630000"
  },
  {
    "id": 29,
    "name": "Jogo de Talheres Tramontina Aço Inox 24 Peças",
-   "price": "R$ 120,00",
+   "price": "120,00",
    "image": "https://a-static.mlcdn.com.br/420x420/jogo-de-talheres-tramontina-inox-colher-faca-garfo-24-pecas-inox/ecomba/buzi-24/f023246dbc1bc2156f72e6fb2034b489.jpeg"
  },
  {
    "id": 30,
    "name": "Conjunto 24 Potes Herméticos Empilháveis Tampa E Trava",
-   "price": "R$126, 86",
+   "price": "126,86",
    "image": "https://a-static.mlcdn.com.br/420x420/conjunto-de-24-potes-hermeticos-decoteam-com-tampa-e-trava-croix/loibrasil/13403/bac79e2d7c9ab952797068b2b57e260b.jpeg"
  },
  {
    "id": 31,
    "name": "Mixer Mondial 350W 2 em 1",
-   "price": "R$180,41",
+   "price": "180,41",
    "image": "https://a-static.mlcdn.com.br/420x420/mixer-2-em-1-mondial-500w-vermelho-e-inox-m-10-2-velocidades/magazineluiza/236678000/65307241807833125cbcac46a331a839.jpg"
  },
  {
    "id": 32,
    "name": "Ventilador de Teto 3 Pás Acrílica",
-   "price": "R$ 609,90",
+   "price": "609,90",
    "image": "https://cdn.leroymerlin.com.br/products/ventilador_de_teto_controle_remoto_nano_eco_3_pas_bivolt_92186024_6d19_600x600.jpg"
  },
  {
    "id": 33,
    "name": "Alexa Echo Pop",
-   "price": "R$ 379,00",
+   "price": "379,00",
    "image": "https://static.wixstatic.com/media/378b70_9cced3397eaa46e7b2377a81fef9122f~mv2.jpg/v1/fill/w_480,h_360,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/378b70_9cced3397eaa46e7b2377a81fef9122f~mv2.jpg"
  },
  {
    "id": 34,
    "name": "Ventilador de Mesa Mondial 40cm",
-   "price": "R$139,90",
-   "image": "https://m.magazineluiza.com.br/a-static/420x420/ventilador-de-mesa-mondial-super-power-40cm-6-pas-3-velocidades-vsp-40-ap/gazinshop/12750/0d44b41796ca3a83256ca782041bab7d.jpg"
+   "price": "139,90",
+   "image": "https://a-static.mlcdn.com.br/420x420/ventilador-de-mesa-mondial-super-power-40cm-6-pas-3-velocidades-vsp-40-ap/gazinshop/12750/0d44b41796ca3a83256ca782041bab7d.jpg"
  },
  {
    "id": 35,
    "name": "Jogo de Facas Inox 6 Peças Tramontina",
-   "price": "R$231,53",
+   "price": "231,53",
    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQTfkG_Shna1wDS2FY2YHRtHl99y0b_3OtH0ACnKDBf-dkBbGQgFM5gFbmoff_cQv5yMjjB9uzSeH9UUHynW2YK-Exq1YKvqPPbcQinb-57lFouL1aQyR6ZNg"
  },
  {
    "id": 36,
    "name": "Ferro de Passar a Vapor Arno Ultragliss 1750W",
-   "price": "R$250,71",
+   "price": "250,71",
    "image": "https://m.media-amazon.com/images/I/61JAgtqvcEL._AC_SL1200_.jpg"
  },
  {
    "id": 37,
    "name": "Sofá 4 Lugares Beny Com Chaise Esquerdo Linho Bege",
-   "price": "R$ 1.199,00",
+   "price": "1.199,00",
    "image": "https://product-hub-prd.madeiramadeira.com.br/666419306/images/26039380-d660-47e0-9dbd-1dacb9b488f52d05b95114da29565504b959db.png?width=700&canvas=1:1&bg-color=FFF"
  },
  {
    "id": 38,
    "name": "Kit Ferramentas WAP 110 Peças WF M110",
-   "price": "R$ 474,00",
+   "price": "474,00",
    "image": "https://lojawap.vtexassets.com/arquivos/ids/174307/7899831333493---WAP-WF-M110---00.png?v=638792170810670000"
  },
  {
    "id": 39,
    "name": "Pipoqueira Mallory Mickey c/ 2 baldes ",
-   "price": "R$ 207,66",
+   "price": "207,66",
    "image": "https://cdn-assets-legacy.casar.com/thumb/208x208x1/dados/sitenoivos/wed972927/presentes/ik0HW_1768177352.jpeg"
  },
  {
    "id": 40,
    "name": "Churrasqueira elétrica Philco do faustão",
-   "price": "R$ 236,62",
+   "price": "236,62",
    "image": "https://philco.vtexassets.com/arquivos/ids/195786/Churrasqueira-Eletrica-PCQ1500D_--29-.jpg?v=638711593940570000"
  },
  {
    "id": 41,
    "name": "Espremedor de Laranja ",
-   "price": "R$ 238,81",
+   "price": "238,81",
    "image": "https://dleyjack4mlu0.cloudfront.net/Custom/Content/Products/14/46/1446_espremedor-de-frutas-mondial-cozinha-e-10-eletrico-inox-250w_m1_637387199500032283.webp"
  },
  {
    "id": 42,
    "name": "Grill Britânia Multi Grill",
-   "price": "R$ 259,58",
+   "price": "259,58",
    "image": "https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/multi-grill-britania-1200w-placa-removivel-coletora-de-gordura/magazineluiza/218920500/356f53aca256c37258ed46daa5428462.jpg"
  },
  {
    "id": 43,
    "name": "Conjunto para sobremesa Planet em prata 13 peças",
-   "price": "R$ 265,66",
+   "price": "265,66",
    "image": "https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/conjunto-13-pecas-para-sobremesa-de-prata-planet-23cm-rojemac/madeiramadeira-openapi/316828/dacc789aaaa42290590260c4d48bfa2e.jpeg"
  },
  {
    "id": 44,
    "name": "Panela de pressão elétrica Electrolux 6L ",
-   "price": "R$ 446,47",
+   "price": "446,47",
    "image": "https://i.zst.com.br/thumbs/12/c/12/121343084.jpg"
  },
  {
    "id": 45,
    "name": "Purificador de água",
-   "price": "R$ 513,73",
+   "price": "513,73",
    "image": "https://d1likr6vgtxkkw.cloudfront.net/Custom/Content/Products/16/59/16598_purificador-de-agua-efficient-8l-pe15p-bivolt-preto-electrolux_z1_638676134083318556.webp"
  },
  {
    "id": 46,
    "name": "Guarda-roupas",
-   "price": "R$ 1.461,95",
+   "price": "1.461,95",
    "image": "https://imgs.casasbahia.com.br/1568874334/1xg.jpg?imwidth=500"
  },
  {
    "id": 47,
    "name": "Forno a Gás de Embutir",
-   "price": "R$ 1.868,24",
+   "price": "1.868,24",
    "image": "https://m.media-amazon.com/images/I/51JdvXXHcYL.jpg"
  },
  {
    "id": 48,
    "name": "Adega de Vinhos",
-   "price": "R$ 1.504,51",
+   "price": "1.504,51",
    "image": "https://m.media-amazon.com/images/I/41g2PlQcSvL._AC_SX342_SY445_QL70_ML2_.jpg"
  },
  {
    "id": 49,
    "name": "Jogo de Xícaras para Café com Pires - 12 peças",
-   "price": "R$ 293,96",
+   "price": "293,96",
    "image": "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/j/o/jogo-de-xicaras-de-cha-com-pires-royal-havan-casa_1059553.jpg"
  },
  {
    "id": 50,
    "name": "Armário de Cozinha",
-   "price": "R$ 1.648,43",
+   "price": "1.648,43",
    "image": "https://images.tcdn.com.br/img/img_prod/571683/armario_de_cozinha_modulada_completa_reta_8_pecas_3_50m_215_botanic_kappesberg_36526_1_6a8324f3eda418a3aa16729193be4c0d.jpg"
  },
  {
    "id": 51,
    "name": "Aparador Muse",
-   "price": "R$ 444,51",
-   "image": "https://www.muma.com.br/media/iopt/catalog/product/cache/4c4278ec3c53112f90b46bb15500dc78/a/p/aparador-massa.webp"
+   "price": "444,51",
+   "image": "https://product-hub-prd.madeiramadeira.com.br/685019375/images/7004f8de-389f-4f8c-a450-beb596d7386b151014242690647dk1.jpg?width=700&canvas=1:1&bg-color=FFF"
  },
  {
    "id": 52,
    "name": "Conjunto de Baixelas Tramontina",
-   "price": "R$ 155,42",
+   "price": "155,42",
    "image": "https://images.tcdn.com.br/img/img_prod/361962/1678_1_20260309172742.jpg"
  },
  {
    "id": 53,
    "name": "Bule de chá",
-   "price": "R$ 77,71",
+   "price": "77,71",
    "image": "https://img.camicado.com.br/item/100413398/zoom/1.jpg"
  },
  {
    "id": 54,
    "name": "Conjunto de Potes Vidro",
-   "price": "R$ 95,74",
+   "price": "95,74",
    "image": "https://http2.mlstatic.com/D_NQ_NP_617954-MLB74829978119_022024-O.webp"
  },
  {
    "id": 55,
    "name": "Escorredor de Louças Aço Inoxidável",
-   "price": "R$ 130,45",
+   "price": "130,45",
    "image": "https://m.media-amazon.com/images/I/71DDQxrJZzL._AC_UF350,350_QL80_.jpg"
  },
  {
    "id": 56,
    "name": "Formas para Bolos",
-   "price": "R$ 169,58",
+   "price": "169,58",
    "image": "https://m.media-amazon.com/images/I/51RKjJvDP8L._AC_SY300_SX300_QL70_ML2_.jpg"
  },
  {
    "id": 57,
    "name": "Jogo de Lençol Casal ",
-   "price": "R$ 125,27",
+   "price": "125,27",
    "image": "https://images.tcdn.com.br/img/img_prod/636855/kit_jogo_de_lencol_casal_188x138x30_cama_box_algodao_percal_attuale_16062_1_77e84d923c1e59b2a663240a5d459f0f.jpg"
  },
  {
    "id": 58,
    "name": "Jogo para sobremesa 12 peças",
-   "price": "R$ 99,37",
+   "price": "99,37",
    "image": "https://archives.lojasnossolar.com.br/images/nossolar/sku/16780/252177_237162_800.webp"
  },
  {
    "id": 59,
    "name": "Kit de travessas porcelana",
-   "price": "R$ 181,33",
+   "price": "181,33",
    "image": "https://http2.mlstatic.com/D_NQ_NP_757698-MLB89107204656_082025-O.webp"
  },
  {
    "id": 60,
    "name": "Kit Jogo Americano",
-   "price": "R$ 145,06",
+   "price": "145,06",
    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRD8H9srHPjg5PxLAq5m1aI0DEEyH05d8DEw&s"
  },
  {
    "id": 61,
    "name": "Lava Louças em Inox 14 Serviços",
-   "price": "R$ 4.301,82",
+   "price": "4.301,82",
    "image": "https://73035.cdn.simplo7.net/static/73035/sku/12520014844.jpg"
  },
  {
    "id": 62,
    "name": "Ferro de Passar a Vapor",
-   "price": "R$ 124,90",
+   "price": "124,90",
    "image": "https://lojasbecker.vtexassets.com/arquivos/ids/3287164/1-f-32-ferro-de-passar-roupas-azul-frent.jpg?v=638615746649300000"
  },
  {
    "id": 63,
    "name": "Organizador De Gaveta Porta Talheres Com Extensor Cozinha",
-   "price": "R$ 67,90",
+   "price": "67,90",
    "image": "https://cdn.awsli.com.br/1866/1866589/produto/995898479779eded8d.jpg"
  },
  {
    "id": 64,
    "name": "Rack para Tv até 80 Polegadas 180cm 3 Portas Retrô Multimóveis Mp1103 Off White/madeirado",
-   "price": "R$363,36 ",
+   "price": "363,36",
    "image": "https://m.media-amazon.com/images/I/61M-mgzlsKL._AC_SX679_.jpg"
  },
  {
    "id": 65,
    "name": "Aparelho de Jantar e Chá 20 Peças Oxford de Cerâmica Bege e Marrom Redondo Unni Brisa",
-   "price": "R$229,41",
+   "price": "229,41",
    "image": "https://a-static.mlcdn.com.br/450pxx450px/aparelho-de-jantar-e-cha-20-pecas-oxford-de-ceramica-bege-e-marrom-redondo-unni-brisa/magazineluiza/237715800/a16542ceb053e172fc1f4df54f8347da.jpg"
  },
  {
    "id": 66,
    "name": "Bomboniere",
-   "price": "R$ 80,00",
+   "price": "80,00",
    "image": "https://artegift.fbitsstatic.net/img/p/bomboniere-oriental-mini-73037/260144-3.jpg?w=825&h=825&v=no-value"
  },
  {
    "id": 67,
    "name": "Tábua De Passar Roupas Ou Linha Flow",
-   "price": "R$373,26",
+   "price": "373,26",
    "image": "https://down-br.img.susercontent.com/file/sg-11134201-824i1-me649820i7sx63@resize_w450_nl.webp"
  },
  {
    "id": 68,
    "name": "Varal De Parede Retratil Secreto Magico",
-   "price": "R$119,90 ",
+   "price": "119,90",
    "image": "https://m.media-amazon.com/images/I/31e2L2R2wqL._AC_.jpg"
  },
  {
    "id": 69,
    "name": "Cama Box Baú Airtech King ",
-   "price": "R$ 2.799,90",
+   "price": "2.799,90",
    "image": "https://i.imgur.com/RdvygGz.png?width=700&canvas=1:1&bg-color=FFF"
  },
  {
    "id": 70,
    "name": "Kit 2 Mesas de Cabeceira Retrô com Gaveta Channel",
-   "price": "R$449,90 ",
+   "price": "449,90",
    "image": "https://m.media-amazon.com/images/I/51EAZhHuPmL._AC_SX679_.jpg"
  },
  {
    "id": 71,
    "name": "Cabeceira Alta Cama De King Box Kit 10 Módulos",
-   "price": "R$ 444,51",
+   "price": "444,51",
    "image": "https://product-hub-prd.madeiramadeira.com.br/781337161/images/5f6affcb-0713-4673-b721-8a8e66be18b8lickhomemalluestofadoslado.jpg?width=700&canvas=1:1&bg-color=FFF"
  },
  {
    "id": 72,
    "name": "Cooktop a Gás Philco 5 Queimadores Cook Chef Bivolt",
-   "price": "R$424,76",
+   "price": "424,76",
    "image": "https://m.media-amazon.com/images/I/51v90dxFzPL._AC_SX679_.jpg"
  },
  {
    "id": 73,
    "name": "Mesa Escrivaninha para Escritório em L Estilo Industrial 100% MDF",
-   "price": "R$ 608,30",
+   "price": "608,30",
    "image": "https://storage.panoverse-cdn.com.br/lojadallacosta.img/produto/341/mesa-para-escritorio-100-mdf-industrial-freijo-preto-dalla-costa-1804-large.jpg"
  },
  {
    "id": 74,
    "name": "ser bem servido no buffet",
-   "price": "R$ 67,33",
+   "price": "67,33",
    "image": "https://bordalo.observador.pt/v2/q:60/rs:fill:980/c:770:433:nowe:0:0/plain/https://s3.observador.pt/wp-content/uploads/2016/09/29124952/meme_770x433_acf_cropped.jpg"
  },
  {
    "id": 75,
    "name": "Dancinha do jamal com o noivo",
-   "price": "R$ 107,00",
+   "price": "107,00",
    "image": "https://play-lh.googleusercontent.com/BdahGuzgujz2DiIKDq60L-6TYQKdDnI1ijYCvcyY3w7hdVFRh_necQpKTgafimhH5Mc"
  },
  {
    "id": 76,
    "name": "Ortopedista pro yuri",
-   "price": "R$ 724,76",
+   "price": "724,76",
    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZEwBDhseCRCnrwZoIiq7hZ70bzNTverZEllXUI9ZiO66n_BIHdtJhjVY&s=10"
  },
  {
    "id": 77,
    "name": "Jogar o buque na sua direção",
-   "price": "R$ 112,84",
+   "price": "112,84",
    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUDW2Ly79XwMVRySUuCfsPRxonfbddJZn19Q&s"
  },
  {
    "id": 78,
    "name": "Ajude a pagar a mosin nagant",
-   "price": "R$ 300,00",
-   "image": "https://www.airsoftelite.com.br/armas-historicas/airsoft-rifle-sniper-mosin-nagant-m1938-st-fullmetal-wood"
+   "price": "300,00",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Mosin-Nagant-9130.jpg/960px-Mosin-Nagant-9130.jpg"
  },
  {
    "id": 79,
    "name": "1 mês do server de mine",
-   "price": "R$ 600,00",
-   "image": "https://www.minecraft.net/pt-br"
+   "price": "600,00",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Minecraft_Creeper_%28Crop%29.png"
  },
  {
    "id": 80,
    "name": "Churrasco pro noivo",
-   "price": "R$ 100,00",
-   "image": "https://alegrafoods.com.br/churrasco-e-carne-suina-2/"
+   "price": "100,00",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Asado_argentino_a_la_estaca.jpg/960px-Asado_argentino_a_la_estaca.jpg"
  },
  {
    "id": 81,
    "name": "Passe de batalha do Hunt",
-   "price": "R$ 50,00",
+   "price": "50,00",
    "image": "https://i.ytimg.com/vi/zLUbOY0e1ww/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCwxO7TAbHHYyge1gtnQkw0GbsM0w"
  },
  {
    "id": 82,
    "name": "O Um Anel",
-   "price": "R$ 685,99",
+   "price": "685,99",
    "image": "https://repositorio.sbrauble.com/arquivos/in/magic/480196/6476640e534d8-7dtbv-tfjzn-20758249536476640e53519.jpg"
  },
  {
    "id": 83,
    "name": "Cuecas pro noivo",
-   "price": "R$ 33,96",
+   "price": "33,96",
    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlFL7LpIyPNcQfgUP4J9MIC1zVl_Su4XWFYLHR6ghAGA&s"
  },
  {
    "id": 84,
    "name": "Jogo de meia pro noivo",
-   "price": "R$ 56,81",
-   "image": "https://m.magazineluiza.com.br/a-static/420x420/kit-2-pares-meia-sonic-e-shadow-personagem-divertida-adulto-cano-longo-premium-pronta-entrega-divertsocks/visualmodasrp/96/6ae7f2460133145e36c108b8b170d869.jpeg"
+   "price": "56,81",
+   "image": "https://a-static.mlcdn.com.br/420x420/kit-2-pares-meia-sonic-e-shadow-personagem-divertida-adulto-cano-longo-premium-pronta-entrega-divertsocks/visualmodasrp/96/6ae7f2460133145e36c108b8b170d869.jpeg"
  },
  {
    "id": 85,
    "name": "Um pote de pepinos agridoce hemmer pro noivo",
-   "price": "R$ 31,99",
+   "price": "31,99",
    "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-lxwwb8zedevm28"
  },
  {
    "id": 86,
    "name": "Um mês de petlove pra Mel",
-   "price": "R$ 100,00",
+   "price": "100,00",
    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSShI209EViLs4OTT6p1PIYfTBckHr69epKR6NizxkaIg&s"
  },
  {
    "id": 87,
    "name": "Boleto da Zaaz",
-   "price": "R$ 99,90",
+   "price": "99,90",
    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvGq9dhJIJidPOSGky847WMjF1GLr84LIuvITc1JpXpCbDnbvJIW3gOrh7&s=10"
  },
  {
    "id": 88,
    "name": "Boleto da Copel ",
-   "price": "R$ 170,00",
+   "price": "170,00",
    "image": "https://www.copel.com/site/wp-content/uploads/2021/12/logo-copel-avatar.jpg"
  },
  {
    "id": 89,
    "name": "Uma parcela do emprestimo do santana",
-   "price": "R$ 744,00",
+   "price": "744,00",
    "image": "https://www.conjur.com.br/wp-content/uploads/2023/06/emprestimo-dinheiro.jpeg"
  },
  {
    "id": 90,
    "name": "Abusar do Charlinho",
-   "price": "R$ 100,00",
+   "price": "100,00",
    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR5-CE5SwvwJdLk-nd4riZT10TnF5TgW-hXif4qpAD3UbOhwSMrNuAXss&s=10"
  },
  {
    "id": 91,
    "name": "Aula de direção pro Heitor",
-   "price": "R$ 150,00",
+   "price": "150,00",
    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJQq5ILfqF0pluY2lQKMgXKgsa0NCl86xfHwafIcqy9JN9lXGttGrMKwlM&s=10"
  },
  {
    "id": 92,
    "name": "3 kg de Paçoca pro Yuri aomoçar",
-   "price": "R$ 96,00",
+   "price": "96,00",
    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_810943-MLB88592362529_072025-F.webp"
  },
  {
    "id": 93,
    "name": "Uma ampola de Mounjaro",
-   "price": "R$ 200,00",
+   "price": "200,00",
    "image": "https://http2.mlstatic.com/D_NQ_NP_659904-MLB106777671820_022026-O.webp"
  },
  {
    "id": 94,
    "name": "uma parcela da do scope da mosin ",
-   "price": "R$ 100,00",
+   "price": "100,00",
    "image": "https://www.arsenalsports.com/img/34735/produtos/600/5d7501c8e757efd68d7fa68607a5e5e9.jpg"
  },
  {
    "id": 95,
    "name": "Grelha pra linguiça",
-   "price": "R$ 76,03",
+   "price": "76,03",
    "image": "https://images.tcdn.com.br/img/img_prod/1143540/grelha_para_linguica_12x48cm_griler_gaucho_grill_grilazer_2233_2_5e4f538cb0762e0e7f1242c4ea8b6782.jpeg"
  },
  {
    "id": 96,
    "name": "Dia de Magic com o Noivo",
-   "price": "R$ 50,00",
+   "price": "50,00",
    "image": "https://images.ctfassets.net/s5n2t79q9icq/3awgqvlvTDjwCWtrzezxiG/afd3434e7ff31204f08c3902ae4e3b02/WOTC_RedRoom-1023-crop.jpg?w=500"
  },
  {
    "id": 97,
    "name": "Uma Oneshot do Noivo",
-   "price": "R$ 50,00",
+   "price": "50,00",
    "image": "https://i.pinimg.com/736x/52/26/c3/5226c375b0abd94b5c4daf8889d66633.jpg"
  },
  {
    "id": 98,
    "name": "Boleto Condominio",
-   "price": "R$ 400,00",
+   "price": "400,00",
    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn6QOt_DQ1odKjEz1Bncz4t1SD6TibDCJyBpKck0W11g&s=10"
  },
  {
    "id": 99,
    "name": "Uma parcela do Financiamento da Caixa",
-   "price": "R$ 600,00",
+   "price": "600,00",
    "image": "https://widesys.com.br/wp-content/uploads/2025/05/Financiamento-da-Caixa-corretores-sem-softwares-estao-perdendo-feio-em-2025.jpg.webp"
  },
  {
    "id": 100,
    "name": "Me conte uma piada",
-   "price": "R$ 15,00",
+   "price": "15,00",
    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGA4-PtiFjPFZNwekL-S2gsBXQjZqR03kfih_4Wx5NCA&s=10"
  },
  {
    "id": 101,
    "name": "Não seja abduzido durante a recepção ",
-   "price": "R$ 10,00",
+   "price": "10,00",
    "image": "https://s2.glbimg.com/HnbsZ27boOVyVsHRt16mO-0mM-U=/e.glbimg.com/og/ed/f/original/2018/07/30/download.jpg"
  },
  {
    "id": 102,
    "name": "Disparo de airsoft no noivo",
-   "price": "R$ 50,00",
+   "price": "50,00",
    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRpzXQDxUmRvNkLi6px2uV5xEC_qBk6SP6ps8CjSyDgw&s=10"
+ },
+  {
+   "id": 103,
+   "name": "Disparo de mosin no noivo",
+   "price": "75,00",
+   "image": "https://www.warsoftbrasil.com.br/media/catalog/product/cache/1/image/800x/9df78eab33525d08d6e5fb8d27136e95/8/8/880777037_db857b7d7ea061d853e7930b09c44923.jpg.jpg"
  }
 ]

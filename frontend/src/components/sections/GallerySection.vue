@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useScrollReveal } from "@/composables/useScrollReveal";
 import { getPublicPath } from "@/utils/assets";
 import VineCorner from "@/components/ui/VineCorner.vue";
@@ -44,6 +44,16 @@ const pages = [];
 photos.forEach((p) => {
   pages.push({ type: "photo", ...p });
   pages.push({ type: "story", ...p });
+});
+
+// Pré-carrega as fotos assim que o site abre, para que apareçam
+// instantâneas ao navegar no carrossel (o cache já estará aquecido).
+onMounted(() => {
+  photos.forEach((p) => {
+    const img = new Image();
+    img.decoding = "async";
+    img.src = p.src;
+  });
 });
 
 const current = ref(0);
