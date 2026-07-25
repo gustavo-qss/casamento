@@ -309,6 +309,18 @@ function showToast(msg) {
   toastTimer = setTimeout(() => (toast.value = ''), 3000);
 }
 
+/* ---------------- Visualizar comprovante ---------------- */
+const viewingComprovante = ref('');
+const comprovanteIsPdf = computed(() =>
+  /\.pdf(\?|#|$)/i.test(viewingComprovante.value),
+);
+function openComprovante(url) {
+  viewingComprovante.value = url;
+}
+function closeComprovante() {
+  viewingComprovante.value = '';
+}
+
 /* ---------------- Init ---------------- */
 onMounted(() => {
   if (token.value) loadAll();
@@ -444,9 +456,17 @@ onMounted(() => {
             <p v-if="readField(row, 'dietary')" class="card-note">
               <span class="note-label">Restrições:</span> {{ readField(row, 'dietary') }}
             </p>
-            <a v-if="readField(row, 'comprovanteUrl')" class="card-link" :href="readField(row, 'comprovanteUrl')" target="_blank" rel="noopener">
-              Ver comprovante ↗
-            </a>
+            <button
+              v-if="readField(row, 'comprovanteUrl')"
+              class="btn btn-comprovante"
+              @click="openComprovante(readField(row, 'comprovanteUrl'))"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              Ver comprovante
+            </button>
           </template>
 
           <!-- Campos Cartas -->
@@ -513,6 +533,33 @@ onMounted(() => {
             <button class="btn btn-primary" :disabled="saving" @click="saveEdit">
               {{ saving ? 'Salvando...' : 'Salvar' }}
             </button>
+          </footer>
+        </div>
+      </div>
+    </Transition>
+
+    <!-- ============ VISUALIZADOR DE COMPROVANTE ============ -->
+    <Transition name="modal">
+      <div v-if="viewingComprovante" class="modal-overlay" @click.self="closeComprovante">
+        <div class="lightbox">
+          <header class="modal-header">
+            <h2>Comprovante</h2>
+            <button class="modal-close" @click="closeComprovante" aria-label="Fechar">×</button>
+          </header>
+          <div class="lightbox-body">
+            <iframe
+              v-if="comprovanteIsPdf"
+              :src="viewingComprovante"
+              class="lightbox-frame"
+              title="Comprovante em PDF"
+            ></iframe>
+            <img v-else :src="viewingComprovante" alt="Comprovante" class="lightbox-img" />
+          </div>
+          <footer class="modal-footer">
+            <a class="btn btn-outline" :href="viewingComprovante" target="_blank" rel="noopener">
+              Abrir em nova aba ↗
+            </a>
+            <button class="btn btn-primary" @click="closeComprovante">Fechar</button>
           </footer>
         </div>
       </div>
@@ -681,6 +728,20 @@ onMounted(() => {
   letter-spacing: 0.1em;
 }
 .btn-edit:hover { background: var(--terracotta); color: var(--white); border-color: var(--terracotta); }
+
+.btn-comprovante {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(184, 95, 53, 0.1);
+  color: var(--clay);
+  border-color: transparent;
+  font-size: 0.75rem;
+  padding: 0.45rem 0.9rem;
+}
+.btn-comprovante:hover { background: var(--terracotta); color: var(--white); }
+.btn-comprovante svg { flex-shrink: 0; }
 
 .btn-block { width: 100%; padding: 0.85rem; margin-top: 0.4rem; }
 
@@ -1022,6 +1083,43 @@ onMounted(() => {
 .modal-enter-from, .modal-leave-to { opacity: 0; }
 .modal-enter-active .modal, .modal-leave-active .modal { transition: transform 0.25s ease; }
 .modal-enter-from .modal, .modal-leave-to .modal { transform: translateY(20px); }
+
+/* ---------------- LIGHTBOX COMPROVANTE ---------------- */
+.lightbox {
+  width: 100%;
+  max-width: 640px;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--pearl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(74, 42, 28, 0.15);
+  overflow: hidden;
+}
+.lightbox-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  background: rgba(42, 24, 18, 0.06);
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+}
+.lightbox-frame {
+  width: 100%;
+  height: 72vh;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: #fff;
+}
 
 /* ---------------- TOAST ---------------- */
 .toast {
