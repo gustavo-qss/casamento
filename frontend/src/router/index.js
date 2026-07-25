@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import PolaroidsSite from '@/views/PolaroidsSite.vue';
 import InstagramSite from '@/views/InstagramSite.vue';
 import V2Site from '@/views/V2Site.vue';
+import AdminPanel from '@/views/AdminPanel.vue';
 
 const routes = [
   // Site de scroll com galeria polaroid.
@@ -25,6 +26,12 @@ const routes = [
     path: '/instagram/2',
     name: 'instagram-v2',
     component: V2Site,
+  },
+  // Painel administrativo (login no front) — /adm
+  {
+    path: '/adm',
+    name: 'admin',
+    component: AdminPanel,
   },
   // Qualquer rota desconhecida cai no site polaroid.
   {
