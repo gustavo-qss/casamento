@@ -25,8 +25,9 @@ function spaFallback404() {
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Servido como GitHub Pages de projeto: https://gustavo-qss.github.io/casamento/
-  base: '/casamento/',
+  // Servido no domínio próprio (apex) https://jessicaelucas.app.br na raiz.
+  // Com domínio customizado o Pages serve na raiz, então base = '/'.
+  base: '/',
   plugins: [
     vue(),
     vueDevTools(),
